@@ -1,0 +1,116 @@
+{
+	"env": {
+		"browser": true,
+		"es6": true,
+		"node": true
+	},
+	"extends": "eslint:recommended",
+	"globals": {
+		"Atomics": "readonly",
+		"SharedArrayBuffer": "readonly"
+	},
+	"parserOptions": {
+		"ecmaVersion": 2018,
+		"sourceType": "module"
+	},
+	"rules": {
+		"eqeqeq": "error",
+		"no-alert": "error",
+		"no-eval": "error",
+		"no-magic-numbers": [
+			"error", {
+				"ignore": [
+					0, 1
+				],
+				"ignoreArrayIndexes": true
+			}
+		],
+
+
+
+
+		"no-shadow": "error",
+
+
+
+		"brace-style": [
+			"error",
+			"1tbs",
+			{
+				"allowSingleLine": false
+			}
+		],
+		"camelcase": "error",
+		"func-call-spacing": [
+			"error",
+			"never"
+		],
+		"func-names": "error",
+		"indent": [
+			"error",
+			"tab"
+		],
+		"keyword-spacing": "error",
+		"line-comment-position": "error",
+		"max-depth": [
+			"warn",
+			{
+				"max": 3
+			}
+		],
+		"max-len": [
+			"error",
+			{
+				"code": 120
+			}
+		],
+		"max-lines-per-function": [
+			"error", 
+			{ 
+				"max": 20
+			}
+		],
+		"max-nested-callbacks": [
+			"error",
+			{
+				"max": 2
+			}
+		],
+		"max-params": [
+			"error",
+			{
+				"max": 3
+			}
+		],
+		"max-statements-per-line": [
+			"error",
+			{
+				"max": 1
+			}
+		],
+		"new-parens": [
+			"error",
+			"always"
+		],
+		"no-trailing-spaces": "error",
+		"quotes": [
+			"error",
+			"double"
+		],
+		"semi": [
+			"error",
+			"always"
+		],
+		"no-multiple-empty-lines": [
+			"error", {
+				"max": 1,
+				"maxEOF": 1
+			}
+		],
+		"max-statements-per-line": [
+			"error", {
+				"max": 1
+			}
+		]
+	}
+}

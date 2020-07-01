@@ -1,0 +1,22 @@
+diff --git a/dmenu.c b/dmenu.c
+index 65f25ce..e8ff288 100644
+--- a/dmenu.c
++++ b/dmenu.c
+@@ -638,7 +638,7 @@ setup(void)
+ 					break;
+ 
+ 		x = info[i].x_org;
+-		y = info[i].y_org + (topbar ? 0 : info[i].height - mh);
++		y = info[i].y_org + ((info[i].height - mh) * 0.5);
+ 		mw = info[i].width;
+ 		XFree(info);
+ 	} else
+@@ -648,7 +648,7 @@ setup(void)
+ 			die("could not get embedding window attributes: 0x%lx",
+ 			    parentwin);
+ 		x = 0;
+-		y = topbar ? 0 : wa.height - mh;
++		y = (wa.height - mh) * 0.5;
+ 		mw = wa.width;
+ 	}
+ 	promptw = (prompt && *prompt) ? TEXTW(prompt) - lrpad / 4 : 0;
