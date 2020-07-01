@@ -1,0 +1,13 @@
+[Desktop Entry]
+# The type as listed above
+Type=Application
+# The version of the desktop entry specification to which this file complies
+Version=1.0
+# The name of the application
+Name=sxiv
+# A comment which can/will be used as a tooltip
+Comment=Open images and animate them if possible
+# The executable of the application, possibly with arguments.
+Exec=sxiv -a
+# Describes the categories in which this entry should be shown
+Categories=Images

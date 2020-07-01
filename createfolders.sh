@@ -8,6 +8,6 @@ mkdir -p $HOME/.vim/undo
 mkdir -p $HOME/Development
 mkdir -p $HOME/Download
 mkdir -p $HOME/Pictures/caps
-mkdir -p $HOME/Development
+mkdir -p $HOME/Remotes
 
 sudo mkdir /opt/vim8

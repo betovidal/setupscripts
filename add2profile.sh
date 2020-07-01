@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ============ PROFILE ==============
-FOLDERS='$HOME/scripts /opt/NX/bin $HOME/repos/splatmoji'
+FOLDERS='$HOME/Scripts /opt/NX/bin $HOME/Repos/splatmoji'
 TARGET=$HOME/.profile
 if [ -f $TARGET ]; then
 	for folder in $FOLDERS; do
