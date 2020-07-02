@@ -19,7 +19,7 @@ git clone https://github.com/vim/vim.git $REPOS_FOLDER"vim"
 git clone https://github.com/cspeterson/splatmoji.git $REPOS_FOLDER"splatmoji"
 # My repos
 echo "= = = = = My Own Repositories = = = = ="
-MYREPOS="rcfiles scripts"
+MYREPOS="setupscripts"
 for myrepo in $MYREPOS; do
 	git clone https://github.com/betovidal/$myrepo.git $DEV_FOLDER$myrepo
 done
