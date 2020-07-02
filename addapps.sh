@@ -1,7 +1,11 @@
 #!/bin/bash
 APPSTARGET=$HOME/.local/share/applications/
 APPS=./applications
-if [ ! -d $APPS ]; then
+if [ ! -d "$APPS" ]; then
 	mkdir -p $APPS
 fi
-cp $APPS/* $APPSTARGET --interactive
+if [ "$1" == "f" ]; then
+	cp $APPS/* $APPSTARGET
+else
+	cp $APPS/* $APPSTARGET --interactive
+fi
