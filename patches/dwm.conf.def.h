@@ -1,7 +1,7 @@
 /* Apply https://dwm.suckless.org/patches/canfocusrule/ */
 
-static const char *fonts[]          = { "DejaVu Sans Mono for Powerline:pixelsize=16" };
-static const char dmenufont[]       = "DejaVu Sans Mono for Powerline:pixelsize=16";
+static const char *fonts[]          = { "DejaVu Sans Mono:pixelsize=21" };
+static const char dmenufont[]       = "DejaVu Sans Mono:pixelsize=21";
 
 static const Rule rules[] = {
 	/* xprop(1):
