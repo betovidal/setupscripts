@@ -39,8 +39,6 @@ set listchars=tab:\·\ ,trail:-,extends:>,precedes:< " Unprintable chars mapping
 call plug#begin('~/.vim/plugged')
 " See https://github.com/junegunn/vim-plug for possibilities
 Plug 'vim-syntastic/syntastic'              " Syntax checker
-" These are in old config
-Plug 'morhetz/gruvbox'                      " Color theme
 Plug 'henrik/vim-indexed-search'
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-commentary'
@@ -58,7 +56,7 @@ Plug 'prabirshrestha/vim-lsp'
 " Plug 'vim-jp/vim-cpp'
 " Plug 'mbbill/undotree'
 " Plug 'nathanaelkane/vim-indent-guides'
-" Plug 'dracula/vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
 
 " ================ simple snips =========================
@@ -116,9 +114,19 @@ set undodir^=$HOME/.vim/tmp//   " I can't recall how these look
 
 " ================= COLOR SCHEME CONFIGURATION ===========
 syntax enable               " Colors for syntax
-colorscheme gruvbox         " Download from https://raw.githubusercontent.com/morhetz/gruvbox/master/colors/gruvbox.vim
+" Download gruvbox from (I'm not using a status bar)
+" https://raw.githubusercontent.com/morhetz/gruvbox/master/colors/gruvbox.vim
+colorscheme dracula
 set number                  " Line numbers in gutter
 set background=dark         " Dark mode
+" Dracula configuration start
+let g:dracula_italic = 0
+colorscheme dracula
+highlight Normal ctermbg=None
+if (has("termguicolors"))
+	set termguicolors
+endif
+" Dracula configuration end
 
 " ============== JUMP VIM LIST =============
 " https://stackoverflow.com/a/27204000
@@ -209,8 +217,10 @@ set statusline+=\ [enc:%{&fileencoding?&fileencoding:&encoding}]
 set statusline+=\ [ff:%{&fileformat}\]
 set statusline+=\ %3.p%%                                   " Percentage
 set statusline+=\ %l/%L:%c                                 " line/TotalLines:Col
-" set statusline+=%=                                         " Align to the right
-" set statusline+=%{strftime('%a\ \|\ %F\ \|\ %H:%M:%S\ ')}  " Time
+" I have the time available from many other places. Also it refreshes after
+" input which doesn't really fit my needs
+" set statusline+=%=                                       " Align to the right
+" set statusline+=%{strftime('%a\ \|\ %F\ \|\ %H:%M:%S\ ')}" Time
 " ============== Syntax checkers ========================
 let g:syntastic_javascript_checkers = ['eslint']
 " Install $pip pylama and $pip pylama_pylint
@@ -250,7 +260,7 @@ if has("win32")
 	" Avoid mouse interaction other than selecting
 	set mouse=c
 	" set guifont=terminus:h14
-	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h14
+	set guifont=DejaVu\ Sans\ Mono:h14
 	set guioptions-=m "remove menu bar
 	set guioptions-=T "remove toolbar
 	set guioptions-=r "remove right-hand scroll bar
