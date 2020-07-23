@@ -177,7 +177,7 @@ nnoremap <leader>b :ls<CR>:b
 vnoremap <leader>t :Tab/
 nnoremap <leader>t :Tab/
 " Python JSON format module
-nnoremap <leader>j :%!python -m json.tool<CR>
+nnoremap <leader>j :%!python3 -m json.tool<CR>
 " Call snip completion
 " nnoremap <leader>s :call dumbsnips#expand()<CR>
 inoremap <expr> <C-B> "<ESC>:call ssnips#expand()<CR>"
@@ -243,6 +243,8 @@ let g:syntastic_mode_map = {
 
 " ============== WINDOWS SPECIFIC CONFIG ================
 if has("win32")
+	" Python instead of python3
+	nnoremap <leader>j :%!python -m json.tool<CR>
 	" Unprintable characters
 	set listchars=tab:\|\ ,trail:-,extends:>,precedes:< " Unprintable chars mapping
 	set belloff=all
