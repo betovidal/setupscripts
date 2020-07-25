@@ -31,6 +31,6 @@ static unsigned int defaultrcs = 15;
 /* I used to like this */
 char font[] = "Terminus:pixelsize=18";
 /* But now I use */
-static char *font = "DejaVu Sans Mono for Powerline:pixelsize=25:antialias=true:autohint=true";
+static char *font = "DejaVu Sans Mono:pixelsize=25:antialias=true:autohint=true";
 
 Install with: $sudo make clean install
