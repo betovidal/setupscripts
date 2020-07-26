@@ -6,3 +6,11 @@ static const char *colorname[NUMCOLS] = {
 
 /* treat a cleared input like a wrong password (color) */
 static const int failonclear = 0;
+
+/* default message */
+static const char * message = "Hey you with the pretty face\n\tWelcome to the human race";
+
+
+/* text size (must be a valid size) */
+/* Taken from xfontsel */
+static const char * font_name = "-adobe-*-*-r-*-*-34-*-*-*-*-*-*-*";
