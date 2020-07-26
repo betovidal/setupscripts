@@ -2,7 +2,7 @@
 APPSTARGET=$HOME/.local/share/applications/
 APPS=./applications
 if [ ! -d "$APPS" ]; then
-	mkdir -p $APPS
+	mkdir -p $APPSTARGET
 fi
 if [ "$1" == "f" ]; then
 	cp $APPS/* $APPSTARGET
