@@ -4,7 +4,7 @@ PACKAGES="\
 	gcc make man\
 	bash-completion git\
 	alsa-utils pulseaudio\
-	dbus-x11 dunst fonts-noto-color-emoji geany libnotify-bin thunar\
+	dbus-x11 dunst fonts-noto-color-emoji geany libnotify-bin thunar ffmpegthumbnailer tumbler-plugins-extra\
 	bc cmus curl feh ffmpeg fim freerdp2-x11 gpick maim mednafen nnn ntfs-3g openfortivpn p7zip-full python3 rofi screenfetch slop sxiv tigervnc-viewer tmux xzoom zathura\
 	xclip xsel xdotool xinit xorg\
 	nethogs nload\
