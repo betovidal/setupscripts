@@ -47,7 +47,9 @@ Plug 'tpope/vim-repeat'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/vim-lsp'
+" Syntax
 Plug 'pangloss/vim-javascript'
+Plug 'vim-python/python-syntax'
 " Plug 'VundleVim/Vundle.vim'
 " Plug 'ajh17/VimCompletesMe'
 " Plug 'PProvost/vim-ps1'
@@ -206,6 +208,9 @@ let g:indexed_search_numbered_only = 1
 
 " ================= vim-javascript ======================
 let g:javascript_plugin_jsdoc = 1
+
+" ================= vim-python === ======================
+let g:python_highlight_all = 1
 
 " ============== Status line ============================
 set statusline=                                            " Clear status line
