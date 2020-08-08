@@ -47,11 +47,11 @@ Plug 'tpope/vim-repeat'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/vim-lsp'
+Plug 'pangloss/vim-javascript'
 " Plug 'VundleVim/Vundle.vim'
 " Plug 'ajh17/VimCompletesMe'
 " Plug 'PProvost/vim-ps1'
 " Plug 'vim-airline/vim-airline'
-" Plug 'pangloss/vim-javascript'
 " Plug 'PotatoesMaster/i3-vim-syntax'
 " Plug 'vim-jp/vim-cpp'
 " Plug 'mbbill/undotree'
@@ -203,6 +203,9 @@ inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 " ============= vim-indexed-search ======================
 let g:indexed_search_colors = 0
 let g:indexed_search_numbered_only = 1
+
+" ================= vim-javascript ======================
+let g:javascript_plugin_jsdoc = 1
 
 " ============== Status line ============================
 set statusline=                                            " Clear status line
