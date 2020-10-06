@@ -3,6 +3,7 @@
 # ============ PROFILE ==============
 FOLDERS='$HOME/Scripts /opt/NX/bin $HOME/Repos/splatmoji $HOME/Android/Studio/bin $HOME/.local/bin'
 TARGET=$HOME/.profile
+TARGETBASH=$HOME/.bashrc
 if [ -f $TARGET ]; then
 	for folder in $FOLDERS; do
 		count=$(grep -c "$folder" "$TARGET")
@@ -33,4 +34,4 @@ function strappend {
 strappend $TARGET "set TERM type"
 strappend $TARGET "export TERM=screen-256color"
 strappend $TARGET "export EDITOR=vim"
-strappend $TARGET "source /home/tocino/Scripts/complete-my-scripts.sh"
+strappend $TARGETBASH 'source $HOME/Scripts/complete-my-scripts.sh'
