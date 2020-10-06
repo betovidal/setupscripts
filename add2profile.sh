@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ============ PROFILE ==============
-FOLDERS='$HOME/Scripts /opt/NX/bin $HOME/Repos/splatmoji'
+FOLDERS='$HOME/Scripts /opt/NX/bin $HOME/Repos/splatmoji $HOME/Android/Studio/bin $HOME/.local/bin'
 TARGET=$HOME/.profile
 if [ -f $TARGET ]; then
 	for folder in $FOLDERS; do
@@ -33,3 +33,4 @@ function strappend {
 strappend $TARGET "set TERM type"
 strappend $TARGET "export TERM=screen-256color"
 strappend $TARGET "export EDITOR=vim"
+strappend $TARGET "source /home/tocino/Scripts/complete-my-scripts.sh"
