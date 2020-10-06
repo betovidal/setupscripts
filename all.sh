@@ -20,6 +20,7 @@ function printHelp {
 }
 if [ "$1" == "h" ] || [ "$1" == "" ]; then
 	printHelp
+	exit 1
 elif [ "$1" != "i" ] && [ "$1" != "f" ]; then
 	echo "Option '$1' not recognized"
 	exit 1
