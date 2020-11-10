@@ -50,9 +50,10 @@ Plug 'prabirshrestha/vim-lsp'
 " Syntax
 Plug 'pangloss/vim-javascript'
 Plug 'vim-python/python-syntax'
+Plug 'stanangeloff/php.vim'
+Plug 'PProvost/vim-ps1'
 " Plug 'VundleVim/Vundle.vim'
 " Plug 'ajh17/VimCompletesMe'
-" Plug 'PProvost/vim-ps1'
 " Plug 'vim-airline/vim-airline'
 " Plug 'PotatoesMaster/i3-vim-syntax'
 " Plug 'vim-jp/vim-cpp'
@@ -71,13 +72,6 @@ autocmd FileType c,cpp,h,hpp,python,javascript,css,html,json,tcl setlocal shiftw
 
 " ================= VIM-LSP =============================
 autocmd FileType typescript setlocal omnifunc=lsp#complete
-function! s:on_lsp_buffer_enabled() abort
-	setlocal omnifunc=lsp#complete
-	" setlocal signcolumn=yes
-	" nmap <buffer> gd <plug>(lsp-definition)
-	" nmap <buffer> <f2> <plug>(lsp-rename)
-	" refer to doc to add more commands
-endfunction
 " Resgister Javascript server
 if executable('typescript-language-server')
 	au User lsp_setup call lsp#register_server({
@@ -95,7 +89,13 @@ if executable('pyls')
         \ 'whitelist': ['python'],
         \ })
 endif
-
+function! s:on_lsp_buffer_enabled() abort
+	setlocal omnifunc=lsp#complete
+	" setlocal signcolumn=yes
+	" nmap <buffer> gd <plug>(lsp-definition)
+	" nmap <buffer> <f2> <plug>(lsp-rename)
+	" refer to doc to add more commands
+endfunction
 augroup lsp_install
     au!
     " call s:on_lsp_buffer_enabled only for languages that has the server registered.
