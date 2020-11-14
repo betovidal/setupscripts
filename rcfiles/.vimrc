@@ -112,7 +112,7 @@ let g:netrw_browse_split=0  " Default, use current window to open file
 " Concentrate temporal files files in the same location https://vi.stackexchange.com/a/179
 set directory^=$HOME/.vim/tmp// " Swap files (e.g. %home%tocino%.vimrc)
 set backupdir^=$HOME/.vim/tmp// " Temporal (file.ext~)
-set undodir^=$HOME/.vim/tmp//   " I can't recall how these look
+set undodir^=$HOME/.vim/undo//   " I can't recall how these look
 
 " ================= COLOR SCHEME CONFIGURATION ===========
 syntax enable               " Colors for syntax
