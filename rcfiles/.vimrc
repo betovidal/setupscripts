@@ -68,7 +68,7 @@ let g:ssnips_end_in_insert_mode=1
 let g:ssnips_path="~/.vim/ssnips/"
 
 " ================= Code formatting =====================
-autocmd FileType c,cpp,h,hpp,python,javascript,css,html,json,tcl setlocal shiftwidth=4 softtabstop=4 tabstop=4
+autocmd FileType c,cpp,h,hpp,python,javascript,css,html,json,tcl setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
 
 " ================= VIM-LSP =============================
 autocmd FileType typescript setlocal omnifunc=lsp#complete
