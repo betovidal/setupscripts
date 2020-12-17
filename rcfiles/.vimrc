@@ -161,6 +161,8 @@ nnoremap <leader>a :SyntasticCheck<CR>
 " (C)lose 'location-list-window', the one syntastic uses for showing errors
 " and reset Syntastic to avoid opening the error buffer upon switching buffers
 nnoremap <leader>c :SyntasticReset<CR> :lclose<CR>
+" (S)pell check
+nnoremap <leader>s :setlocal spell! spelllang=en_us<CR>
 " Next/previous in location list (triggered by e.g. LspDefinition)
 nnoremap <C-k> :call WrapCommand('up', 'c')<CR>
 nnoremap <C-j>  :call WrapCommand('down', 'c')<CR>
