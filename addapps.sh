@@ -1,7 +1,7 @@
 #!/bin/bash
 APPSTARGET=$HOME/.local/share/applications/
 APPS=./applications
-if [ ! -d "$APPS" ]; then
+if [ ! -d "$APPSTARGET" ]; then
 	mkdir -p $APPSTARGET
 fi
 if [ "$1" == "f" ]; then

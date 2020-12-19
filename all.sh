@@ -47,8 +47,8 @@ source addaliases.sh
 printMsg "Adding xdg desktop entries"
 source addapps.sh
 # User specific configurations (vim tmux xinit)
-printMsg "Copying configuration files"
-source copyrc.sh
+printMsg "Linking configuration files"
+source linkrc.sh
 # My own scripts
 printMsg "Copying my own scripts"
 source copyscripts.sh
