@@ -50,7 +50,7 @@ Plug 'prabirshrestha/vim-lsp'
 " Syntax
 Plug 'pangloss/vim-javascript'
 Plug 'vim-python/python-syntax'
-Plug 'stanangeloff/php.vim'
+Plug 'StanAngeloff/php.vim'
 Plug 'PProvost/vim-ps1'
 " Plug 'VundleVim/Vundle.vim'
 " Plug 'ajh17/VimCompletesMe'
@@ -59,7 +59,7 @@ Plug 'PProvost/vim-ps1'
 " Plug 'vim-jp/vim-cpp'
 " Plug 'mbbill/undotree'
 " Plug 'nathanaelkane/vim-indent-guides'
-Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'dracula/vim', { 'name': 'dracula' }
 call plug#end()
 
 " ================ simple snips =========================
