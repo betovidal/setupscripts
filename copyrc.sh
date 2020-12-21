@@ -5,9 +5,11 @@ TARGET=$HOME
 for f in $(ls -a $RCFILES); do
 	if [ "$f" != "." ] && [ "$f" != ".." ]; then
 		if [ "$1" == "f" ]; then
-			ln -sf $RCFILES/$f $HOME
+			# ln -sf $RCFILES/$f $HOME
+			cp -f $RCFILES/$f $HOME
 		else
-			ln -s  $RCFILES/$f $HOME
+			# ln -s  $RCFILES/$f $HOME
+			cp    $RCFILES/$f $HOME
 		fi
 	fi
 done
