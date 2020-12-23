@@ -11,7 +11,7 @@ PACKAGES="\
 	openfortivpn p7zip-full python3 rofi screenfetch slop sxiv\
 	tigervnc-viewer tmux\
 	xclip xsel xdotool xinit xorg\
-	nethogs nload\
+	nethogs nload net-tools\
 	libncurses5-dev libx11-dev libxinerama-dev libxft-dev\
 	libjpeg-dev libxrandr-dev libxt-dev\
 	firmware-realtek\
