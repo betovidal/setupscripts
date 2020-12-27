@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ============ PROFILE ==============
-FOLDERS='$HOME/Scripts /opt/NX/bin $HOME/Repos/splatmoji $HOME/Android/Studio/bin $HOME/.local/bin'
+FOLDERS='/opt/NX/bin $HOME/Repos/splatmoji $HOME/Android/Studio/bin $HOME/.local/bin'
 TARGET=$HOME/.profile
 TARGETBASH=$HOME/.bashrc
 if [ -f $TARGET ]; then
@@ -34,4 +34,4 @@ function strappend {
 strappend $TARGET "set TERM type"
 strappend $TARGET "export TERM=screen-256color"
 strappend $TARGET "export EDITOR=vim"
-strappend $TARGETBASH 'source $HOME/Scripts/complete-my-scripts.sh'
+strappend $TARGETBASH 'source $HOME/.local/bin/complete-my-scripts.sh'

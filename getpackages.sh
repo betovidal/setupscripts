@@ -1,7 +1,7 @@
 #!/bin/bash
 PACKAGES="\
 	adduser sudo\
-	gcc make man\
+	gcc make man stow\
 	bash-completion git\
 	alsa-utils pulseaudio pulseaudio-module-bluetooth\
 	fonts-noto-color-emoji fonts-symbola\

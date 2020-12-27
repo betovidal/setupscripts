@@ -43,12 +43,6 @@ source add2profile.sh
 # ls with colors
 printMsg "Adding aliases"
 source addaliases.sh
-# Once x11 is installed, make apps be opened with custom cmds
-printMsg "Adding xdg desktop entries"
-source addapps.sh
-# User specific configurations (vim tmux xinit)
-printMsg "Copying configuration files"
-source copyrc.sh
-# My own scripts
-printMsg "Copying my own scripts"
-source copyscripts.sh
+# User specific configurations and binaries (scripts)
+printMsg "Linking home configurations and scripts"
+source link.sh

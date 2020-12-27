@@ -1,7 +1,3 @@
-Last working version: 0.8.3
-
-No patches needed anymore. Use tmux.
-
 /* gruvbox-dark colorscheme START */
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
