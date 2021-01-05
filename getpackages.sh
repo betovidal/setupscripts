@@ -6,9 +6,9 @@ PACKAGES="\
 	alsa-utils pulseaudio pulseaudio-module-bluetooth\
 	fonts-noto-color-emoji fonts-symbola\
 	dbus-x11 dunst libnotify-bin ffmpegthumbnailer tumbler-plugins-extra\
-	geany thunar mednafen zathura xzoom gpick\
+	geany thunar mednafen zathura xzoom gpick lingot\
 	bc cmus curl feh ffmpeg fim freerdp2-x11 maim nnn ntfs-3g\
-	openfortivpn p7zip-full python3 rofi screenfetch slop sxiv\
+	p7zip-full python3 rofi screenfetch slop sxiv\
 	tigervnc-viewer tmux\
 	xclip xsel xdotool xinit xorg\
 	nethogs nload net-tools\
