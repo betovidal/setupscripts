@@ -8,7 +8,7 @@ PACKAGES="\
 	dbus-x11 dunst libnotify-bin ffmpegthumbnailer tumbler-plugins-extra\
 	geany thunar mednafen zathura xzoom gpick lingot\
 	bc cmus curl feh ffmpeg fim freerdp2-x11 maim nnn ntfs-3g\
-	p7zip-full python3 rofi screenfetch slop sxiv\
+	p7zip-full python3 rofi screenfetch slop sxiv jq\
 	tigervnc-viewer tmux\
 	xclip xsel xdotool xinit xorg\
 	nethogs nload net-tools\
