@@ -31,7 +31,6 @@ function strappend {
 		echo "[NO] $2"
 	fi
 }
-strappend $TARGETPROF "set TERM type"
 strappend $TARGETPROF "export TERM=screen-256color"
 strappend $TARGETPROF "export EDITOR=vim"
 strappend $TARGETBASH 'source $HOME/.local/bin/complete-my-scripts.sh'
