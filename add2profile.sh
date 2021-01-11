@@ -1,23 +1,23 @@
 #!/bin/bash
 
 # ============ PROFILE ==============
-FOLDERS='/opt/NX/bin $HOME/Repos/splatmoji $HOME/Android/Studio/bin $HOME/.local/bin'
-TARGET=$HOME/.profile
+FOLDERS='/usr/NX/bin $HOME/Repos/splatmoji $HOME/Android/Studio/bin $HOME/.local/bin'
+TARGETPROF=$HOME/.profile
 TARGETBASH=$HOME/.bashrc
-if [ -f $TARGET ]; then
+if [ -f $TARGETPROF ]; then
 	for folder in $FOLDERS; do
-		count=$(grep -c "$folder" "$TARGET")
+		count=$(grep -c "$folder" "$TARGETPROF")
 		if [ $count -eq "0" ]; then
-			echo "if [ -d \"$folder\" ]; then" >> $TARGET
-			echo "	PATH=\"$folder:\$PATH\""   >> $TARGET
-			echo "fi"                      >> $TARGET
+			echo "if [ -d \"$folder\" ]; then" >> $TARGETPROF
+			echo "	PATH=\"$folder:\$PATH\""   >> $TARGETPROF
+			echo "fi"                      >> $TARGETPROF
 			echo "[OK] $folder"
 		else
 			echo "[NO] $folder"
 		fi
 	done
 else
-	echo "File $TARGET does not exist"
+	echo "File $TARGETPROF does not exist"
 fi
 
 # $1 - target
@@ -31,7 +31,7 @@ function strappend {
 		echo "[NO] $2"
 	fi
 }
-strappend $TARGET "set TERM type"
-strappend $TARGET "export TERM=screen-256color"
-strappend $TARGET "export EDITOR=vim"
+strappend $TARGETPROF "set TERM type"
+strappend $TARGETPROF "export TERM=screen-256color"
+strappend $TARGETPROF "export EDITOR=vim"
 strappend $TARGETBASH 'source $HOME/.local/bin/complete-my-scripts.sh'
