@@ -61,6 +61,8 @@ Plug 'ap/vim-css-color'
 " Plug 'mbbill/undotree'
 " Plug 'nathanaelkane/vim-indent-guides'
 Plug 'dracula/vim', { 'name': 'dracula' }
+Plug 'noahfrederick/vim-noctu', { 'name': 'noctu' }
+Plug 'jeffkreeftmeijer/vim-dim', { 'name': 'dim' }
 call plug#end()
 
 " ================ simple snips =========================
@@ -119,12 +121,11 @@ set undodir^=$HOME/.vim/undo//   " I can't recall how these look
 syntax enable               " Colors for syntax
 " Download gruvbox from (I'm not using a status bar)
 " https://raw.githubusercontent.com/morhetz/gruvbox/master/colors/gruvbox.vim
-colorscheme dracula
+colorscheme dim
 set number                  " Line numbers in gutter
 set background=dark         " Dark mode
 " Dracula configuration start
 let g:dracula_italic = 0
-colorscheme dracula
 highlight Normal ctermbg=None
 if (has("termguicolors"))
 	set termguicolors
@@ -278,4 +279,5 @@ if has("win32")
 	set guioptions-=T "remove toolbar
 	set guioptions-=r "remove right-hand scroll bar
 	set guioptions-=L "remove left-hand scroll bar
+	colorscheme dracula
 endif

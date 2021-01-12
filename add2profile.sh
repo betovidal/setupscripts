@@ -2,12 +2,12 @@
 
 # ============ PROFILE ==============
 FOLDERS='/usr/NX/bin $HOME/Repos/splatmoji $HOME/Android/Studio/bin $HOME/.local/bin'
-TARGETPROF=$HOME/.profile
+TARGETPROF=$HOME/.bash_profile
 TARGETBASH=$HOME/.bashrc
 if [ -f $TARGETPROF ]; then
 	for folder in $FOLDERS; do
 		count=$(grep -c "$folder" "$TARGETPROF")
-		if [ $count -eq "0" ]; then
+		if [ "$count" -eq "0" ]; then
 			echo "if [ -d \"$folder\" ]; then" >> $TARGETPROF
 			echo "	PATH=\"$folder:\$PATH\""   >> $TARGETPROF
 			echo "fi"                      >> $TARGETPROF
@@ -24,7 +24,8 @@ fi
 # $2 - string
 function strappend {
 	count=$(grep -c "$2" "$1")
-	if [ $count -eq "0" ]; then
+	echo $count
+	if [ "$count" -eq "0" ]; then
 		echo $2 >> $1
 		echo "[OK] $2"
 	else
