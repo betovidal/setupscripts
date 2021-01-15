@@ -54,7 +54,7 @@ fi
 # !!!!!!! END OF INNER BLOCK (If I indent this, it breaks)
 }
 if [ -z "$1" ]; then
-	execute_command "lsblk -o NAME,LABEL,MOUNTPOINT"
+	execute_command "lsblk -o +LABEL"
 	exit 1
 fi
 if sudo -n true; then
