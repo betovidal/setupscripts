@@ -22,7 +22,7 @@ do_mount() {
 			echo "Folder   : $FOLDER"
 			if [ ! -d "$FOLDER" ]; then
 				echo "Need to create directory."
-				sudo mkdir "$FOLDER"
+				sudo mkdir -p "$FOLDER"
 			else
 				echo "Directory exists."
 			fi
