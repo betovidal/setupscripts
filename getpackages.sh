@@ -70,6 +70,7 @@ PACKAGES="\
 	tmux \
 	ttf-dejavu \
 	vi \
+	vpnc \
 	xclip \
 	xdotool \
 	xorg-mkfontscale \
