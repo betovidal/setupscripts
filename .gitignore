@@ -1,2 +1,4 @@
 dotfiles/.local/share/applications/mimeinfo.cache
 dotfiles/.local/share/applications/userapp-Firefox-*.desktop
+dotfiles/.local/bin/pycodestyle
+dotfiles/.local/bin/pyls
