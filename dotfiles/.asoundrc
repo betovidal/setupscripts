@@ -1,2 +1,6 @@
-defaults.pcm.!card 2
-defaults.ctl.!card 2
+# This can be set as an index too (without quotations)
+# Get this name through $aplay -l, either the card index
+# or name (name is on the left, ignore the [Long name].
+# Name preferred as indices change in Arch.
+defaults.pcm.!card "Generic"
+defaults.ctl.!card "Generic"
