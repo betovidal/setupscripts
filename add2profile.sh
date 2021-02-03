@@ -34,4 +34,5 @@ function strappend {
 }
 strappend $TARGETPROF "export TERM=screen-256color"
 strappend $TARGETPROF "export EDITOR=vim"
+strappend $TARGETPROF 'source $HOME/.bashrc'
 strappend $TARGETBASH 'source $HOME/.local/bin/complete-my-scripts.sh'

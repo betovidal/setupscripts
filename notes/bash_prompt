@@ -1,22 +1,13 @@
-# Normal colors
-BLACK=$(tput setaf 0)
-RED=$(tput setaf 1)
-GREEN=$(tput setaf 2)
-YELLOW=$(tput setaf 3)
-BLUE=$(tput setaf 4)
-MAGENTA=$(tput setaf 5)
-CYAN=$(tput setaf 6)
-WHITE=$(tput setaf 7)
-# Bright colors
-B_BLACK=$(tput setaf 8)
-B_RED=$(tput setaf 9)
-B_GREEN=$(tput setaf 10)
-B_YELLOW=$(tput setaf 11)
-B_BLUE=$(tput setaf 12)
-B_MAGENTA=$(tput setaf 13)
-B_CYAN=$(tput setaf 14)
-B_WHITE=$(tput setaf 15)
-ACCENT=$B_MAGENTA
-RESET=$(tput sgr0)
-# PS1='[\u@\h \W]\$ '
-PS1='${ACCENT}[${RESET}\u@\h${ACCENT}>${RESET}\W${ACCENT}]${RESET}\$ '
+# Keywords definition
+# https://wiki.archlinux.org/index.php/Bash/Prompt_customization
+BLACK="\[$(tput setaf 0)\]"
+RED="\[$(tput setaf 1)\]"
+GREEN="\[$(tput setaf 2)\]"
+YELLOW="\[$(tput setaf 3)\]"
+BLUE="\[$(tput setaf 4)\]"
+MAGENTA="\[$(tput setaf 5)\]"
+CYAN="\[$(tput setaf 6)\]"
+WHITE="\[$(tput setaf 7)\]"
+RESET="\[$(tput sgr0)\]"
+ACCENT="$MAGENTA"
+PS1="${ACCENT}[${RESET}\u@\h${ACCENT}>${RESET}\W${ACCENT}]${RESET}\$ "
