@@ -86,4 +86,4 @@ PACKAGES="\
 for package in $PACKAGES; do
 	echo $package
 done
-sudo pacman -Syu install $PACKAGES --needed
+sudo pacman -Syu $PACKAGES --needed
