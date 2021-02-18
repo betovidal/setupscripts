@@ -28,6 +28,7 @@ PACKAGES="\
 	base-devel \
 	bash-completion \
 	bc \
+	bluez \
 	cmus \
 	dhcpcd \
 	dunst \
