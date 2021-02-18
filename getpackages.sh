@@ -29,6 +29,7 @@ PACKAGES="\
 	bash-completion \
 	bc \
 	bluez \
+	bluez-utils \
 	cmus \
 	dhcpcd \
 	dunst \
