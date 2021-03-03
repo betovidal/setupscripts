@@ -74,6 +74,7 @@ let g:ssnips_path="~/.vim/ssnips/"
 autocmd FileType c,cpp,h,hpp,python,javascript,css,html,json,tcl setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
 
 " ================= VIM-LSP =============================
+let g:lsp_document_highlight_enabled = 0
 autocmd FileType typescript setlocal omnifunc=lsp#complete
 " Resgister Javascript server
 if executable('typescript-language-server')
