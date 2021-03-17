@@ -2,5 +2,8 @@
 # Get this name through $aplay -l, either the card index
 # or name (name is on the left, ignore the [Long name].
 # Name preferred as indices change in Arch.
-defaults.pcm.!card "Generic"
+
+# For Arch on PC
+
+defaults.pcm.!card "C525"
 defaults.ctl.!card "Generic"
