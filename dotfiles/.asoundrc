@@ -5,5 +5,5 @@
 
 # For Arch on PC
 
-defaults.pcm.!card "C525"
+defaults.pcm.!card "Generic"
 defaults.ctl.!card "Generic"
