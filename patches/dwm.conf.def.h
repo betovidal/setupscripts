@@ -1,8 +1,13 @@
 diff --git a/config.def.h b/config.def.h
-index 1c0b587..12273d6 100644
+index 1c0b587..814b436 100644
 --- a/config.def.h
 +++ b/config.def.h
-@@ -5,8 +5,10 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
+@@ -1,17 +1,24 @@
+ /* See LICENSE file for copyright and license details. */
+ 
+ /* appearance */
+-static const unsigned int borderpx  = 1;        /* border pixel of windows */
++static const unsigned int borderpx  = 2;        /* border pixel of windows */
  static const unsigned int snap      = 32;       /* snap pixel */
  static const int showbar            = 1;        /* 0 means no bar */
  static const int topbar             = 1;        /* 0 means bottom bar */
@@ -12,10 +17,21 @@ index 1c0b587..12273d6 100644
 +/* static const char dmenufont[]       = "DejaVu Sans Mono:pixelsize=21"; */
 +static const char *fonts[]          = { "Terminus:pixelsize=24:style=Bold" };
 +static const char dmenufont[]       = "Terminus:pixelsize=24:style=Bold";
++/* static const char col_gray1[]       = "#222222"; */
++/* static const char col_gray2[]       = "#444444"; */
++/* static const char col_gray3[]       = "#bbbbbb"; */
++/* static const char col_gray4[]       = "#eeeeee"; */
++/* static const char col_cyan[]        = "#005577"; */
  static const char col_gray1[]       = "#222222";
  static const char col_gray2[]       = "#444444";
  static const char col_gray3[]       = "#bbbbbb";
-@@ -27,8 +29,7 @@ static const Rule rules[] = {
+ static const char col_gray4[]       = "#eeeeee";
+-static const char col_cyan[]        = "#005577";
++static const char col_cyan[]        = "#833c9f";
+ static const char *colors[][3]      = {
+ 	/*               fg         bg         border   */
+ 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
+@@ -27,8 +34,7 @@ static const Rule rules[] = {
  	 *	WM_NAME(STRING) = title
  	 */
  	/* class      instance    title       tags mask     isfloating   monitor */
@@ -25,7 +41,17 @@ index 1c0b587..12273d6 100644
  };
  
  /* layout(s) */
-@@ -55,12 +56,52 @@ static const Layout layouts[] = {
+@@ -44,7 +50,8 @@ static const Layout layouts[] = {
+ };
+ 
+ /* key definitions */
+-#define MODKEY Mod1Mask
++/* #define MODKEY Mod1Mask */
++#define MODKEY Mod4Mask
+ #define TAGKEYS(KEY,TAG) \
+ 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
+ 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
+@@ -55,12 +62,54 @@ static const Layout layouts[] = {
  #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
  
  /* commands */
@@ -36,6 +62,7 @@ index 1c0b587..12273d6 100644
 +static const char *mouse_left[] = { "xdotool", "mousemove_relative", "--", "-15", "0", NULL };
 +static const char *click_left[] = { "xdotool", "click", "1", NULL };
 +static const char *click_right[] = { "xdotool", "click", "3", NULL };
++static const char *lock_screen[] = { "slock", NULL };
 +static const char *prev_track[] = { "cmus-remote", "-r", NULL };
 +static const char *next_track[] = { "cmus-remote", "-n", NULL };
 +static const char *play_track[] = { "cmus-remote", "-p", NULL };
@@ -74,6 +101,7 @@ index 1c0b587..12273d6 100644
 +	{ MODKEY|ControlMask,           XK_space,  spawn,          {.v = click_left } },
 +	{ MODKEY|ControlMask|ShiftMask, XK_space,  spawn,          {.v = click_right } },
 +	{ MODKEY,                       XK_e,  spawn,              {.v = insert_emoji } },
++	{ MODKEY|ShiftMask,             XK_l,  spawn,              {.v = lock_screen } },
 +	/* My own key bindings END */
  	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
  	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
