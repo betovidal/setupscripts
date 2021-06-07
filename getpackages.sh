@@ -60,7 +60,6 @@ PACKAGES="\
 	pulseaudio \
 	pulseaudio-bluetooth \
 	python \
-	python-pip \
 	rofi \
 	screenfetch \
 	slop \
