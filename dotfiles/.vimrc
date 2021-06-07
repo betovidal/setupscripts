@@ -53,6 +53,7 @@ Plug 'vim-python/python-syntax'
 Plug 'StanAngeloff/php.vim'
 Plug 'PProvost/vim-ps1'
 Plug 'ap/vim-css-color'
+Plug 'Konfekt/FastFold'
 " Plug 'VundleVim/Vundle.vim'
 " Plug 'ajh17/VimCompletesMe'
 " Plug 'vim-airline/vim-airline'
@@ -91,6 +92,14 @@ if executable('pyls')
         \ 'name': 'pyls',
         \ 'cmd': {server_info->['pyls']},
         \ 'whitelist': ['python'],
+        \ })
+endif
+" Resgister Swift server (Mac only, included as xcrun tools)
+if executable('sourcekit-lsp')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'sourcekit-lsp',
+        \ 'cmd': {server_info->['sourcekit-lsp']},
+        \ 'whitelist': ['swift'],
         \ })
 endif
 function! s:on_lsp_buffer_enabled() abort
