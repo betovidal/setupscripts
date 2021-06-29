@@ -1,5 +1,5 @@
 diff --git a/config.def.h b/config.def.h
-index 1c0b587..814b436 100644
+index 1c0b587..f5c03a7 100644
 --- a/config.def.h
 +++ b/config.def.h
 @@ -1,17 +1,24 @@
@@ -51,7 +51,7 @@ index 1c0b587..814b436 100644
  #define TAGKEYS(KEY,TAG) \
  	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
  	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
-@@ -55,12 +62,54 @@ static const Layout layouts[] = {
+@@ -55,12 +62,56 @@ static const Layout layouts[] = {
  #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
  
  /* commands */
@@ -63,6 +63,7 @@ index 1c0b587..814b436 100644
 +static const char *click_left[] = { "xdotool", "click", "1", NULL };
 +static const char *click_right[] = { "xdotool", "click", "3", NULL };
 +static const char *lock_screen[] = { "slock", NULL };
++static const char *track_info[] = { "track-info.sh", NULL };
 +static const char *prev_track[] = { "cmus-remote", "-r", NULL };
 +static const char *next_track[] = { "cmus-remote", "-n", NULL };
 +static const char *play_track[] = { "cmus-remote", "-p", NULL };
@@ -102,6 +103,7 @@ index 1c0b587..814b436 100644
 +	{ MODKEY|ControlMask|ShiftMask, XK_space,  spawn,          {.v = click_right } },
 +	{ MODKEY,                       XK_e,  spawn,              {.v = insert_emoji } },
 +	{ MODKEY|ShiftMask,             XK_l,  spawn,              {.v = lock_screen } },
++	{ MODKEY|ShiftMask,             XK_i,  spawn,              {.v = track_info } },
 +	/* My own key bindings END */
  	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
  	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
