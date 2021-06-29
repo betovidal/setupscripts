@@ -82,6 +82,10 @@ PACKAGES="\
 	xsel \
 	zathura \
 	zathura-pdf-mupdf \
+	\
+	mesa \
+	mesa-vdpau \
+	xf86-video-amdgpu \
 	"
 
 for package in $PACKAGES; do
