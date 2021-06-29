@@ -1,6 +1,7 @@
 #!/bin/bash
 
-INFO=$(cmus-remote -Q)
+# Redirect stdout and stderr to INFO var
+INFO=$(cmus-remote -Q 2>&1)
 NOTRUNNING="cmus-remote: cmus is not running"
 STOPPED="status stopped"
 NOTFOUND="command not found"
@@ -13,18 +14,18 @@ get_tag () {
        echo $VALUE
 }
 show_message() {
-       notify-send -t "$TIME" "$1" "$2"
+	notify-send -t "$TIME" "$1" "$2"
 }
 if [[ "$INFO" =~ "$NOTRUNNING" ]]; then
-       show_message "Not found"
+	show_message "Error" "cmus not running"
 elif [[ "$INFO" =~ "$STOPPED" ]]; then
-       show_message "No track is playing"
+	show_message "Warning" "No track is playing"
 elif [[ "$INFO" =~ "$NOTFOUND" ]]; then
-       show_message "cmus is not installed"
+	show_message "Error" "cmus not found"
 else
-       ARTISTTAG="tag artist "
-       TITLETAG="tag title "
-       ARTIST=$(get_tag "$INFO" "$ARTISTTAG")
-       TITLE=$(get_tag "$INFO" "$TITLETAG")
-       show_message "$ARTIST" "$TITLE"
+	ARTISTTAG="tag artist "
+	TITLETAG="tag title "
+	ARTIST=$(get_tag "$INFO" "$ARTISTTAG")
+	TITLE=$(get_tag "$INFO" "$TITLETAG")
+	show_message "$ARTIST" "$TITLE"
 fi
