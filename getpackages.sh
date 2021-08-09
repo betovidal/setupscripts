@@ -40,10 +40,14 @@ PACKAGES="\
 	gcc \
 	git \
 	grub \
+	i3-wm \
+	i3status \
+	irssi \
 	jq \
 	libnotify \
 	linux \
 	linux-firmware \
+	lm_sensors \
 	maim \
 	make \
 	man \
@@ -79,6 +83,7 @@ PACKAGES="\
 	xorg-xev \
 	xorg-xfontsel \
 	xorg-xinit \
+	xorg-xinput \
 	xsel \
 	zathura \
 	zathura-pdf-mupdf \
