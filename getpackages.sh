@@ -28,20 +28,28 @@ PACKAGES="\
 	base-devel \
 	bash-completion \
 	bc \
+	blender \
 	bluez \
 	bluez-utils \
+	chromium \
 	cmus \
 	dhcpcd \
+	dillo \
+	discord \
 	dunst \
 	efibootmgr \
+	fbv \
 	feh \
+	firejail \
 	ffmpeg \
+	ffmpegthumbnailer \
 	freerdp \
 	gcc \
 	git \
 	grub \
 	i3-wm \
 	i3status \
+	inkscape \
 	irssi \
 	jq \
 	libnotify \
@@ -65,6 +73,7 @@ PACKAGES="\
 	pulseaudio-bluetooth \
 	python \
 	rofi \
+	ruby \
 	screenfetch \
 	slop \
 	stow \
@@ -72,8 +81,10 @@ PACKAGES="\
 	sxiv \
 	terminus-font \
 	thunar \
+	tigervnc \
 	tmux \
 	ttf-dejavu \
+	tumbler \
 	vi \
 	vpnc \
 	xclip \
