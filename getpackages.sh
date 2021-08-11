@@ -67,6 +67,7 @@ PACKAGES="\
 	ntfs-3g \
 	openssh \
 	os-prober \
+	mpv \
 	p7zip \
 	pkgconf \
 	pulseaudio \
