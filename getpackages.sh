@@ -48,6 +48,7 @@ PACKAGES="\
 	gcc \
 	git \
 	grub \
+	gsimplecal \
 	i3-wm \
 	i3status \
 	inkscape \
