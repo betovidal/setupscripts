@@ -1,5 +1,9 @@
 #!/bin/bash
-TARGET=$HOME/Downloads/
+TARGET=$HOME/Downloads
+FFSOURCE=$TARGET/firefox
+FFTARGET=/opt
+FFBIN=$FFTARGET/firefox/firefox
+FFLNK=/usr/bin/firefox
 if [ ! -d $TARGET ]; then
 	mkdir -p $TARGET
 fi
@@ -14,6 +18,10 @@ else
 	curl -LO $URL
 	if [ "$1" == "f" ]; then
 		tar xjf firefox-*.tar.bz2
+		echo "Moving firefox to $FFTARGET"
+		sudo mv $FFSOURCE $FFTARGET
+		echo "Creating symlink"
+		sudo ln -s $FFBIN $FFLNK
 	else
 		echo "Uncompress with \$tar xjf firefox-*.tar.bz2"
 	fi
