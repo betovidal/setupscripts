@@ -26,7 +26,7 @@ git clean -df
 BINS="vim vimdiff xxd"
 
 for binary in $BINS; do
-	sudo ln -s $VIMDEST/bin/$binary /usr/bin/$binary
+	sudo ln -s "$VIMDEST/bin/$binary" "/usr/bin/$binary"
 done
 
 cd -

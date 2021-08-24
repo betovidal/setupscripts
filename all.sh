@@ -37,6 +37,9 @@ source getrepos.sh
 # With ff I can register a new ssh
 printMsg "Getting Firefox"
 source getff.sh
+# After repos are available, I can install vim
+printMsg "Installing Vim"
+source setupvim.sh
 # Configure global path folders and EDITOR+tmux
 printMsg "Adding folders to path (.profile)"
 source add2profile.sh
