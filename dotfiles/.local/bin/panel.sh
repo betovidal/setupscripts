@@ -1,10 +1,8 @@
 #!/bin/bash
 
 #TODO
-# Network ul/dl traffic, from /sys/class/net/enp4s0/statistics
 # Network check connectivity https://git.sr.ht/~rycwo/lemons/tree/master/item/lemons
 #                         or https://stackoverflow.com/questions/929368/how-to-test-an-internet-connection-with-bash
-# VPN
 # Wireless (with strength)
 # Battery
 # Memory
