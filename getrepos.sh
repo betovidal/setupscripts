@@ -24,7 +24,7 @@ git clone https://github.com/vim/vim.git $REPOS_FOLDER"vim"
 git clone https://github.com/cspeterson/splatmoji.git $REPOS_FOLDER"splatmoji"
 # AUR repos
 echo "= = = = = AUR packages = = = = ="
-AURREPOS="libxft-bgra minecraft-launcher nomachine tuxguitar"
+AURREPOS="libxft-bgra minecraft-launcher nomachine tuxguitar lemonbar-git xtitle"
 for aurrepo in $AURREPOS; do
 	git clone https://aur.archlinux.org/$aurrepo.git $AUR_FOLDER$aurrepo
 done
