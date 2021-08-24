@@ -201,6 +201,11 @@ bindsym --release Control+$mod+l exec "slock"
 bindsym $mod+period exec "splatmoji type"
 
 # Screenshots
+# Cheatsheet:
+#   -None=Whole screen
+#   -MOD=Selection
+#   -SHIFT=To file
+#   -CONTROL=Specific window
 # Whole Screen to clipboard
 bindsym --release Print exec       "maim -u | xclip -selection clipboard -t image/png"
 # Whole Screen to file
