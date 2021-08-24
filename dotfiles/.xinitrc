@@ -1,5 +1,7 @@
 xset r rate 150 30
 xset m 0 0
+# Set X shaped cursor (needed in bspwm)
+xsetroot -cursor_name left_ptr
 # $xinput list
 # $xinput list-props <id|name>
 # $xinput set-prop <id|name> <propname> <value>
@@ -16,7 +18,8 @@ setxkbmap latam
 # For allowing notifications
 dunst &
 feh --bg-fill ~/Pictures/bg.png &
+picom &
 # exec dwm
-exec i3
-# sxhkd &
-# exec bspwm
+# exec i3
+sxhkd &
+exec bspwm
