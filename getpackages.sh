@@ -31,6 +31,7 @@ PACKAGES="\
 	blender \
 	bluez \
 	bluez-utils \
+	bspwm \
 	chromium \
 	cmus \
 	dhcpcd \
@@ -50,7 +51,9 @@ PACKAGES="\
 	i3-wm \
 	i3status \
 	inkscape \
+	inotify-tools \
 	irssi \
+	jdk-openjdk \
 	jq \
 	libnotify \
 	linux \
@@ -59,6 +62,7 @@ PACKAGES="\
 	maim \
 	make \
 	man \
+	mpv \
 	net-tools \
 	nethogs \
 	nload \
@@ -67,9 +71,10 @@ PACKAGES="\
 	ntfs-3g \
 	openssh \
 	os-prober \
-	mpv \
 	p7zip \
+	pavucontrol \
 	pkgconf \
+	plantuml \
 	pulseaudio \
 	pulseaudio-bluetooth \
 	python \
@@ -79,6 +84,7 @@ PACKAGES="\
 	slop \
 	stow \
 	sudo \
+	sxhkd \
 	sxiv \
 	terminus-font \
 	thunar \
@@ -89,6 +95,7 @@ PACKAGES="\
 	vi \
 	vpnc \
 	xclip \
+	xdo \
 	xdotool \
 	xorg-mkfontscale \
 	xorg-server \
@@ -100,10 +107,25 @@ PACKAGES="\
 	zathura \
 	zathura-pdf-mupdf \
 	\
-	mesa \
+	mesa
 	mesa-vdpau \
 	xf86-video-amdgpu \
+	libva-mesa-driver \
+	\
+	qemu \
+	libvirt \
+	virt-manager \
+	virt-viewer
+	lxqt-policykit \
+	dnsmasq \
+	iptables-nft \
+	edk2-ovmf \
+	\
 	"
+# virt-manager packages described here
+#   https://wiki.archlinux.org/title/libvirt
+# amdgpu packages as described here
+#   https://wiki.archlinux.org/title/AMDGPU#Installation
 
 for package in $PACKAGES; do
 	echo $package
