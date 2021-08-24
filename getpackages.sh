@@ -73,6 +73,7 @@ PACKAGES="\
 	os-prober \
 	p7zip \
 	pavucontrol \
+	picom \
 	pkgconf \
 	plantuml \
 	pulseaudio \
