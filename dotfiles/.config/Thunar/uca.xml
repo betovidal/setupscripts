@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Open Terminal Here</name>
+	<unique-id>1629840672641490-1</unique-id>
+	<command>st</command>
+	<description>Example for a custom action</description>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+<action>
+	<icon>sxiv</icon>
+	<name>See images [N]</name>
+	<unique-id>1629948625747911-1</unique-id>
+	<command>sxiv -a -s f .</command>
+	<description>See images of this directory</description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>sxiv</icon>
+	<name>See images [R]</name>
+	<unique-id>1629948654564192-2</unique-id>
+	<command>sxiv -a -s f -r .</command>
+	<description>See images of this directory and its subdirectories</description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+</actions>
