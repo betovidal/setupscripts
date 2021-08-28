@@ -20,15 +20,19 @@ function graph_perc_as_box() {
 # Value to represent bytes as human readable
 function bytes_to_human() {
 	awk -v bytes=$1 '
-	BEGIN {
-		units[1] = "Bi"
-		units[2] = "Kb"
-		units[3] = "Mb"
-		units[4] = "Gb"
-		for (i = 0; i < 4; i++) {
-			if (bytes > 1024) {
+		BEGIN {
+			prefix[0] = "B "
+			prefix[1] = "Ki"
+			prefix[2] = "Mi"
+			prefix[3] = "Gi"
+			prefix[4] = "Ti"
+			scaled = bytes
+			base = 1024
+			for (i = 0; i < 5 && scaled >= base; i++) {
+					scaled /= base
 			}
+			str_out = sprintf("%.1f %s", scaled, prefix[i])
+			printf "%9s", str_out
 		}
-	}
 	'
 }

@@ -151,30 +151,17 @@ function get_network_delta() {
 	now=$(cat "$src")
 	before="$now"
 	direction="D" # Or U for upload
+	symbol="▼"
 	if [[ $1 == "tx" ]]; then
 		direction="U"
+		symbol="▲"
 	fi
 
 	while true; do
 		now=$(cat "$src")
 		delta=$(expr $now - $before)
 		before="$now"
-		awk -v delta=$delta -v direction=$direction '
-			BEGIN {
-				prefix[0] = "B "
-				prefix[1] = "Ki"
-				prefix[2] = "Mi"
-				prefix[3] = "Gi"
-				prefix[4] = "Ti"
-				scaled = delta
-				base = 1024
-				for (i = 0; i < 5 && scaled >= base; i++) {
-						scaled /= base
-				}
-				str_out = sprintf("%.1f %s", scaled, prefix[i])
-				printf "%s%9s\n", direction, str_out
-			}
-		'
+		echo "${direction}${symbol}$(bytes_to_human $delta)"
 		sleep 1
 	done
 }
@@ -227,10 +214,10 @@ function panel_bar() {
 			[UD]*)
 				case $line in
 					U*)
-						uprate="%{F$COLOR_SYS_FG}%{B$COLOR_SYS_BG} ▲${line#?} %{B-}%{F-}"
+						uprate="%{F$COLOR_SYS_FG}%{B$COLOR_SYS_BG} ${line#?} %{B-}%{F-}"
 						;;
 					D*)
-						downrate="%{F$COLOR_SYS_FG}%{B$COLOR_SYS_BG} ▼${line#?} %{B-}%{F-}"
+						downrate="%{F$COLOR_SYS_FG}%{B$COLOR_SYS_BG} ${line#?} %{B-}%{F-}"
 						;;
 				esac
 				;;
