@@ -153,6 +153,8 @@ super + shift + Left
 	mpc seek -5
 super + shift + Right
 	mpc seek +5
+super + question
+	 notify-send -t 1500 "♪" "$(mpc status | sed '1q;d')"
 
 # super + ctrl + {z,x,c,v,b}
 # 	cmus-remote {-z -p -u -s -n}
