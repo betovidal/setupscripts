@@ -194,6 +194,15 @@ vnoremap <leader>t :Tab/
 nnoremap <leader>t :Tab/
 " Python JSON format module
 nnoremap <leader>j :%!python3 -m json.tool<CR>
+" Move across splits
+nmap <silent> <up> :wincmd k<CR>
+nmap <silent> <down> :wincmd j<CR>
+nmap <silent> <left> :wincmd h<CR>
+nmap <silent> <right> :wincmd l<CR>
+nmap <silent> <c-up> :wincmd +<CR>
+nmap <silent> <c-down> :wincmd -<CR>
+nmap <silent> <c-left> :wincmd <<CR>
+nmap <silent> <c-right> :wincmd ><CR>
 " Call snip completion
 " nnoremap <leader>s :call dumbsnips#expand()<CR>
 inoremap <expr> <C-B> "<ESC>:call ssnips#expand()<CR>"
