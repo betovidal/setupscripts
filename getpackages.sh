@@ -32,6 +32,7 @@ PACKAGES="\
 	bluez \
 	bluez-utils \
 	bspwm \
+	catfish \
 	chromium \
 	cmus \
 	dhcpcd \
@@ -41,11 +42,13 @@ PACKAGES="\
 	efibootmgr \
 	fbv \
 	feh \
+	file-roller \
 	firejail \
 	ffmpeg \
 	ffmpegthumbnailer \
 	freerdp \
 	gcc \
+	geany \
 	git \
 	grub \
 	gsimplecal \
@@ -90,7 +93,9 @@ PACKAGES="\
 	sxiv \
 	terminus-font \
 	thunar \
+	thunar-archive-plugin \
 	tigervnc \
+	tk \
 	tmux \
 	ttf-dejavu \
 	tumbler \
