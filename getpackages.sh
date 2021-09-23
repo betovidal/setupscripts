@@ -67,6 +67,8 @@ PACKAGES="\
 	make \
 	man \
 	mpv \
+	mpc \
+	mpd \
 	net-tools \
 	nethogs \
 	nload \
