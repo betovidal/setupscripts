@@ -132,7 +132,7 @@ super + minus
 	splatmoji -m type
 
 
-# AUDIO RELATED
+# Audio related
 XF86AudioRaiseVolume
 	pactl set-sink-volume @DEFAULT_SINK@ +10%
 XF86AudioLowerVolume
@@ -140,6 +140,19 @@ XF86AudioLowerVolume
 XF86AudioMute
 	pactl set-sink-mute @DEFAULT_SINK@ toggle
 
+# Music related
+{XF86AudioPrev, super + F1}
+	mpc prev
+{XF86AudioNext, super + F3}
+	mpc next
+{XF86AudioPlay, super + F2}
+	mpc toggle
+{XF86AudioStop, super + F4}
+	mpc stop
+super + shift + Left
+	mpc seek -5
+super + shift + Right
+	mpc seek +5
 
 # super + ctrl + {z,x,c,v,b}
 # 	cmus-remote {-z -p -u -s -n}
