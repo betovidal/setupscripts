@@ -181,6 +181,8 @@ function panel_bar() {
 			S*)
 				# clock output
 				sys="%{F$COLOR_SYS_FG}%{B$COLOR_SYS_BG} ${line#?} %{B-}%{F-}"
+				# Clickable
+				# sys="%{F$COLOR_SYS_FG}%{B$COLOR_SYS_BG}%{A:gsimplecal:} ${line#?} %{A}%{B-}%{F-}"
 				;;
 			T*)
 				# xtitle output
@@ -191,7 +193,7 @@ function panel_bar() {
 				if [[ $(get_playback_volume_mute) == "yes" ]]; then
 					vol_fg_color="$COLOR_VOLUME_MUTED_FG"
 				fi
-				vol="%{F$vol_fg_color}%{B$COLOR_VOLUME_BG} ${line#?} ${B-} %{B-}%{F-}"
+				vol="%{F$vol_fg_color}%{B$COLOR_VOLUME_BG} ${line#?}${B-}%{B-}%{F-}"
 				;;
 			N*)
 				ip_fg_color="$COLOR_IP_UP_FG"
@@ -209,15 +211,15 @@ function panel_bar() {
 				if [[ "${line#?}" == "CREATE" ]]; then
 					vpn_fg_color="$COLOR_VPN_FG"
 				fi
-				vpnstat="%{F$vpn_fg_color}%{B$COLOR_VPN_BG} $VPNMSG ${B-} %{B-}%{F-}"
+				vpnstat="%{F$vpn_fg_color}%{B$COLOR_VPN_BG}${VPNMSG}${B-} %{B-}%{F-}"
 				;;
 			[UD]*)
 				case $line in
 					U*)
-						uprate="%{F$COLOR_SYS_FG}%{B$COLOR_SYS_BG} ${line#?} %{B-}%{F-}"
+						uprate="%{F$COLOR_SYS_FG}%{B$COLOR_SYS_BG}${line#?}%{B-}%{F-}"
 						;;
 					D*)
-						downrate="%{F$COLOR_SYS_FG}%{B$COLOR_SYS_BG} ${line#?} %{B-}%{F-}"
+						downrate="%{F$COLOR_SYS_FG}%{B$COLOR_SYS_BG}${line#?}%{B-}%{F-}"
 						;;
 				esac
 				;;
