@@ -48,7 +48,6 @@ PACKAGES="\
 	ffmpegthumbnailer \
 	freerdp \
 	gcc \
-	geany \
 	git \
 	grub \
 	gsimplecal \
@@ -59,6 +58,7 @@ PACKAGES="\
 	irssi \
 	jdk-openjdk \
 	jq \
+	leafpad \
 	libnotify \
 	linux \
 	linux-firmware \
