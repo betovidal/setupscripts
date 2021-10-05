@@ -9,7 +9,6 @@ packadd matchit             " Match opening/closing html,xml tags with *
 set completeopt-=preview
 filetype plugin indent on   " https://vi.stackexchange.com/a/10125
 set nocompatible            " Do not pretend to be vi, enable new features
-set showcmd
 let mapleader=","           " To add more functionality, instead of \
 filetype plugin on          " Enable netwr
 set wildignore+=**/node_modules/**,**/__pycache__/** " Do not consider folders in :find
@@ -76,7 +75,6 @@ autocmd FileType c,cpp,h,hpp,python,javascript,css,html,json,sh,tcl setlocal shi
 
 " ================= VIM-LSP =============================
 let g:lsp_document_highlight_enabled = 0
-autocmd FileType typescript setlocal omnifunc=lsp#complete
 " Resgister Javascript server
 if executable('typescript-language-server')
 	au User lsp_setup call lsp#register_server({
