@@ -51,8 +51,6 @@ PACKAGES="\
 	git \
 	grub \
 	gsimplecal \
-	i3-wm \
-	i3status \
 	inkscape \
 	inotify-tools \
 	irssi \
@@ -86,8 +84,8 @@ PACKAGES="\
 	pulseaudio-bluetooth \
 	python \
 	rofi \
-	ruby \
 	screenfetch \
+	seahorse \
 	slop \
 	stow \
 	sudo \
