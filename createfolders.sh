@@ -9,5 +9,7 @@ mkdir -p $HOME/Development
 mkdir -p $HOME/Downloads
 mkdir -p $HOME/Pictures/caps
 mkdir -p $HOME/Remotes
+mkdir -p $HOME/Torrents
+mkdir -p $HOME/Shared
 
 sudo mkdir -p /opt/vim8
