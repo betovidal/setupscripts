@@ -40,9 +40,9 @@ source getff.sh
 # After repos are available, I can install vim
 printMsg "Installing Vim"
 source setupvim.sh
-# Configure global path folders and EDITOR+tmux
-printMsg "Adding folders to path (.profile)"
-source add2profile.sh
+# Backup and remove original bash profile and rc, will be linked by link.sh
+printMsg "Backing up bash_profile and bashrc, deleting originals"
+source bashops.sh
 # ls with colors
 printMsg "Adding aliases"
 source addaliases.sh
