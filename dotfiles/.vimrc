@@ -136,6 +136,9 @@ set background=dark         " Dark mode
 let g:dracula_italic = 0
 highlight Normal ctermbg=None
 if (has("termguicolors"))
+	" Be careful to use this only in the GUI application, otherwise
+	" expect no colors. This doesn't affect in my Linux envs as I compile
+	" without termguicolors.
 	set termguicolors
 endif
 " Dracula configuration end
