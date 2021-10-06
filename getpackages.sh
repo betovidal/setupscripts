@@ -91,6 +91,7 @@ PACKAGES="\
 	sudo \
 	sxhkd \
 	sxiv \
+	task \
 	terminus-font \
 	thunar \
 	thunar-archive-plugin \
@@ -100,6 +101,7 @@ PACKAGES="\
 	ttf-dejavu \
 	tumbler \
 	vi \
+	vim \
 	vpnc \
 	xclip \
 	xdo \
