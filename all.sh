@@ -38,8 +38,8 @@ source getrepos.sh
 printMsg "Getting Firefox"
 source getff.sh
 # After repos are available, I can install vim
-printMsg "Installing Vim"
-source setupvim.sh
+# printMsg "Installing Vim"
+# source setupvim.sh
 # Backup and remove original bash profile and rc, will be linked by link.sh
 printMsg "Backing up bash_profile and bashrc, deleting originals"
 source bashops.sh
