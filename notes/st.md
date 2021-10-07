@@ -2,4 +2,5 @@
 
 From https://terminal.sexy/
 
-- isotope.dark
+- x-dotshare
+- hund
