@@ -3,6 +3,7 @@
 #
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
+
 if [ -d "/usr/NX/bin" ]; then
 	PATH="/usr/NX/bin:$PATH"
 fi
@@ -16,8 +17,6 @@ if [ -d "$HOME/.local/bin" ]; then
 	PATH="$HOME/.local/bin:$PATH"
 fi
 
-# Launch mpd if it exists
-
 # Panel related (bspwm)
 PANEL_FIFO=/tmp/panel-fifo
 PANEL_HEIGHT=24
@@ -29,5 +28,3 @@ TERM=screen-256color
 EDITOR=vim
 JAVA_HOME=/usr/lib/jvm/default
 export TERM EDITOR JAVA_HOME
-
-source $HOME/.bashrc
