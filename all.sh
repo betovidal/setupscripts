@@ -40,6 +40,9 @@ source getff.sh
 # After repos are available, I can install vim
 printMsg "Installing Vim"
 source setupvim.sh
+# After repos are available, I can configure mpd
+printMsg "Configuring mpd"
+source mpdconfig.sh
 # Backup and remove original bash profile and rc, will be linked by link.sh
 printMsg "Backing up bash_profile and bashrc, deleting originals"
 source bashops.sh
