@@ -20,7 +20,7 @@ super + Escape
 
 # quit/restart bspwm
 super + alt + {q,r}
-	bspc {quit,wm -r}
+	bspc {quit; pkill -USR1 -x panel.sh ,wm -r}
 
 # close and kill
 super + {_,shift + }w
