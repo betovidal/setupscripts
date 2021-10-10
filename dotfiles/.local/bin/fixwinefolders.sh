@@ -1,5 +1,5 @@
 #!/bin/bash
-FOLDERS_LINE="Downloads Music Pictures Videos Documents"
+FOLDERS_LINE="Downloads Music Pictures Videos Documents Desktop"
 IFS=' ' read -a FOLDERS <<< "$FOLDERS_LINE"
 
 for folder in "${FOLDERS[@]}"; do
