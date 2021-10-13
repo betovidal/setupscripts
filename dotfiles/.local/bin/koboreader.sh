@@ -1,4 +1,4 @@
 #!/bin/bash
 
-wine "$HOME/.wine/drive_c/users/tocino/Desktop/Kobo.desktop"
+wine "$HOME/.wine/drive_c/users/Public/Desktop/Kobo.lnk"
 
