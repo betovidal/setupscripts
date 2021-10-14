@@ -43,6 +43,8 @@ PACKAGES="\
 	fbv \
 	feh \
 	file-roller \
+	firefox \
+	firefox-developer-edition \
 	firejail \
 	ffmpeg \
 	ffmpegthumbnailer \
@@ -58,6 +60,7 @@ PACKAGES="\
 	jq \
 	leafpad \
 	libnotify \
+	libxml2 \
 	linux \
 	linux-firmware \
 	lm_sensors \
@@ -101,7 +104,6 @@ PACKAGES="\
 	ttf-dejavu \
 	tumbler \
 	vi \
-	vim \
 	vpnc \
 	xclip \
 	xdo \
