@@ -12,8 +12,8 @@ if [ ! -d $AUR_FOLDER ]; then
 	mkdir -p $AUR_FOLDER
 fi
 # Suckless tools
-_SUCKLESSTOOLS="dwm farbfeld sent slstatus"
-SUCKLESSTOOLS="dmenu slock st"
+_SUCKLESSTOOLS="dmenu dwm farbfeld sent slock slstatus"
+SUCKLESSTOOLS="st"
 echo "= = = = = Suckless Tools = = = = ="
 for tool in $SUCKLESSTOOLS; do
 	git clone https://git.suckless.org/$tool $REPOS_FOLDER$tool

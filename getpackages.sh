@@ -53,6 +53,7 @@ PACKAGES="\
 	git \
 	grub \
 	gsimplecal \
+	i3lock \
 	inkscape \
 	inotify-tools \
 	irssi \
