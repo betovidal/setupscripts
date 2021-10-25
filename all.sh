@@ -49,6 +49,9 @@ source bashops.sh
 # ls with colors
 printMsg "Adding aliases"
 source addaliases.sh
+# Set file associations
+printMsg "Setting file associations"
+source setfiledefaults.sh
 # User specific configurations and binaries (scripts)
 printMsg "Linking home configurations and scripts"
 source link.sh
