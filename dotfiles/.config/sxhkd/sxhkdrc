@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + @space
-	rofi -show run -disable-history
+	rofi -show run -disable-history -scroll-method 1
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -156,7 +156,7 @@ super + shift + Right
 super + question
 	 notify-send -t 1500 "♪" "$(mpc status | sed '1q;d')"
 super + apostrophe
-	 mpc playlist | rofi -format d -dmenu -i | xargs mpc play
+	 mpc playlist | rofi -format d -dmenu -i -scroll-method 1 | xargs mpc play
 
 # super + ctrl + {z,x,c,v,b}
 # 	cmus-remote {-z -p -u -s -n}
