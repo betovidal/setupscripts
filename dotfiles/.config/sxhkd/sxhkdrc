@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	st
+	alacritty
 
 # program launcher
 super + @space
@@ -130,6 +130,10 @@ super + {Left,Down,Up,Right}
 # rofi
 super + minus
 	splatmoji -m type
+
+# lock screen
+super +  Scroll_Lock
+	i3lock -u --image ~/Pictures/lock.png
 
 
 # Audio related
