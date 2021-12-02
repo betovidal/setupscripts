@@ -22,6 +22,7 @@
 
 # ARCH
 PACKAGES="\
+	alacritty \
 	alsa-utils \
 	amd-ucode \
 	base \
@@ -102,7 +103,10 @@ PACKAGES="\
 	tigervnc \
 	tk \
 	tmux \
+	ttf-baekmuk \
 	ttf-dejavu \
+	ttf-hanazono \
+	ttf-liberation \
 	tumbler \
 	vi \
 	vpnc \
