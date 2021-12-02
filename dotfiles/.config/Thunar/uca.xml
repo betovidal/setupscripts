@@ -28,4 +28,13 @@
 	<patterns>*</patterns>
 	<directories/>
 </action>
+<action>
+	<icon></icon>
+	<name>Search with catfish</name>
+	<unique-id>1637822812501311-1</unique-id>
+	<command>catfish %f</command>
+	<description></description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
 </actions>
