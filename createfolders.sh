@@ -14,4 +14,6 @@ mkdir -p $HOME/Remotes
 mkdir -p $HOME/Torrents
 mkdir -p $HOME/Shared
 
+mkdir -p $HOME/.npm-global
+
 sudo mkdir -p /opt/vim8

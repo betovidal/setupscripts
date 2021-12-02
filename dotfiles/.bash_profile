@@ -16,6 +16,9 @@ fi
 if [ -d "$HOME/.local/bin" ]; then
 	PATH="$HOME/.local/bin:$PATH"
 fi
+if [ -d "$HOME/.npm-global/bin" ]; then
+	PATH="$HOME/.npm-global/bin:$PATH"
+fi
 
 # Panel related (bspwm)
 PANEL_FIFO=/tmp/panel-fifo
