@@ -34,6 +34,9 @@ set listchars=tab:\·\ ,trail:-,extends:>,precedes:< " Unprintable chars mapping
 " set rulerformat=%l,%c%V%=%P
 " set ruler
 
+" ============== VIMSPECTOR ==================
+let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
+
 " ============== PLUGINS ===================
 call plug#begin('~/.vim/plugged')
 " See https://github.com/junegunn/vim-plug for possibilities
@@ -45,6 +48,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/asyncomplete.vim'
+" LSP
 Plug 'prabirshrestha/vim-lsp'
 " Syntax
 Plug 'pangloss/vim-javascript'
@@ -52,8 +56,15 @@ Plug 'vim-python/python-syntax'
 Plug 'StanAngeloff/php.vim'
 Plug 'PProvost/vim-ps1'
 Plug 'ap/vim-css-color'
-Plug 'Konfekt/FastFold'
 Plug 'aklt/plantuml-syntax'
+Plug 'udalov/kotlin-vim'
+" Snippets
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
+" Plug 'ludovicchabant/vim-gutentags'
+" Plug 'Konfekt/FastFold'
 " Plug 'VundleVim/Vundle.vim'
 " Plug 'ajh17/VimCompletesMe'
 " Plug 'vim-airline/vim-airline'
@@ -61,15 +72,12 @@ Plug 'aklt/plantuml-syntax'
 " Plug 'vim-jp/vim-cpp'
 " Plug 'mbbill/undotree'
 " Plug 'nathanaelkane/vim-indent-guides'
+" Plug 'puremourning/vimspector'
+" Color schemes
 Plug 'dracula/vim', { 'name': 'dracula' }
 Plug 'noahfrederick/vim-noctu', { 'name': 'noctu' }
 Plug 'jeffkreeftmeijer/vim-dim', { 'name': 'dim' }
 call plug#end()
-
-" ================ simple snips =========================
-let g:ssnips_cursor="█"
-let g:ssnips_end_in_insert_mode=1
-let g:ssnips_path="~/.vim/ssnips/"
 
 " ================= Code formatting =====================
 autocmd FileType c,cpp,h,hpp,python,javascript,css,html,json,sh,tcl setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
@@ -136,12 +144,12 @@ set background=dark         " Dark mode
 " Dracula configuration start
 let g:dracula_italic = 0
 highlight Normal ctermbg=None
-if (has("termguicolors"))
-	" Be careful to use this only in the GUI application, otherwise
-	" expect no colors. This doesn't affect in my Linux envs as I compile
-	" without termguicolors.
-	set termguicolors
-endif
+" if (has("termguicolors"))
+" 	" Be careful to use this only in the GUI application, otherwise
+" 	" expect no colors. This doesn't affect in my Linux envs as I compile
+" 	" without termguicolors.
+" 	set termguicolors
+" endif
 " Dracula configuration end
 
 " ============== JUMP VIM LIST =============
@@ -177,6 +185,8 @@ nnoremap <leader>a :SyntasticCheck<CR>
 nnoremap <leader>c :SyntasticReset<CR> :lclose<CR>
 " (S)pell check
 nnoremap <leader>s :setlocal spell! spelllang=en_us<CR>
+nnoremap <PageUp> :bnext<CR>
+nnoremap <PageDown> :bprev<CR>
 " Next/previous in location list (triggered by e.g. LspDefinition)
 nnoremap <C-k> :call WrapCommand('up', 'c')<CR>
 nnoremap <C-j>  :call WrapCommand('down', 'c')<CR>
@@ -205,9 +215,6 @@ nmap <silent> <c-up> :wincmd +<CR>
 nmap <silent> <c-down> :wincmd -<CR>
 nmap <silent> <c-left> :wincmd <<CR>
 nmap <silent> <c-right> :wincmd ><CR>
-" Call snip completion
-" nnoremap <leader>s :call dumbsnips#expand()<CR>
-inoremap <expr> <C-B> "<ESC>:call ssnips#expand()<CR>"
 " Expand common enclosing signs to allow keep writing inside
 " inoremap () ()<C-c>i
 " inoremap [] []<C-c>i
@@ -226,6 +233,12 @@ function! s:align()
 	endif
 endfunction
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+
+" ============ snipmate ================================
+let g:snipMate = {}
+let g:snipMate.snippet_version = 1
+let g:snipMate.no_default_aliases = 1
+" <Plug>snipMateTrigger
 
 " ============= vim-indexed-search ======================
 let g:indexed_search_colors = 0
@@ -256,7 +269,6 @@ set statusline+=\ %l/%L:%c                                 " line/TotalLines:Col
 " set statusline+=%{strftime('%a\ \|\ %F\ \|\ %H:%M:%S\ ')}" Time
 " ============== Syntax checkers ========================
 let g:syntastic_javascript_checkers = ['eslint']
-" Install $pip pylama and $pip pylama_pylint
 let g:syntastic_python_checkers = ['pycodestyle', 'pydocstyle']
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_auto_loc_list=1
