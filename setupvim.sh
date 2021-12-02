@@ -1,3 +1,5 @@
+#!/bin/bash
+
 VIMREPO=$HOME/Repos/vim
 VIMDEST=/opt/vim8
 
@@ -11,14 +13,14 @@ cd $VIMREPO
 
 ./configure \
 --enable-gui=no \
---with-features=normal \
+--with-features=huge \
+--enable-python3interp=dynamic \
 --enable-multibyte \
 --with-x \
 --with-compiledby="tocino" \
 --prefix=$VIMDEST
 
-# --enable-python3interp \
-# --with-python3-config-dir=/usr/lib/python3.7/config-3.7m-x86_64-linux-gnu \
+# --with-python3-config-dir=/usr/lib/python3.9/config-3.9-x86_64-linux-gnu \
 
 sudo make clean install
 git clean -df
