@@ -37,6 +37,7 @@ fi
 
 xset r rate 150 30
 xset m 0 0
+xset b off
 # Set X shaped cursor (needed in bspwm)
 xsetroot -cursor_name left_ptr
 # $xinput list
