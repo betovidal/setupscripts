@@ -34,9 +34,6 @@ set listchars=tab:\·\ ,trail:-,extends:>,precedes:< " Unprintable chars mapping
 " set rulerformat=%l,%c%V%=%P
 " set ruler
 
-" ============== VIMSPECTOR ==================
-let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
-
 " ============== PLUGINS ===================
 call plug#begin('~/.vim/plugged')
 " See https://github.com/junegunn/vim-plug for possibilities
@@ -72,7 +69,6 @@ Plug 'honza/vim-snippets'
 " Plug 'vim-jp/vim-cpp'
 " Plug 'mbbill/undotree'
 " Plug 'nathanaelkane/vim-indent-guides'
-" Plug 'puremourning/vimspector'
 " Color schemes
 Plug 'dracula/vim', { 'name': 'dracula' }
 Plug 'noahfrederick/vim-noctu', { 'name': 'noctu' }
