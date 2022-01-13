@@ -9,7 +9,8 @@
 # Cpu_usage
 
 # Important notes
-# source vs dot (.), . is POSIX
+# -source vs dot (.), . is POSIX
+# -The $! at the end of the echo prints their process ID, for debug purposes
 
 
 # imports
@@ -58,6 +59,8 @@ COLOR_IP_BG="#333232"
 COLOR_VPN_FG="#BBDDBB"
 COLOR_VPN_DOWN_FG="#555555"
 COLOR_VPN_BG="#333232"
+COLOR_RAM_FG="#DDBBDD"
+COLOR_RAM_BG="#333232"
 
 if xdo id -a "$PANEL_WM_NAME" > /dev/null ; then
 	printf "%s\n" "The panel is already running." >&2
@@ -79,7 +82,7 @@ xtitle -sf 'T%s\n' -t 30 > "$PANEL_FIFO" & echo "xtitle $!"
 # [S]Calendar
 function get_calendar() {
 	while true; do
-		date '+S%a %Y-%m-%d %H:%M:%S'
+		date '+S%a, %d %b %H:%M:%S'
 		sleep 1
 	done
 }
@@ -168,6 +171,30 @@ function get_network_delta() {
 get_network_delta "tx" > "$PANEL_FIFO" & echo "get_network_delta tx $!"
 get_network_delta "rx" > "$PANEL_FIFO" & echo "get_network_delta rx $!"
 
+# [R]am, non available
+function get_mem_detail() {
+	mem_info=$1
+	mem_component=$2
+	echo $(echo "$mem_info" | grep "$mem_component" | awk '{ print $2; }')
+}
+
+function get_used_ram() {
+	mem_info=$(cat /proc/meminfo)
+	# in kB
+	mem_total=$(get_mem_detail "$mem_info" "MemTotal")
+	mem_available=$(get_mem_detail "$mem_info" "MemAvailable")
+	mem_non_available=$(( $mem_total - $mem_available ))
+	# Make readable. Non available or used.
+	echo "$(bytes_to_human $(( $mem_non_available * 1024 )))"
+}
+function poll_ram() {
+	while true; do
+		echo "R$(get_used_ram)"
+		sleep 1
+	done
+}
+poll_ram > "$PANEL_FIFO" & echo "get_used_ram $!"
+
 # Here, information is formatted and appended accordingly before piping to
 # lemonbar
 # T - xtitle output
@@ -222,6 +249,9 @@ function panel_bar() {
 						downrate="%{F$COLOR_SYS_FG}%{B$COLOR_SYS_BG}${line#?}%{B-}%{F-}"
 						;;
 				esac
+				;;
+			R*)
+				ram="%{F$COLOR_RAM_FG}%{B$COLOR_RAM_BG}R:${line#?} %{B-}%{F-}"
 				;;
 			W*)
 				# bspwm's state
@@ -321,7 +351,7 @@ function panel_bar() {
 				done
 				;;
 		esac
-		printf "%s\n" "%{l}${wm}${title}%{r}${vpnstat}${net}${uprate}${downrate}${vol}${sys}"
+		printf "%s\n" "%{l}${wm}${title}%{r}${vpnstat}${net}${ram}${uprate}${downrate}${vol}${sys}"
 		# printf "%s\n" "%{l}${wm}%{c}${title}%{r}${sys}"
 	done
 }
