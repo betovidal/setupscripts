@@ -25,7 +25,7 @@ git clone https://github.com/cspeterson/splatmoji.git $REPOS_FOLDER"splatmoji"
 git clone https://github.com/toadjaune/pulseaudio-config.git $REPOS_FOLDER"pulseaudio-config"
 # AUR repos
 echo "= = = = = AUR packages = = = = ="
-AURREPOS="lemonbar-git libxft-bgra minecraft-launcher nomachine pod2man tuxguitar xp-pen-tablet xtitle"
+AURREPOS="google-earth-pro lemonbar-git libxft-bgra minecraft-launcher nomachine pod2man tuxguitar vscodium-bin xtitle"
 for aurrepo in $AURREPOS; do
 	git clone https://aur.archlinux.org/$aurrepo.git $AUR_FOLDER$aurrepo
 done
