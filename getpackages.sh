@@ -33,9 +33,11 @@ PACKAGES="\
 	bluez \
 	bluez-utils \
 	bspwm \
+	calibre \
 	catfish \
 	chromium \
 	cmus \
+	coolreader \
 	dhcpcd \
 	dillo \
 	discord \
@@ -51,10 +53,12 @@ PACKAGES="\
 	ffmpegthumbnailer \
 	freerdp \
 	gcc \
+	gftp \
 	git \
 	grub \
 	gsimplecal \
 	i3lock \
+	inetutils \
 	inkscape \
 	inotify-tools \
 	irssi \
@@ -88,10 +92,12 @@ PACKAGES="\
 	pulseaudio \
 	pulseaudio-bluetooth \
 	python \
+	retext \
 	rofi \
 	screenfetch \
 	seahorse \
 	slop \
+	sox \
 	stow \
 	sudo \
 	sxhkd \
@@ -110,6 +116,7 @@ PACKAGES="\
 	tumbler \
 	vi \
 	vpnc \
+	xchm \
 	xclip \
 	xdo \
 	xdotool \
@@ -138,10 +145,10 @@ PACKAGES="\
 	edk2-ovmf \
 	\
 	"
-# virt-manager packages described here
-#   https://wiki.archlinux.org/title/libvirt
 # amdgpu packages as described here
 #   https://wiki.archlinux.org/title/AMDGPU#Installation
+# virt-manager packages described here
+#   https://wiki.archlinux.org/title/libvirt
 
 for package in $PACKAGES; do
 	echo $package
