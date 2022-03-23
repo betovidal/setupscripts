@@ -43,6 +43,8 @@ PACKAGES="\
 	discord \
 	dunst \
 	efibootmgr \
+	espeak-ng \
+	espeak-ng-espeak \
 	fbv \
 	feh \
 	file-roller \
