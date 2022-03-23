@@ -8,7 +8,9 @@ Name=ffplay
 # A comment which can/will be used as a tooltip
 Comment=Open video files in ffmpeg's visualization tool
 # The executable of the application, possibly with arguments.
-Exec=alacritty -e /usr/bin/ffplay -volume 0
+Exec=ffplay -volume 0
+Terminal=true
+Icon=ffplay
 # Describes whether this application needs to be run in a terminal or not
 Terminal=true
 # Describes the categories in which this entry should be shown
