@@ -53,9 +53,9 @@ setxkbmap latam
 # slstatus &
 # For allowing notifications
 dunst &
-feh --bg-fill ~/Pictures/bg.png &
+feh --bg-fill $HOME/Pictures/bg.png &
 picom &
 # exec dwm
 # exec i3
-sxhkd &
-exec bspwm
+sxhkd & exec bspwm
+# exec awesome
