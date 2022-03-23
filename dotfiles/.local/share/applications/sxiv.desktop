@@ -5,6 +5,7 @@ Type=Application
 Version=1.0
 # The name of the application
 Name=sxiv
+Icon=sxiv
 # A comment which can/will be used as a tooltip
 Comment=Open images and animate them if possible
 # The executable of the application, possibly with arguments.

@@ -4,12 +4,12 @@ Type=Application
 # The version of the desktop entry specification to which this file complies
 Version=1.0
 # The name of the application
-Name=vim
-Icon=vim
+Name=Teams
+# Located in $HOME/.icons/hicolor/48x48/teams.{png,ico}
+Icon=teams
 # A comment which can/will be used as a tooltip
-Comment=Edit with vim
+Comment=Launch Chromium in app mode and go to Teams web app
 # The executable of the application, possibly with arguments.
-Exec=vim
-Terminal=true
+Exec=chromium --app=https://teams.microsoft.com/
 # Describes the categories in which this entry should be shown
-Categories=Text
+Categories=Communication
