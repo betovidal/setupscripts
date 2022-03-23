@@ -1,4 +1,3 @@
-,
 # wm independent hotkeys
 #
 
@@ -8,7 +7,11 @@ super + Return
 
 # program launcher
 super + @space
-	rofi -show run -disable-history -scroll-method 1
+	rofi -show drun -show-icons -disable-history -scroll-method 1
+
+# Show help
+super + bar
+	alacritty -e less $HOME/.config/sxhkd/sxhkdrc
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -126,14 +129,13 @@ super + {Left,Down,Up,Right}
 
 
 
-
-# rofi
+# Emojis
 super + minus
 	splatmoji -m type
 
 # lock screen
 super +  Scroll_Lock
-	i3lock -u --image ~/Pictures/lock.png
+	i3lock -u --image $HOME/Pictures/lock.png
 
 
 # Audio related
