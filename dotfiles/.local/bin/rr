@@ -1,0 +1,31 @@
+#!/bin/env bash
+
+# TODO: Validate special chars https://github.com/FreeRDP/FreeRDP/issues/3448
+# TODO: Support SSH arguments (right now only user@host are supported)
+# TODO: Finish migration of .rdp and .ssh files to the single remotes.json file
+
+TYPE=$1
+NAME=$2
+
+if [ -z "$NAME" ]; then
+	echo "ERROR: You must provide a named host, from $HOME/.config/remotes.json"
+	exit
+fi
+
+if [ "$TYPE" = "ssh" ] || [ "$TYPE" = "rdp" ]; then
+	args=$(python _gen_compl_args.py "$TYPE" "$NAME")
+	if [ -z "$args" ]; then
+		echo "ERROR: Named host '$NAME' is not in file $HOME/.config/remotes.json"
+		exit
+	fi
+	case "$TYPE" in
+		"ssh")
+			ssh $args
+			;;
+		"rdp")
+			xfreerdp $args
+			;;
+	esac
+else
+	echo "Type $TYPE not recognized."
+fi

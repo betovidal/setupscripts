@@ -1,0 +1,22 @@
+{
+	"base-conf": {
+		"ssh": {
+		},
+		"rdp": {
+			"/scale": "180",
+			"/scale-desktop": "150",
+			"/dynamic-resolution": "",
+			"+auto-reconnect": ""
+		}
+	},
+	"hosts": [
+		{
+			"name": "",
+			"user": "",
+			"password": "",
+			"host": "",
+			"rdp": {},
+			"ssh": {}
+		}
+	]
+}

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+completions_folder="$HOME/.local/share/bash-completion/completion/"
+if [ -d "$completions_folder" ] ; then
+	for f in "$completions_folder"/?*.bash ; do
+		[ -x "$f" ] && . "$f"
+	done
+	unset f
+fi
