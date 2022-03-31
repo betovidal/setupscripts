@@ -87,12 +87,13 @@ PACKAGES="\
 	openssh \
 	os-prober \
 	p7zip \
-	pavucontrol \
 	picom \
 	pkgconf \
 	plantuml \
 	pulseaudio \
+	pulseaudio-alsa \
 	pulseaudio-bluetooth \
+	pulsemixer \
 	python \
 	retext \
 	rofi \
