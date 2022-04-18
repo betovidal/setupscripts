@@ -19,7 +19,8 @@ alias ls="ls --color=auto"
 alias bc="bc -l"
 # PS1='[\u@\h \W]\$ '
 PS1="$ACCENT[$WHITE\u$ACCENT@$WHITE\h \W$ACCENT]$WHITE\$ "
-source $HOME/.local/bin/complete-my-scripts.sh
+# Replaced by my rr script and NetworkManager, respectively
+# source $HOME/.local/bin/complete-my-scripts.sh
 
 # NNN configuration
 
@@ -55,7 +56,11 @@ n ()
 # Autocompletion
 
 # composer, phpspec, symphony, behat...
-eval "$(symfony-autocomplete)"
+if command -v symfony-autocomplete &> /dev/null
+then
+	eval "$(symfony-autocomplete)"
+fi
+
 
 # pip bash completion start
 _pip_completion()
