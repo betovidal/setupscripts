@@ -52,23 +52,3 @@ n ()
             rm -f "$NNN_TMPFILE" > /dev/null
     fi
 }
-
-# Autocompletion
-
-# composer, phpspec, symphony, behat...
-if command -v symfony-autocomplete &> /dev/null
-then
-	eval "$(symfony-autocomplete)"
-fi
-
-
-# pip bash completion start
-_pip_completion()
-{
-    COMPREPLY=( $( COMP_WORDS="${COMP_WORDS[*]}" \
-                   COMP_CWORD=$COMP_CWORD \
-                   PIP_AUTO_COMPLETE=1 $1 2>/dev/null ) )
-}
-complete -o default -F _pip_completion pip
-# pip bash completion end
-

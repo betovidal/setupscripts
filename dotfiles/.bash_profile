@@ -1,11 +1,11 @@
 #
 # ~/.bash_profile
 #
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+
 if [ -d "$HOME/.config/composer/vendor/bin" ]; then
 	PATH="$HOME/.config/composer/vendor/bin:$PATH"
 fi
-
-[[ -f ~/.bashrc ]] && . ~/.bashrc
 
 if [ -d "/usr/NX/bin" ]; then
 	PATH="/usr/NX/bin:$PATH"
