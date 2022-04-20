@@ -1,0 +1,3 @@
+#!/bin/bash
+
+chromium --app=https://to-do.office.com/tasks/important
