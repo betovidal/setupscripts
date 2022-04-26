@@ -22,6 +22,7 @@
 
 # ARCH
 PACKAGES="\
+	acpilight \
 	alacritty \
 	alsa-utils \
 	amd-ucode \
@@ -36,7 +37,6 @@ PACKAGES="\
 	calibre \
 	catfish \
 	chromium \
-	cmus \
 	coolreader \
 	dhcpcd \
 	dillo \
