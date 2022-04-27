@@ -55,6 +55,7 @@ setxkbmap latam
 dunst &
 feh --bg-fill $HOME/Pictures/bg.png &
 picom &
+# export DESKTOP_SESSION=plasma; exec startplasma-x11
 # exec dwm
 # exec i3
 sxhkd & exec bspwm
