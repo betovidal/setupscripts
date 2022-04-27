@@ -26,6 +26,7 @@ PACKAGES="\
 	alacritty \
 	alsa-utils \
 	amd-ucode \
+	archlinux-keyring \
 	base \
 	base-devel \
 	bash-completion \
