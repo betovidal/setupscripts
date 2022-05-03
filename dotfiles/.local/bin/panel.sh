@@ -20,6 +20,7 @@ HERE=$(dirname ${BASH_SOURCE[0]})
 
 VPNC_PID_FILE=/var/run/vpnc.pid
 NET_IFACE="enp4s0"
+BAT_NAME="BAT0"
 PANEL_FIFO=/tmp/panel-fifo
 PANEL_HEIGHT=24
 PANEL_FONT="-*-terminus-*-*-*-*-22-*-*-*-*-*-*-*"
@@ -59,6 +60,8 @@ COLOR_IP_BG="#333232"
 COLOR_VPN_FG="#BBDDBB"
 COLOR_VPN_DOWN_FG="#555555"
 COLOR_VPN_BG="#333232"
+COLOR_BAT_FG="#DDBBDD"
+COLOR_BAT_BG="#333232"
 COLOR_RAM_FG="#DDBBDD"
 COLOR_RAM_BG="#333232"
 
@@ -195,6 +198,31 @@ function poll_ram() {
 }
 poll_ram > "$PANEL_FIFO" & echo "get_used_ram $!"
 
+# [B]attery
+function poll_capacity() {
+	while true; do
+		bat_stat=$(cat /sys/class/power_supply/$BAT_NAME/status)
+		bat_icon=" "
+		if [ $bat_stat == "Discharging" ]; then
+			bat_icon="▼"
+		elif [ $bat_stat == "Charging" ]; then
+			bat_icon="▲"
+		fi
+
+		bat_cap=$(cat /sys/class/power_supply/$BAT_NAME/capacity)
+		bat_box=$(graph_perc_as_box $bat_cap)
+		echo "B${bat_icon}${bat_box}"
+		sleep 1
+	done
+}
+
+# If there's a battery, register polling
+if [ -d "/sys/class/power_supply/$BAT_NAME" ]; then
+	poll_capacity > "$PANEL_FIFO" & echo "poll_capacity $!"
+else
+	echo "No bat"
+fi
+
 # Here, information is formatted and appended accordingly before piping to
 # lemonbar
 # T - xtitle output
@@ -252,6 +280,9 @@ function panel_bar() {
 				;;
 			R*)
 				ram="%{F$COLOR_RAM_FG}%{B$COLOR_RAM_BG}R:${line#?} %{B-}%{F-}"
+				;;
+			B*)
+				bat="%{F$COLOR_BAT_FG}%{B$COLOR_BAT_BG}B:${line#?} %{B-}%{F-}"
 				;;
 			W*)
 				# bspwm's state
@@ -351,7 +382,7 @@ function panel_bar() {
 				done
 				;;
 		esac
-		printf "%s\n" "%{l}${wm}${title}%{r}${vpnstat}${net}${ram}${uprate}${downrate}${vol}${sys}"
+		printf "%s\n" "%{l}${wm}${title}%{r}${vpnstat}${net}${ram}${uprate}${downrate}${vol}${sys}${bat}"
 		# printf "%s\n" "%{l}${wm}%{c}${title}%{r}${sys}"
 	done
 }
