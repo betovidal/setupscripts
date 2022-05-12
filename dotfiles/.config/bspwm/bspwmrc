@@ -1,6 +1,6 @@
 #! /bin/sh
 pgrep -x sxhkd > /dev/null || sxhkd & echo "sxhkd PID = $!"
-pgrep -x panel.sh > /dev/null || panel.sh & echo "panel PID = $!"
+# pgrep -x panel.sh > /dev/null || panel.sh & echo "panel PID = $!"
 # pgrep -x panel > /dev/null || panel & echo "panel PID = $!"
 
 bspc monitor -d 1 2 3 4 5 6 7 8 9 10
