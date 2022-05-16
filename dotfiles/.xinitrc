@@ -53,7 +53,8 @@ setxkbmap latam
 # slstatus &
 # For allowing notifications
 dunst &
-feh --bg-fill $HOME/Pictures/bg.png &
+# feh --bg-fill $HOME/Pictures/bg.png &
+xwallpaper --daemon --center "$HOME/Pictures/bg.png"
 picom &
 # export DESKTOP_SESSION=plasma; exec startplasma-x11
 # exec dwm

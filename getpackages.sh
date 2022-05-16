@@ -47,7 +47,6 @@ PACKAGES="\
 	espeak-ng \
 	espeak-ng-espeak \
 	fbv \
-	feh \
 	file-roller \
 	firefox \
 	firefox-developer-edition \
@@ -131,6 +130,7 @@ PACKAGES="\
 	xorg-xinit \
 	xorg-xinput \
 	xsel \
+	xwallpaper \
 	zathura \
 	zathura-pdf-mupdf \
 	\
