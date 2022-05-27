@@ -51,14 +51,13 @@ xinput set-prop "ELAN0708:00 04F3:31BF Touchpad" "libinput Disable While Typing 
 export _JAVA_AWT_WM_NONREPARENTING=1
 # Kb layout
 setxkbmap latam
-# slstatus &
 # For allowing notifications
 dunst &
 # feh --bg-fill $HOME/Pictures/bg.png &
 xwallpaper --daemon --center "$HOME/Pictures/bg.png"
 picom &
 # export DESKTOP_SESSION=plasma; exec startplasma-x11
-# exec dwm
+# slstatus & exec dwm
 # exec i3
 sxhkd & polybar & exec bspwm
 # exec awesome
