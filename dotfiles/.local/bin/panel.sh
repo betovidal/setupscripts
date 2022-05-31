@@ -81,7 +81,7 @@ mkfifo "$PANEL_FIFO"
 # character, which is how the bspwm internal information is presented.
 
 # [T]Title of windows
-xtitle -sf 'T%s\n' -t 30 > "$PANEL_FIFO" & echo "xtitle $!"
+xtitle -sf 'T%s\n' -t $TITLE_WIDTH > "$PANEL_FIFO" & echo "xtitle $!"
 # [S]Calendar
 function get_calendar() {
 	while true; do
