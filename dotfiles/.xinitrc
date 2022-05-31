@@ -59,5 +59,7 @@ picom &
 # export DESKTOP_SESSION=plasma; exec startplasma-x11
 # slstatus & exec dwm
 # exec i3
-sxhkd & polybar & exec bspwm
+sxhkd & exec bspwm
 # exec awesome
+# exec qtile start
+# until wmii; do :; done
