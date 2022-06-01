@@ -7,7 +7,7 @@ super + Return
 
 # program launcher
 super + @space
-	rofi -modi run,drun -show run -show-icons -disable-history -scroll-method 1
+	rofi -monitor -1 -modi run,drun -show run -show-icons -disable-history -scroll-method 1
 
 # Show help
 super + bar
@@ -162,7 +162,7 @@ super + shift + Right
 super + question
 	 notify-send -t 1500 "♪" "$(mpc status | sed '1q;d')"
 super + apostrophe
-	 mpc playlist | rofi -format d -dmenu -i -scroll-method 1 | xargs -r mpc play
+	 mpc playlist | rofi -monitor -1 -format d -dmenu -i -scroll-method 1 | xargs -r mpc play
 
 # super + ctrl + {z,x,c,v,b}
 # 	cmus-remote {-z -p -u -s -n}

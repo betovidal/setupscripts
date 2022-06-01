@@ -229,7 +229,9 @@ fi
 # S - date output (same as example)
 # W - window manager information (free/focused/occupied desktops)
 
-num_mon=$(bspc query -M | wc -l)
+# num_mon=$(bspc query -M | wc -l)
+# List only connected and active monitors
+num_mon=$(xrandr --query | grep "connected" | grep '[0-9]\+x[0-9]\++[0-9]\++[0-9\+]' | wc -l)
 function panel_bar() {
 	while read -r line ; do
 		case $line in
