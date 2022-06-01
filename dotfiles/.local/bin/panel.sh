@@ -22,8 +22,8 @@ VPNC_PID_FILE=/var/run/vpnc.pid
 NET_IFACE="enp4s0"
 BAT_NAME="BAT0"
 PANEL_FIFO=/tmp/panel-fifo
-PANEL_HEIGHT=24
-PANEL_FONT="-*-terminus-*-*-*-*-22-*-*-*-*-*-*-*"
+PANEL_HEIGHT=20
+PANEL_FONT="-*-terminus-*-*-*-*-18-*-*-*-*-*-*-*"
 PANEL_WM_NAME=lemon_panel
 TITLE_WIDTH=30
 
