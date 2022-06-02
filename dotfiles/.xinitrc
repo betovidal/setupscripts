@@ -56,6 +56,7 @@ dunst &
 # feh --bg-fill $HOME/Pictures/bg.png &
 # xwallpaper --center "$HOME/Pictures/bg.png"
 picom &
+alacritty -e launch_tmux.bash &
 
 # Different WMs/DEs if I want to try them
 
