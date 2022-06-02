@@ -26,6 +26,7 @@ PACKAGES="\
 	alacritty \
 	alsa-utils \
 	amd-ucode \
+	arandr \
 	archlinux-keyring \
 	base \
 	base-devel \
