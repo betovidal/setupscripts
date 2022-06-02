@@ -49,3 +49,8 @@ auri () {
 		echo ""
 	done;
 }
+
+steam_update_on_launch () {
+	STEAM_FOLDER="$HOME/.steam/steam/steamapps"
+	sed -i 's/\("AutoUpdateBehavior".*\)"0"/\1"1"/' "${STEAM_FOLDER}"/*.acf
+}
