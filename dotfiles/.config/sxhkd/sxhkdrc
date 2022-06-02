@@ -134,8 +134,8 @@ super + minus
 	splatmoji -m type
 
 # lock screen
-super +  Scroll_Lock
-	i3lock -u --image $HOME/Pictures/lock.png
+super + q
+	my-lock.sh
 
 
 # Audio related

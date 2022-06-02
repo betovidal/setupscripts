@@ -9,12 +9,20 @@ launch_polybar.bash
 # polybar &
 
 # Set wallpaper
-xwallpaper --center "$HOME/Pictures/bg.png"
+BG="$HOME/Pictures/bg.png"
+if [ -f "$BG" ]; then
+	xwallpaper --center "$BG"
+fi
 
 monitors=$(xrandr --query | grep "connected" | grep '[0-9]\+x[0-9]\++[0-9]\++[0-9\+]')
 if [ $(echo "$monitors" | wc -l) -gt 1 ]; then
-	bspc monitor eDP -d 1 2 3 4 5 6 7 8 9
-	bspc monitor HDMI-A-0 -d 10
+	if echo $monitors | grep -q eDP; then
+		bspc monitor eDP -d 1 2 3 4 5 6 7 8 9
+		bspc monitor HDMI-A-0 -d 10
+	elif echo $monitors | grep -q "DisplayPort-1"; then
+		bspc monitor HDMI-A-0 -d 1 2 3 4 5 6 7 8 9
+		bspc monitor "DisplayPort-1" -d 10
+	fi
 else
 	bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 fi
@@ -26,9 +34,7 @@ bspc config split_ratio          0.5
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
-bspc config pointer_follows_focus true; \
-bspc node -f "$direction"; \
-bspc config pointer_follows_focus false
+bspc config pointer_follows_monitor true
 
 # bspc rule -a Gimp desktop='^8' state=floating follow=on
 # bspc rule -a Chromium desktop='^2'
