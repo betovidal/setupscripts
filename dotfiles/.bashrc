@@ -15,11 +15,18 @@ PURPLE="\001$(tput setaf 5)\002"
 CYAN="\001$(tput setaf 6)\002"
 WHITE="\001$(tput setaf 7)\002"
 ACCENT=$PURPLE
-alias ls="ls --color=auto"
-alias bc="bc -l"
 # PS1='[\u@\h \W]\$ '
 PS1="$ACCENT[$WHITE\u$ACCENT@$WHITE\h \W$ACCENT]$WHITE\$ "
 # Replaced by my rr script and NetworkManager, respectively
 # source $HOME/.local/bin/complete-my-scripts.sh
 
-. "$HOME/.local/bin/functions.bash"
+# Include utility functions for the terminal
+FUNCTIONS_SCRIPT="$HOME/.local/bin/functions.bash"
+if [ -x "$FUNCTIONS_SCRIPT" ]; then
+	. "$FUNCTIONS_SCRIPT"
+fi
+# Include aliases.
+ALIASES="$HOME/.config/aliases.bash"
+if [ -x "$ALIASES" ]; then
+	. "$ALIASES"
+fi
