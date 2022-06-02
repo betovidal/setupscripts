@@ -29,3 +29,23 @@ n ()
             rm -f "$NNN_TMPFILE" > /dev/null
     fi
 }
+
+auru () {
+	for d in */; do
+		echo "- = Updating $d = -"
+		cd "$d"
+		git pull
+		cd ..
+		echo ""
+	done;
+}
+
+auri () {
+	for d in */; do
+		echo "Installing $d - - - -"
+		cd "$d"
+		sudo makepkg -sirc
+		cd ..
+		echo ""
+	done;
+}
