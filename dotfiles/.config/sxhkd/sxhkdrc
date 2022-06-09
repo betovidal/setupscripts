@@ -3,7 +3,7 @@
 
 # terminal emulator
 super + Return
-	alacritty
+	launch_st.bash
 
 # program launcher
 super + @space
@@ -11,7 +11,7 @@ super + @space
 
 # Show help
 super + bar
-	alacritty -e less $HOME/.config/sxhkd/sxhkdrc
+	st -e less $HOME/.config/sxhkd/sxhkdrc
 
 # make sxhkd reload its configuration files:
 super + Escape

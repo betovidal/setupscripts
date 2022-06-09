@@ -40,6 +40,8 @@ source getrepos.sh
 # After repos are available, I can install vim
 printMsg "Installing Vim"
 source setupvim.sh
+printMsg "Installing st"
+source setupst.bash
 # After repos are available, I can configure mpd
 printMsg "Configuring mpd"
 source mpdconfig.sh

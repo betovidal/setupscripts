@@ -1,26 +1,26 @@
 #!/usr/bin/env bash
 
 # All themes generated with https://terminal.sexy/
-
-unknown=(
+theme=""
+default=(
 	# Dark
-	"#272822" # black
-	"#f92672" # red
-	"#a6e22e" # green
-	"#f4bf75" # yellow
-	"#66d9ef" # blue
-	"#ae81ff" # magenta
-	"#a1efe4" # cyan
-	"#f8f8f2" # white
+	"black"
+	"red3"
+	"green3"
+	"yellow3"
+	"blue2"
+	"magenta3"
+	"cyan3"
+	"gray90"
 	# Bright
-	"#75715e" # black
-	"#f92672" # red
-	"#a6e22e" # green
-	"#f4bf75" # yellow
-	"#66d9ef" # blue
-	"#ae81ff" # magenta
-	"#a1efe4" # cyan
-	"#f9f8f5" # white
+	"gray50"
+	"red"
+	"green"
+	"yellow"
+	"#5c5cff"
+	"magenta"
+	"cyan"
+	"white"
 )
 # base16 -> tomorrow.dark
 tomorrow=(
@@ -64,15 +64,19 @@ monokai=(
 	"#a1efe4"
 	"#f9f8f5"
 )
-
-case $1 in
-	tomorrow)
-		theme=( "${tomorrow[@]}" )
-		;;
-	monokai)
-		theme=( "${monokai[@]}" )
-		;;
-	*)
-		theme=""
-		;;
-esac
+function get_theme() {
+	theme_name="$1"
+	case $1 in
+		tomorrow)
+			theme=( "${tomorrow[@]}" )
+			;;
+		monokai)
+			theme=( "${monokai[@]}" )
+			;;
+		*)
+			theme=( "${default[@]}" )
+			theme_name="default"
+			;;
+	esac
+	echo "Using theme $theme_name"
+}

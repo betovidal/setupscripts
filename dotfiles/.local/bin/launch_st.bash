@@ -1,9 +1,21 @@
 #!/usr/bin/env bash
 
 THEMES_PATH="$HOME/.config/st_themes.bash"
+THEME_PATH="$HOME/.config/st_theme.bash"
+THEME=""
 if [ -f "$THEMES_PATH" ]; then
 	. "$THEMES_PATH"
 fi
+if [ -f "$THEME_PATH" ]; then
+	# theme_name is defined here. Else, load default theme.
+	. "$THEME_PATH"
+else
+	theme_name="default"
+fi
+# Assign global var theme in this function
+# so I don't have to figure out how to
+# return an array from a function.
+get_theme "$theme_name"
 # theme var is defined in st_themes.bash
 if [ -n "$theme" ]; then
 	st \
