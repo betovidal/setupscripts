@@ -23,7 +23,6 @@
 # ARCH
 PACKAGES="\
 	acpilight \
-	alacritty \
 	alsa-utils \
 	amd-ucode \
 	arandr \

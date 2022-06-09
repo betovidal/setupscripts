@@ -13,7 +13,7 @@ if [ ! -d $AUR_FOLDER ]; then
 fi
 # Suckless tools
 _SUCKLESSTOOLS="dmenu dwm farbfeld sent slock slstatus st"
-SUCKLESSTOOLS=""
+SUCKLESSTOOLS="st"
 echo "= = = = = Suckless Tools = = = = ="
 for tool in $SUCKLESSTOOLS; do
 	git clone https://git.suckless.org/$tool $REPOS_FOLDER$tool
