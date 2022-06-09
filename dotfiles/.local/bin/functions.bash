@@ -50,6 +50,18 @@ auri () {
 	done;
 }
 
+start_web () {
+	sudo systemctl start nginx
+	sudo systemctl start mariadb
+	sudo systemctl start php-fpm
+}
+
+stop_web () {
+	sudo systemctl stop nginx
+	sudo systemctl stop mariadb
+	sudo systemctl stop php-fpm
+}
+
 steam_update_on_launch () {
 	STEAM_FOLDER="$HOME/.steam/steam/steamapps"
 	sed -i 's/\("AutoUpdateBehavior".*\)"0"/\1"1"/' "${STEAM_FOLDER}"/*.acf
