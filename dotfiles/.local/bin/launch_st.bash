@@ -35,7 +35,8 @@ if [ -n "$theme" ]; then
 		-C "${theme[12]}@12" \
 		-C "${theme[13]}@13" \
 		-C "${theme[14]}@14" \
-		-C "${theme[15]}@15"
+		-C "${theme[15]}@15" \
+		"$@"
 else
-	st -f "Terminus:pixelsize=24:bold"
+	st -f "Terminus:pixelsize=24:bold" "$@"
 fi
