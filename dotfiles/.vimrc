@@ -11,6 +11,7 @@ filetype plugin indent on   " https://vi.stackexchange.com/a/10125
 set nocompatible            " Do not pretend to be vi, enable new features
 let mapleader=","           " To add more functionality, instead of \
 filetype plugin on          " Enable netwr
+set modeline                " Enable syntax hightlighting through modeline magic. See more with :help modeline
 set wildignore+=**/node_modules/**,**/__pycache__/** " Do not consider folders in :find
 set encoding=utf-8
 set wildmenu                " Display all matching files when we tab complete, complete ex commands
