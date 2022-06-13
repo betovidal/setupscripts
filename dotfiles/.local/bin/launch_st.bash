@@ -2,7 +2,6 @@
 
 THEMES_PATH="$HOME/.config/st_themes.bash"
 THEME_PATH="$HOME/.config/st_theme.bash"
-THEME=""
 if [ -f "$THEMES_PATH" ]; then
 	. "$THEMES_PATH"
 fi

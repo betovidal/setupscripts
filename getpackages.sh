@@ -54,6 +54,7 @@ PACKAGES="\
 	ffmpeg \
 	ffmpegthumbnailer \
 	freerdp \
+	fzf \
 	gcc \
 	gftp \
 	git \
@@ -96,6 +97,7 @@ PACKAGES="\
 	pulsemixer \
 	python \
 	retext \
+	ripgrep \
 	rofi \
 	screenfetch \
 	seahorse \

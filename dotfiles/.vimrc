@@ -44,6 +44,9 @@ Plug 'godlygeek/tabular'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf'                                 " Install fzf manually
+Plug 'junegunn/fzf.vim'                             " Relying on fzf again as :find alone can't find in hidden folders
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/asyncomplete.vim'
 " LSP
@@ -195,7 +198,8 @@ nnoremap <leader>dc :LspDeclaration<CR>
 nnoremap <leader>df :LspDefinition<CR>
 nnoremap <leader>h :LspHover<CR>
 " Quickly search
-nnoremap <leader>f :find 
+" nnoremap <leader>f :find 
+nnoremap <leader>f :Files<CR>
 " Switch (B)uffers (note the space after :b)
 nnoremap <leader>b :ls<CR>:b 
 " (T)abularize
@@ -230,6 +234,9 @@ function! s:align()
 	endif
 endfunction
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+
+" ================= fzf.vim ============================
+
 
 " ============ snipmate ================================
 let g:snipMate = {}

@@ -20,6 +20,10 @@ PS1="$ACCENT[$WHITE\u$ACCENT@$WHITE\h \W$ACCENT]$WHITE\$ "
 # Replaced by my rr script and NetworkManager, respectively
 # source $HOME/.local/bin/complete-my-scripts.sh
 
+# FZF
+# Either multiple -g flags or as single one as -g '!{.git,.svn,.hg}'
+export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!.git" -g "!__pycache__" '
+
 # Include utility functions for the terminal
 FUNCTIONS_SCRIPT="$HOME/.local/bin/functions.bash"
 if [ -x "$FUNCTIONS_SCRIPT" ]; then
