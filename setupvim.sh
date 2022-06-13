@@ -13,13 +13,13 @@ cd $VIMREPO
 
 ./configure \
 --enable-gui=no \
---with-features=normal \
-# --enable-python3interp=dynamic \
+--with-features=huge \
+--enable-python3interp=dynamic \
+--with-python3-command=python \
 --enable-multibyte \
 --with-x \
 --with-compiledby="tocino" \
 --prefix=$VIMDEST
-# --with-python3-config-dir=/usr/lib/python3.9/config-3.9-x86_64-linux-gnu \
 
 sudo make clean install
 git clean -df

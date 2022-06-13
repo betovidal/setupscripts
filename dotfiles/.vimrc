@@ -49,6 +49,8 @@ Plug 'junegunn/fzf'                                 " Install fzf manually
 Plug 'junegunn/fzf.vim'                             " Relying on fzf again as :find alone can't find in hidden folders
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/asyncomplete.vim'
+" Debug
+Plug 'puremourning/vimspector'
 " LSP
 Plug 'prabirshrestha/vim-lsp'
 " Syntax
@@ -59,6 +61,7 @@ Plug 'PProvost/vim-ps1'
 Plug 'ap/vim-css-color'
 Plug 'aklt/plantuml-syntax'
 Plug 'udalov/kotlin-vim'
+Plug 'Vimjas/vim-python-pep8-indent' "Fix wrong indentation on new lines https://stackoverflow.com/a/39554322/7274945
 " Snippets
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
@@ -81,6 +84,7 @@ call plug#end()
 
 " ================= Code formatting =====================
 autocmd FileType c,cpp,h,hpp,python,javascript,css,html,json,sh,tcl setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
+autocmd FileType python setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 
 " ================= VIM-LSP =============================
 let g:lsp_document_highlight_enabled = 0
@@ -94,6 +98,8 @@ if executable('typescript-language-server')
 	\ })
 endif
 " Resgister Python server
+" Add this line for handling checkers in vim-lsp
+" 'workspace_config': {'pyls': {'plugins': {'pydocstyle': {'enabled': v:true}, 'pycodestyle': {'enabled': v:true}, 'pylint': {'enabled': v:true}}}}
 if executable('pyls')
     au User lsp_setup call lsp#register_server({
         \ 'name': 'pyls',
@@ -254,6 +260,13 @@ let g:javascript_plugin_jsdoc = 1
 " ================= vim-python === ======================
 let g:python_highlight_all = 1
 
+" ================ vim-python-pep8-indent ===============
+" let g:python_pep8_indent_multiline_string = 0
+" let g:python_pep8_indent_hang_closing
+
+" ================= vimspector ==========================
+let g:vimspector_enable_mappings = 'HUMAN'
+
 " ============== Status line ============================
 set statusline=                                            " Clear status line
 " set statusline+=%#warningmsg#                            " hl- style
@@ -273,7 +286,7 @@ set statusline+=\ %l/%L:%c                                 " line/TotalLines:Col
 " set statusline+=%{strftime('%a\ \|\ %F\ \|\ %H:%M:%S\ ')}" Time
 " ============== Syntax checkers ========================
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_python_checkers = ['pycodestyle', 'pydocstyle']
+let g:syntastic_python_checkers = ['pylint', 'pycodestyle', 'pydocstyle']
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open=0
