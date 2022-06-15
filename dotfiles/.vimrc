@@ -49,6 +49,7 @@ Plug 'junegunn/fzf'                                 " Install fzf manually
 Plug 'junegunn/fzf.vim'                             " Relying on fzf again as :find alone can't find in hidden folders
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 " Debug
 Plug 'puremourning/vimspector'
 " LSP
@@ -105,6 +106,7 @@ if executable('pyls')
         \ 'name': 'pyls',
         \ 'cmd': {server_info->['pyls']},
         \ 'whitelist': ['python'],
+	\ 'workspace_config': {'pyls': {'plugins': {'pydocstyle': {'enabled': v:true}, 'pycodestyle': {'enabled': v:true}, 'pylint': {'enabled': v:true}}}}
         \ })
 endif
 " Resgister Swift server (Mac only, included as xcrun tools)
@@ -202,7 +204,8 @@ nnoremap <C-n> :call WrapCommand('down', 'l')<CR>
 " vim-lsp
 nnoremap <leader>dc :LspDeclaration<CR>
 nnoremap <leader>df :LspDefinition<CR>
-nnoremap <leader>h :LspHover<CR>
+nnoremap <leader>da :LspDocumentDiagnostics<CR>
+nnoremap <leader>dh :LspHover<CR>
 " Quickly search
 " nnoremap <leader>f :find 
 nnoremap <leader>f :Files<CR>
@@ -240,6 +243,26 @@ function! s:align()
 	endif
 endfunction
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+
+" ================= asyncomplete.svim =================
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+" Uncomment this block to trigger by pressing tab - - -
+" let g:asyncomplete_auto_popup = 0
+" function! s:check_back_space() abort
+"     let col = col('.') - 1
+"     return !col || getline('.')[col - 1]  =~ '\s'
+" endfunction
+
+" inoremap <silent><expr> <TAB>
+"   \ pumvisible() ? "\<C-n>" :
+"   \ <SID>check_back_space() ? "\<TAB>" :
+"   \ asyncomplete#force_refresh()
+" Uncomment this block to trigger by pressing tab - - -
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+let g:asyncomplete_auto_completeopt = 0
+set completeopt=menuone,noinsert,noselect,preview
 
 " ================= fzf.vim ============================
 
