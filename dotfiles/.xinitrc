@@ -4,8 +4,10 @@
 
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
+userprofile=$HOME/.xprofile
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
+profile=/etc/xprofile
 
 # merge in defaults and keymaps
 if [ -f $sysresources ]; then
@@ -23,6 +25,10 @@ fi
 if [ -f "$usermodmap" ]; then
 	xmodmap "$usermodmap"
 fi
+
+# xprofiles
+[ -f $profile ] && . $profile
+[ -f "$userprofile" ] && . "$userprofile"
 
 # start some nice programs
 

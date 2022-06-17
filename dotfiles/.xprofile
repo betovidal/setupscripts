@@ -1,0 +1,3 @@
+# If a screen layout exists, apply it
+layout="$HOME/.screenlayout/layout.sh"
+[ -f "$layout" ] && . "$layout"
