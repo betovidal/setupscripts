@@ -51,8 +51,12 @@ Plug 'junegunn/fzf.vim'   " Relying on fzf again as :find alone can't find in hi
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+" coc (vim-lsp alternative)
+" Plug 'neoclide/coc.nvim' " Not using as it has to be compiled
+" ale (vim-lsp alternative)
+" Plug 'w0rp/ale' " Test it later
 " Debug
 Plug 'puremourning/vimspector'
 " Syntax
@@ -89,46 +93,47 @@ autocmd FileType c,cpp,h,hpp,python,javascript,css,html,json,sh,tcl setlocal shi
 autocmd FileType python setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 
 " ================= VIM-LSP =============================
+
 let g:lsp_document_highlight_enabled = 0
-" Resgister Javascript server
-if executable('typescript-language-server')
-	au User lsp_setup call lsp#register_server({
-	\ 'name': 'javascript support using typescript-language-server',
-	\ 'cmd': { server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
-	\ 'root_uri': { server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_directory(lsp#utils#get_buffer_path(), '.git/..'))},
-	\ 'whitelist': ['javascript', 'javascript.jsx', 'javascriptreact']
-	\ })
-endif
-" Resgister Python server
-" Add this line for handling checkers in vim-lsp
-" 'workspace_config': {'pyls': {'plugins': {'pydocstyle': {'enabled': v:true}, 'pycodestyle': {'enabled': v:true}, 'pylint': {'enabled': v:true}}}}
-if executable('pyls')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'pyls',
-        \ 'cmd': {server_info->['pyls']},
-        \ 'whitelist': ['python'],
-        \ })
-endif
-" Resgister Swift server (Mac only, included as xcrun tools)
-if executable('sourcekit-lsp')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'sourcekit-lsp',
-        \ 'cmd': {server_info->['sourcekit-lsp']},
-        \ 'whitelist': ['swift'],
-        \ })
-endif
-function! s:on_lsp_buffer_enabled() abort
-	setlocal omnifunc=lsp#complete
-	" setlocal signcolumn=yes
-	" nmap <buffer> gd <plug>(lsp-definition)
-	" nmap <buffer> <f2> <plug>(lsp-rename)
-	" refer to doc to add more commands
-endfunction
-augroup lsp_install
-    au!
-    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
-    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-augroup END
+" " Resgister Javascript server
+" if executable('typescript-language-server')
+" 	au User lsp_setup call lsp#register_server({
+" 	\ 'name': 'javascript support using typescript-language-server',
+" 	\ 'cmd': { server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
+" 	\ 'root_uri': { server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_directory(lsp#utils#get_buffer_path(), '.git/..'))},
+" 	\ 'whitelist': ['javascript', 'javascript.jsx', 'javascriptreact']
+" 	\ })
+" endif
+" " Resgister Python server
+" " Add this line for handling checkers in vim-lsp
+" " 'workspace_config': {'pyls': {'plugins': {'pydocstyle': {'enabled': v:true}, 'pycodestyle': {'enabled': v:true}, 'pylint': {'enabled': v:true}}}}
+" if executable('pyls')
+"     au User lsp_setup call lsp#register_server({
+"         \ 'name': 'pyls',
+"         \ 'cmd': {server_info->['pyls']},
+"         \ 'whitelist': ['python'],
+"         \ })
+" endif
+" " Resgister Swift server (Mac only, included as xcrun tools)
+" if executable('sourcekit-lsp')
+"     au User lsp_setup call lsp#register_server({
+"         \ 'name': 'sourcekit-lsp',
+"         \ 'cmd': {server_info->['sourcekit-lsp']},
+"         \ 'whitelist': ['swift'],
+"         \ })
+" endif
+" function! s:on_lsp_buffer_enabled() abort
+" 	setlocal omnifunc=lsp#complete
+" 	" setlocal signcolumn=yes
+" 	" nmap <buffer> gd <plug>(lsp-definition)
+" 	" nmap <buffer> <f2> <plug>(lsp-rename)
+" 	" refer to doc to add more commands
+" endfunction
+" augroup lsp_install
+"     au!
+"     " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+"     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+" augroup END
 
 "  ================  NETRW CONFIGURATION =================
 let g:netrw_browse_split=0  " Default, use current window to open file
