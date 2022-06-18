@@ -5,6 +5,7 @@ mkdir -p $HOME/.vim/tags
 mkdir -p $HOME/.vim/tmp
 mkdir -p $HOME/.vim/undo
 
+mkdir -p $HOME/.config/nvim
 mkdir -p $HOME/.config/mpd/playlists
 
 mkdir -p $HOME/Development
