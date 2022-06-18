@@ -45,15 +45,16 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf'                                 " Install fzf manually
-Plug 'junegunn/fzf.vim'                             " Relying on fzf again as :find alone can't find in hidden folders
+Plug 'junegunn/fzf'       " Install fzf manually through git or if it's available in the repos (it is in arch)
+Plug 'junegunn/fzf.vim'   " Relying on fzf again as :find alone can't find in hidden folders
+" vim-lsp
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/vim-lsp'
 " Debug
 Plug 'puremourning/vimspector'
-" LSP
-Plug 'prabirshrestha/vim-lsp'
 " Syntax
 Plug 'pangloss/vim-javascript'
 Plug 'vim-python/python-syntax'
@@ -106,7 +107,6 @@ if executable('pyls')
         \ 'name': 'pyls',
         \ 'cmd': {server_info->['pyls']},
         \ 'whitelist': ['python'],
-	\ 'workspace_config': {'pyls': {'plugins': {'pydocstyle': {'enabled': v:true}, 'pycodestyle': {'enabled': v:true}, 'pylint': {'enabled': v:true}}}}
         \ })
 endif
 " Resgister Swift server (Mac only, included as xcrun tools)
