@@ -48,7 +48,7 @@ PANEL_FONT="-*-terminus-*-*-*-*-24-*-*-*-*-*-*-*"
 PANEL_WM_NAME=bspwm_panel
 export PANEL_FIFO PANEL_HEIGHT PANEL_FONT PANEL_WM_NAME
 
-TERM=screen-256color
+TERM=xterm-256color
 EDITOR=vim
 JAVA_HOME=/usr/lib/jvm/default
 export TERM EDITOR JAVA_HOME PATH
