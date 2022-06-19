@@ -3,7 +3,7 @@
 n ()
 {
     # Block nesting of nnn in subshells
-    if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
+    if [ -n "$NNNLVL" ] && [ "${NNNLVL:-0}" -ge 1 ]; then
         echo "nnn is already running"
         return
     fi
@@ -30,24 +30,26 @@ n ()
     fi
 }
 
-auru () {
-	for d in */; do
-		echo "- = Updating $d = -"
-		cd "$d"
-		git pull
-		cd ..
-		echo ""
-	done;
-}
-
-auri () {
-	for d in */; do
-		echo "Installing $d - - - -"
-		cd "$d"
-		sudo makepkg -sirc
-		cd ..
-		echo ""
-	done;
+repos () {
+	if [ "$1" == "i" ] || [ "$1" == "install" ]; then
+		for d in */; do
+			echo "Installing $d - - - -"
+			cd "$d" || echo "Could not enter $d"; continue;
+			makepkg -sirc --needed
+			cd ..
+			echo ""
+		done;
+	elif [ "$1" == "u" ] || [ "$1" == "update" ]; then
+		for d in */; do
+			echo "- = Updating $d = -"
+			cd "$d" || echo "Could not enter $d"; continue;
+			git pull
+			cd ..
+			echo ""
+		done;
+	else
+		echo "Available arguments: [i|install]|[u|update]"
+	fi
 }
 
 start_web () {
