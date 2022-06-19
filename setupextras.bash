@@ -47,21 +47,25 @@ sudo pacman -Syu ${packages[*]} --needed
 
 # Install npm packages if needed
 for package in "${npm_pkgs[@]}"; do
-	npm list -g "$package" || npm install -g "$package"
+	echo "Installing $package"
+	npm install -g "$package"
 done
 unset package
 
 for package in "${pip_pkgs[@]}"; do
+	echo "Installing $package"
 	pip install "$package"
 done
 unset package
 
 for package in "${gem_pkgs[@]}"; do
+	echo "Installing $package"
 	gem install "$package"
 done
 unset package
 
 for package in "${composer_pkgs[@]}"; do
+	echo "Installing $package"
 	composer global require "$package" --with-all-dependencies
 done
 unset package
