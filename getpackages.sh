@@ -73,6 +73,7 @@ PACKAGES="\
 	linux \
 	linux-firmware \
 	lm_sensors \
+	lua \
 	maim \
 	make \
 	man \
