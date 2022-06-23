@@ -89,8 +89,8 @@ Plug 'jeffkreeftmeijer/vim-dim', { 'name': 'dim' }
 call plug#end()
 
 " ================= Code formatting =====================
-autocmd FileType c,cpp,h,hpp,python,javascript,css,html,php,json,sh,tcl setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
-autocmd FileType python setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+autocmd FileType c,cpp,h,hpp,python,javascript,css,html,json,tcl setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
+autocmd FileType php,sh,python setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 autocmd FileType markdown,dosini setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 
 " ================= VIM-LSP =============================
@@ -335,6 +335,7 @@ let g:syntastic_javascript_checkers = ['eslint']
 " A more complete check will be done manually, from time to time.
 " Use :SyntasticCheck pylint
 let g:syntastic_python_checkers = ['flake8', 'pydocstyle', 'mypy']
+let g:syntastic_sh_checkers = ['checkbashisms', 'bashate', 'sh', 'shellcheck']
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open=0
