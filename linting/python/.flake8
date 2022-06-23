@@ -1,0 +1,7 @@
+# vim: ft=dosini
+# flake8 includes: mccabe, pyflakes and pycodestyle
+[flake8]
+ignore = E124,E128,E203,E221,E251
+extend-select = W503
+max-complexity = 10
+exclude = .git,__pycache__,build,dist

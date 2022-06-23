@@ -81,7 +81,7 @@ Plug 'honza/vim-snippets'
 " Plug 'PotatoesMaster/i3-vim-syntax'
 " Plug 'vim-jp/vim-cpp'
 " Plug 'mbbill/undotree'
-" Plug 'nathanaelkane/vim-indent-guides'
+Plug 'nathanaelkane/vim-indent-guides'
 " Color schemes
 Plug 'dracula/vim', { 'name': 'dracula' }
 Plug 'noahfrederick/vim-noctu', { 'name': 'noctu' }
@@ -89,28 +89,29 @@ Plug 'jeffkreeftmeijer/vim-dim', { 'name': 'dim' }
 call plug#end()
 
 " ================= Code formatting =====================
-autocmd FileType c,cpp,h,hpp,python,javascript,css,html,json,sh,tcl setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
+autocmd FileType c,cpp,h,hpp,python,javascript,css,html,php,json,sh,tcl setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
 autocmd FileType python setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+autocmd FileType markdown,dosini setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 
 " ================= VIM-LSP =============================
 
 let g:lsp_document_highlight_enabled = 0
-" " Resgister Javascript server
+" Resgister Javascript server
+" 'root_uri': { server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_directory(lsp#utils#get_buffer_path(), '.git/..'))},
 " if executable('typescript-language-server')
 " 	au User lsp_setup call lsp#register_server({
 " 	\ 'name': 'javascript support using typescript-language-server',
 " 	\ 'cmd': { server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
-" 	\ 'root_uri': { server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_directory(lsp#utils#get_buffer_path(), '.git/..'))},
 " 	\ 'whitelist': ['javascript', 'javascript.jsx', 'javascriptreact']
 " 	\ })
 " endif
 " " Resgister Python server
 " " Add this line for handling checkers in vim-lsp
 " " 'workspace_config': {'pyls': {'plugins': {'pydocstyle': {'enabled': v:true}, 'pycodestyle': {'enabled': v:true}, 'pylint': {'enabled': v:true}}}}
-" if executable('pyls')
+" if executable('pylsp')
 "     au User lsp_setup call lsp#register_server({
-"         \ 'name': 'pyls',
-"         \ 'cmd': {server_info->['pyls']},
+"         \ 'name': 'pylsp',
+"         \ 'cmd': {server_info->['pylsp']},
 "         \ 'whitelist': ['python'],
 "         \ })
 " endif
@@ -134,6 +135,12 @@ let g:lsp_document_highlight_enabled = 0
 "     " call s:on_lsp_buffer_enabled only for languages that has the server registered.
 "     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 " augroup END
+
+" =================== VIM-LSP-SETTINGS ==================
+" Disable diagnostics support because I found it hard to disable a specific
+" checker. For instance, I need flake8 and pydocstyle to be executed all the
+" time, but not pylint, so I'll do it manually for both cases.
+let g:lsp_diagnostics_enabled = 0
 
 "  ================  NETRW CONFIGURATION =================
 let g:netrw_browse_split=0  " Default, use current window to open file
@@ -209,8 +216,9 @@ nnoremap <C-n> :call WrapCommand('down', 'l')<CR>
 " vim-lsp
 nnoremap <leader>dc :LspDeclaration<CR>
 nnoremap <leader>df :LspDefinition<CR>
-nnoremap <leader>da :LspDocumentDiagnostics<CR>
-nnoremap <leader>dh :LspHover<CR>
+" Disabling in configuration. Use Syntastic instead
+" nnoremap <leader>da :LspDocumentDiagnostics<CR>
+" nnoremap <leader>dh :LspHover<CR>
 " Quickly search
 " nnoremap <leader>f :find 
 nnoremap <leader>f :Files<CR>
@@ -278,6 +286,15 @@ let g:snipMate.snippet_version = 1
 let g:snipMate.no_default_aliases = 1
 " <Plug>snipMateTrigger
 
+" ================ vim-indent-guides ===================
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+let g:indent_guides_auto_colors = 0
+hi IndentGuidesOdd  guibg=LightGray ctermbg=8
+hi IndentGuidesEven guibg=LightGray ctermbg=8
+
+
 " ============= vim-indexed-search ======================
 let g:indexed_search_colors = 0
 let g:indexed_search_numbered_only = 1
@@ -314,7 +331,10 @@ set statusline+=\ %l/%L:%c                                 " line/TotalLines:Col
 " set statusline+=%{strftime('%a\ \|\ %F\ \|\ %H:%M:%S\ ')}" Time
 " ============== Syntax checkers ========================
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_python_checkers = ['pylint', 'pycodestyle', 'pydocstyle']
+" I need a constant light check, provided by flake8 and pydocstyle.
+" A more complete check will be done manually, from time to time.
+" Use :SyntasticCheck pylint
+let g:syntastic_python_checkers = ['flake8', 'pydocstyle', 'mypy']
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open=0
@@ -325,6 +345,7 @@ let g:syntastic_warning_symbol="!"
 let g:syntastic_style_warning_symbol="s"
 let g:syntastic_sort_aggregated_errors=1
 let g:syntastic_loc_list_height=5
+let g:syntastic_aggregate_errors = 1
 let g:syntastic_ignore_files=['\m/node_modules/', '\m/__pycache__/']
 let g:syntastic_mode_map = {
 	\ "mode": "passive",

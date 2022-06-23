@@ -1,0 +1,4 @@
+[MASTER]
+disable = missing-docstring
+# https://github.com/PyCQA/pylint/issues/2686#issuecomment-864585778
+ignore-paths=^venv/.*$

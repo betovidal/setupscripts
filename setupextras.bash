@@ -32,7 +32,12 @@ npm_pkgs=(
 	"csslint"                        # CSS lint
 	"jsonlint"                       # JSON lint
 )
+# TODO: Good practice: install it in a separate venv
 pip_pkgs=(
+	"flake8"                     # Python lint: pycodestyle, pyflakes, mccabe script
+	"pylint"                     # Python lint: Run manually as it's a heavy process
+	"mypy"                       # Python lint
+	"pydocstyle"                 # Python lint
 	"python-lsp-server"          # Python LSP. python-language-server is unmaintained. https://github.com/python-lsp/python-lsp-server for other tools
 )
 gem_pkgs=(

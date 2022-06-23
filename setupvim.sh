@@ -15,7 +15,7 @@ cd $VIMREPO
 --enable-gui=no \
 --with-features=huge \
 --enable-python3interp=dynamic \
---with-python3-command=python \
+--enable-luainterp=dynamic \
 --enable-multibyte \
 --with-x \
 --with-compiledby="tocino" \
