@@ -45,6 +45,7 @@ gem_pkgs=(
 )
 composer_pkgs=(
 	"vimeo/psalm"
+    "squizlabs/php_codesniffer"
 )
 
 # Install pacman packages in bulk
