@@ -30,8 +30,11 @@ set hlsearch
 set laststatus=2            " Have status bar available always (for every window)
 set ruler
 set display+=lastline       " Not fully displayed lines end in @@@
-set list                    " Display unprintable characters
-set listchars=tab:\·\ ,trail:-,extends:>,precedes:< " Unprintable chars mapping
+" set list                    " Display unprintable characters
+" set listchars=tab:\→-,trail:\·,extends:>,precedes:< " Unprintable chars mapping
+" In case of using indentLine plugin, only this is needed. Otherwise
+" both lines above ^
+set list lcs=tab:\¦\ " Ends with a space
 " set rulerformat=%l,%c%V%=%P
 " set ruler
 
@@ -81,7 +84,9 @@ Plug 'honza/vim-snippets'
 " Plug 'PotatoesMaster/i3-vim-syntax'
 " Plug 'vim-jp/vim-cpp'
 " Plug 'mbbill/undotree'
-Plug 'nathanaelkane/vim-indent-guides'
+Plug 'Yggdroot/indentLine' " Might raise problems with conceal, json and markdown
+" This shows indentation levels with background color
+" Plug 'nathanaelkane/vim-indent-guides'
 " Color schemes
 Plug 'dracula/vim', { 'name': 'dracula' }
 Plug 'noahfrederick/vim-noctu', { 'name': 'noctu' }
@@ -200,6 +205,7 @@ if maparg('<C-L>', 'n') ==# ''
 endif
 " (A)nalyze code
 nnoremap <leader>a :SyntasticCheck<CR>
+nnoremap <leader>i :IndentLinesToggle<CR>
 " (C)lose 'location-list-window', the one syntastic uses for showing errors
 " and reset Syntastic to avoid opening the error buffer upon switching buffers
 nnoremap <leader>c :SyntasticReset<CR> :lclose<CR>
@@ -279,6 +285,11 @@ set completeopt=menuone,noinsert,noselect,preview
 
 " ================= fzf.vim ============================
 
+" ================= indentLine =========================
+" Indentation spaces  character
+let g:indentLine_leadingSpaceChar = '˰'
+" Enable indentations spaces
+let g:indentLine_leadingSpaceEnabled = 1
 
 " ============ snipmate ================================
 let g:snipMate = {}
