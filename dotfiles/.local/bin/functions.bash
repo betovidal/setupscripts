@@ -29,42 +29,93 @@ n ()
             rm -f "$NNN_TMPFILE" > /dev/null
     fi
 }
+ve () {
+    arg="$1"
+    fname="ve"
+    reqs="requirements.txt"
+    activation_script="./venv/bin/activate"
+    in_venv () {
+        # https://stackoverflow.com/a/15454916/7274945
+        pycmd='import sys; print ("1" if hasattr(sys, "real_prefix") else "0")'
+        python -c "$pycmd"
+    }
+    print_help() {
+        print "$fname: Simple python venv operations\n"
+        echo "Available commands:"
+        echo "$fname [-h|--help|h|help] Show help"
+        echo "$fname [c|create]         Clear and create venv in ./venv"
+        echo "$fname [a|activate|on]    Activate venv in ./venv/bin/activate"
+        echo "$fname [d|deactivate|off] Deactivate venv by calling deactivate"
+        echo "$fname [i|install]        Activate and install requirements.txt"
+        echo "$fname [?]                Check if a venv is currenty active"
+    }
+    case "$arg" in
+        "-h"|"-help"|"--help"|"h"|"help")
+            print_help
+            ;;
+        "c"|"create")
+            python -m venv --clear venv/
+            ;;
+        "a" | "activate" | "on")
+            if [ ! -f "$activation_script" ]; then
+                echo "No env found or in wrong working directory."
+            else
+                . "$activation_script"
+            fi
+            ;;
+        "d" | "deactivate" | "off")
+            command -v deactivate &> /dev/null && deactivate
+            ;;
+        "i"|"install")
+            if [ ! -f "$activation_script" ]; then
+                echo "No env found or in wrong working directory."
+            elif [ ! -f "$reqs" ]; then
+                echo "No requirements.txt file in here."
+            else
+                . "$activation_script"
+                pip install -r requirements.txt
+            fi
+            ;;
+        "?")
+            in_venv
+            ;;
+        *)
+            echo "Option $arg not recognized."
+            print_help
+            ;;
+    esac
+}
 
-repos () {
-    if [ "$1" = "i" ] || [ "$1" = "install" ]; then
-        for d in */; do
-            echo "Installing $d - - - -"
-            cd "$d" || echo "Could not enter $d"; continue;
-            makepkg -sirc --needed
-            cd ..
-            echo ""
-        done;
-    elif [ "$1" = "u" ] || [ "$1" = "update" ]; then
-        for d in */; do
-            echo "- = Updating $d = -"
-            cd "$d" || echo "Could not enter $d"; continue;
+ureps () {
+    for d in */; do
+        if [ ! -d "${d}.git/" ]; then
+            echo "Directory $d does not contain a git repository. Skipping."
+            continue;
+        fi
+        (
+            echo "-> Updating $d"
+            cd "$d" || return
             git pull
-            cd ..
-            echo ""
-        done;
-    else
-        echo "Available arguments: [i|install]|[u|update]"
-    fi
+            echo "~~~~~~~~~~~~~~~~~~~~~~"
+        )
+    done
 }
 
-start_web () {
-    sudo systemctl start nginx
-    sudo systemctl start mariadb
-    sudo systemctl start php-fpm
-}
-
-stop_web () {
-    sudo systemctl stop nginx
-    sudo systemctl stop mariadb
-    sudo systemctl stop php-fpm
-}
-
-steam_update_on_launch () {
-    STEAM_FOLDER="$HOME/.steam/steam/steamapps"
-    sed -i 's/\("AutoUpdateBehavior".*\)"0"/\1"1"/' "${STEAM_FOLDER}"/*.acf
+denv () {
+    [ "$1" != "start" ] && \
+        [ "$1" != "stop" ] && \
+        [ "$1" != "restart" ] && \
+        [ "$1" != "is-active" ] && \
+        [ "$1" != "is-enabled" ] && \
+        return
+    action="$1"
+    case "$2" in
+        "web" | "w")
+            services=("nginx" "mariadb" "php-fpm")
+            ;;
+    esac
+    for service in "${services[@]}"; do
+        echo "Query $action on $service"
+        sudo systemctl "$action" "$service"
+    done
 }
