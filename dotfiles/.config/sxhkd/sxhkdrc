@@ -148,9 +148,9 @@ XF86AudioMute
 
 # Music related
 {XF86AudioPrev, super + F1}
-	mpc prev
+	mpc prev; notify-send -t 1000 "♪" "$(mpc status | sed '1q;d')"
 {XF86AudioNext, super + F3}
-	mpc next
+	mpc next; notify-send -t 1000 "♪" "$(mpc status | sed '1q;d')"
 {XF86AudioPlay, super + F2}
 	mpc toggle
 {XF86AudioStop, super + F4}
@@ -160,9 +160,9 @@ super + shift + Left
 super + shift + Right
 	mpc seek +5
 super + question
-	 notify-send -t 1500 "♪" "$(mpc status | sed '1q;d')"
+	notify-send -t 2000 "♪" "$(mpc status | sed '1q;d')"
 super + apostrophe
-	 mpc playlist | rofi -monitor -1 -format d -dmenu -i -scroll-method 1 | xargs -r mpc play
+	mpc playlist | rofi -monitor -1 -format d -dmenu -i -scroll-method 1 | xargs -r mpc play
 
 # super + ctrl + {z,x,c,v,b}
 # 	cmus-remote {-z -p -u -s -n}
