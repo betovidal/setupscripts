@@ -40,7 +40,7 @@ ve () {
         python -c "$pycmd"
     }
     print_help() {
-        print "$fname: Simple python venv operations\n"
+        printf "$fname: Simple python venv operations\n"
         echo "Available commands:"
         echo "$fname [-h|--help|h|help] Show help"
         echo "$fname [c|create]         Clear and create venv in ./venv"
