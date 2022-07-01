@@ -1,15 +1,15 @@
 #!/bin/bash
 
 VIMREPO=$HOME/Repos/vim
-VIMDEST=/opt/vim8
+VIMDEST="/opt/vim"
 
-if [ ! -d $VIMREPO ]; then
-	echo "vim repo does not exist"
-	exit
+if [ ! -d "$VIMREPO" ]; then
+    mkdir -p "$VIMREPO"
+    git clone "https://github.com/vim/vim" "$VIMREPO"
 fi
 
 echo "Configuring VIM..."
-cd $VIMREPO
+cd "$VIMREPO"
 
 ./configure \
 --enable-gui=no \
@@ -27,7 +27,7 @@ git clean -df
 BINS="vim vimdiff xxd"
 
 for binary in $BINS; do
-	sudo ln -sf "$VIMDEST/bin/$binary" "/usr/bin/$binary"
+    sudo ln -sf "$VIMDEST/bin/$binary" "/usr/bin/$binary"
 done
 
 cd -
