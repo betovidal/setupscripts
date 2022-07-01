@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 SCRIPT="rr"
 # TYPES="rdp ssh"

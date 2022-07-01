@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 # TODO: Validate special chars https://github.com/FreeRDP/FreeRDP/issues/3448
 # TODO: Support SSH arguments (right now only user@host are supported)

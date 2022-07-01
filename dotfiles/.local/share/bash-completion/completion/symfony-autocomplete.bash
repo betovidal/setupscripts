@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 # TODO: This works after launching X, not from tty
 # composer, phpspec, symphony, behat...

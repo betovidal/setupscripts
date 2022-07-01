@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 # Should be run with sudo
 USERFOLDER="$USER"
 if [ "$USERFOLDER" == "root" ]; then
