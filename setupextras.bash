@@ -44,7 +44,7 @@ gem_pkgs=(
 	"mdl"                             # Markdown lint
 )
 composer_pkgs=(
-	"vimeo/psalm"
+	# "vimeo/psalm" # Not included as it needs to precompile code tree. Too heavy setup.
     "squizlabs/php_codesniffer"
 )
 
