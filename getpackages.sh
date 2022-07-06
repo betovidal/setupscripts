@@ -24,7 +24,6 @@
 PACKAGES="\
 	acpilight \
 	alsa-utils \
-	amd-ucode \
 	arandr \
 	archlinux-keyring \
 	base \
@@ -92,6 +91,7 @@ PACKAGES="\
 	picom \
 	pkgconf \
 	plantuml \
+	polybar \
 	pulseaudio \
 	pulseaudio-alsa \
 	pulseaudio-bluetooth \
