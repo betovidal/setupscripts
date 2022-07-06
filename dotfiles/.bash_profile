@@ -1,43 +1,53 @@
 #
 # ~/.bash_profile
 #
-[[ -f ~/.bashrc ]] && . ~/.bashrc
+[ -f "$HOME/.bashrc" ] && . "$HOME/.bashrc"
+
+# Platform specific configurations
+SPECIFIC_PROF=""
+case "$OS_TYPE" in
+    darwin*)
+        SPECIFIC_PROF="$HOME/.config/darwin_profile"
+        ;;
+esac
+[ -f "$SPECIFIC_PROF" ] && . "$SPECIFIC_PROF"
 
 composer_path="$HOME/.config/composer/vendor/bin"
 if [ -d "$composer_path" ]; then
-	PATH="$composer_path:$PATH"
+    PATH="$composer_path:$PATH"
 fi
 
 nx_path="/usr/NX/bin"
 if [ -d "$nx_path" ]; then
-	PATH="$nx_path:$PATH"
+    PATH="$nx_path:$PATH"
 fi
 
 splat_path="$HOME/Repos/splatmoji"
 if [ -d  "$splat_path" ]; then
-	PATH="$splat_path:$PATH"
+    PATH="$splat_path:$PATH"
 fi
 
 android_path="$HOME/Android/Studio/bin"
 if [ -d "$android_path" ]; then
-	PATH="$android_path:$PATH"
+    PATH="$android_path:$PATH"
 fi
 
 local_bin_path="$HOME/.local/bin"
 if [ -d "$local_bin_path" ]; then
-	PATH="$local_bin_path:$PATH"
+    PATH="$local_bin_path:$PATH"
 fi
 
 npm_global_path="$HOME/.npm-global/bin"
 if [ -d "$npm_global_path" ]; then
-	PATH="$npm_global_path:$PATH"
+    PATH="$npm_global_path:$PATH"
 fi
 
 # Check if rubygems is installed and add to path
 if command -v gem &> /dev/null
 then
-	export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
-	PATH="$GEM_HOME/bin:$PATH"
+    GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+    export GEM_HOME
+    PATH="$GEM_HOME/bin:$PATH"
 fi
 
 # TODO: Move to specific script to configure this. Invoked by bspwm, not here.
