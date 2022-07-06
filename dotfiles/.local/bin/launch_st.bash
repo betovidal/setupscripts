@@ -9,7 +9,9 @@ if [ -f "$THEME_PATH" ]; then
 	# theme_name is defined here. Else, load default theme.
 	. "$THEME_PATH"
 else
+	# These two variables are expected to exist in the file $THEME_PATH
 	theme_name="default"
+	font_size="24"
 fi
 # Assign global var theme in this function
 # so I don't have to figure out how to
@@ -18,7 +20,7 @@ get_theme "$theme_name"
 # theme var is defined in st_themes.bash
 if [ -n "$theme" ]; then
 	st \
-		-f "Terminus:pixelsize=24:bold" \
+		-f "Terminus:pixelsize=${font_size}:bold" \
 		-C "${theme[0]}@0" \
 		-C "${theme[1]}@1" \
 		-C "${theme[2]}@2" \
@@ -37,5 +39,5 @@ if [ -n "$theme" ]; then
 		-C "${theme[15]}@15" \
 		"$@"
 else
-	st -f "Terminus:pixelsize=24:bold" "$@"
+	st -f "Terminus:pixelsize=${font_size}:bold" "$@"
 fi
