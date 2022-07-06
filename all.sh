@@ -34,6 +34,8 @@ source getpackages.sh
 # Get suckless tools repos and my own (instructions for vim)
 printMsg "Getting git repos"
 source getrepos.sh
+# yay packages need to happen after getrepos (yay is cloned in getrepos.sh)
+. getaur.bash
 # With ff I can register a new ssh
 # printMsg "Getting Firefox"
 # source getff.sh

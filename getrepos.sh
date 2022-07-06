@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 REPOS_FOLDER=$HOME/Repos/
 DEV_FOLDER=$HOME/Development/
 AUR_FOLDER=$HOME/AUR/
@@ -20,15 +20,10 @@ for tool in $SUCKLESSTOOLS; do
 done
 # Other repos
 echo "= = = = = Additional Repositories = = = = ="
-git clone https://github.com/vim/vim.git $REPOS_FOLDER"vim"
-git clone https://github.com/cspeterson/splatmoji.git $REPOS_FOLDER"splatmoji"
-git clone https://github.com/toadjaune/pulseaudio-config.git $REPOS_FOLDER"pulseaudio-config"
-# AUR repos
-echo "= = = = = AUR packages = = = = ="
-AURREPOS="google-earth-pro lemonbar-git libxft-bgra minecraft-launcher nomachine pod2man tuxguitar vscodium-bin xtitle"
-for aurrepo in $AURREPOS; do
-	git clone https://aur.archlinux.org/$aurrepo.git $AUR_FOLDER$aurrepo
-done
+git clone https://github.com/vim/vim.git "${REPOS_FOLDER}vim"
+git clone https://github.com/cspeterson/splatmoji.git "${REPOS_FOLDER}splatmoji"
+git clone https://github.com/toadjaune/pulseaudio-config.git "${REPOS_FOLDER}pulseaudio-config"
+git clone https://aur.archlinux.org/yay.git "${REPOS_FOLDER}yay"
 
 # My repos
 echo "= = = = = My Own Repositories = = = = ="
