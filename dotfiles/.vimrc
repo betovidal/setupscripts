@@ -290,6 +290,11 @@ set completeopt=menuone,noinsert,noselect,preview
 let g:indentLine_leadingSpaceChar = '˰'
 " Enable indentations spaces
 let g:indentLine_leadingSpaceEnabled = 1
+" Keep your conceal setting
+let g:indentLine_conceallevel = 1
+" Fix for quotes disappearing for JSON and Markdown
+let g:vim_json_conceal = 0
+let g:markdown_syntax_conceal = 0
 
 " ============ snipmate ================================
 let g:snipMate = {}
