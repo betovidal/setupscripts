@@ -5,7 +5,7 @@
 
 # Platform specific configurations
 SPECIFIC_PROF=""
-case "$OS_TYPE" in
+case "$OSTYPE" in
     darwin*)
         SPECIFIC_PROF="$HOME/.config/darwin_profile"
         ;;
