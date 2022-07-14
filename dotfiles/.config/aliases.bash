@@ -10,7 +10,6 @@ alias gget="git remote get-url origin"
 alias gset="git remote set-url origin"
 
 # pacman
-alias pu="sudo pacman -Syu"
 alias psi="sudo pacman -Si"
 alias pqi="pacman -Qi"
 
