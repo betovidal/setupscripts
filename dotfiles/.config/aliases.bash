@@ -22,6 +22,10 @@ alias sdisable="sudo systemctl disable"
 alias sstatus="sudo systemctl status"
 alias slist="sudo systemctl list-units"
 
+# Clipboard
+alias cp2="xclip -selection clipboard"
+alias pt2="xclip -o"
+
 # Other tools
 alias ls="ls --color=auto"
 alias bc="bc -l"
