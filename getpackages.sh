@@ -23,6 +23,7 @@
 # ARCH
 PACKAGES="\
 	acpilight \
+	alsa-card-profiles \
 	alsa-utils \
 	arandr \
 	archlinux-keyring \
