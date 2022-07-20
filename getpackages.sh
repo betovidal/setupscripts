@@ -65,7 +65,6 @@ PACKAGES="\
 	inkscape \
 	inotify-tools \
 	irssi \
-	jdk-openjdk \
 	jq \
 	leafpad \
 	libnotify \
