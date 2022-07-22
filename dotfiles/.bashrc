@@ -25,7 +25,7 @@ PS1="$ACCENT[$WHITE\u$ACCENT@$WHITE\h \W$ACCENT]$WHITE\$ "
 export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!.git" -g "!__pycache__" '
 
 # Include utility functions for the terminal
-FUNCTIONS_SCRIPT="$HOME/.local/bin/functions.bash"
+FUNCTIONS_SCRIPT="$HOME/.local/bin/helpers/functions.bash"
 if [ -x "$FUNCTIONS_SCRIPT" ]; then
 	. "$FUNCTIONS_SCRIPT"
 fi
