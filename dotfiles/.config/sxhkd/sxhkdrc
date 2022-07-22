@@ -127,7 +127,9 @@ super + {Left,Down,Up,Right}
 
 
 
-
+# Screen backlight
+{XF86MonBrightnessDown, XF86MonBrightnessUp}
+	xbacklight {-dec,-inc} 5
 
 # Emojis
 super + minus
