@@ -3,7 +3,7 @@
 
 # terminal emulator
 super + Return
-	launch_st.bash
+	s
 
 # program launcher
 super + @space
@@ -11,7 +11,7 @@ super + @space
 
 # Show help
 super + bar
-	launch_st.bash -e less $HOME/.config/sxhkd/sxhkdrc
+	s -e less $HOME/.config/sxhkd/sxhkdrc
 
 # make sxhkd reload its configuration files:
 super + Escape
