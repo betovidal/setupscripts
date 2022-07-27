@@ -42,12 +42,12 @@ ve () {
     print_help() {
         printf "$fname: Simple python venv operations\n"
         echo "Available commands:"
-        echo "$fname [-h|--help|h|help] Show help"
-        echo "$fname [c|create]         Clear and create venv in ./venv"
-        echo "$fname [a|activate|on]    Activate venv in ./venv/bin/activate"
-        echo "$fname [d|deactivate|off] Deactivate venv by calling deactivate"
-        echo "$fname [i|install]        Activate and install requirements.txt"
-        echo "$fname [?]                Check if a venv is currenty active"
+        echo "  $fname [-h|--help|h|help] Show help"
+        echo "  $fname [c|create]         Clear and create venv in ./venv"
+        echo "  $fname [a|activate|on]    Activate venv in ./venv/bin/activate"
+        echo "  $fname [d|deactivate|off] Deactivate venv by calling deactivate"
+        echo "  $fname [i|install]        Activate and install requirements.txt"
+        echo "  $fname [?]                Check if a venv is currenty active"
     }
     case "$arg" in
         "-h"|"-help"|"--help"|"h"|"help")
@@ -102,20 +102,59 @@ ureps () {
 }
 
 denv () {
-    [ "$1" != "start" ] && \
-        [ "$1" != "stop" ] && \
-        [ "$1" != "restart" ] && \
-        [ "$1" != "is-active" ] && \
-        [ "$1" != "is-enabled" ] && \
+    # Declarations
+    print_denv_help () {
+        fname="denv"
+        printf "$fname: Simple services groups operations.\n"
+        echo "Usage:"
+        echo "  $fname ACTION COLLECTION"
+        echo "ACTION is one of: ${actions[*]}"
+        echo "COLLECTION is one of: ${collections[*]}"
+    }
+    actions=(
+        "start" "stop" "restart" "is-active" "is-enabled" "status"
+    )
+    collections=(
+        "web"
+    )
+    # Action checks
+    okaction=false
+    for action in "${actions[@]}"; do
+        if [ "$action" = "$1" ]; then
+            okaction=true
+        fi
+    done
+    if ! $okaction; then
+        print_denv_help
         return
-    action="$1"
+    fi
+    # Collection checks
+    okcollection=false
+    for collection in "${collections[@]}"; do
+        if [ "$collection" = "$2" ]; then
+            okcollection=true
+        fi
+    done
+    if ! $okcollection; then
+        print_denv_help
+        return
+    fi
     case "$2" in
-        "web" | "w")
+        "web")
             services=("nginx" "mariadb" "php-fpm")
             ;;
+        *)
+            print_denv_help
+            return
     esac
+    action="$1"
+    collection="$2"
     for service in "${services[@]}"; do
-        echo "Query $action on $service"
-        sudo systemctl "$action" "$service"
+        if [ "$action" = "status" ]; then
+            sudo systemctl "status" "--no-pager" "$service"
+        else
+            echo "Query $action on $service"
+            sudo systemctl "$action" "$service"
+        fi
     done
 }
