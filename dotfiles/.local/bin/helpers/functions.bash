@@ -87,6 +87,11 @@ ve () {
 }
 
 ureps () {
+    fname="ureps"
+    if [ "$1" != "go" ]; then
+        printf "$fname go: Update git repos 'here'.\n"
+        return
+    fi
     for d in */; do
         if [ ! -d "${d}.git/" ]; then
             echo "Directory $d does not contain a git repository. Skipping."
