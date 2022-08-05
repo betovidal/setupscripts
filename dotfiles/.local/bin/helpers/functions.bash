@@ -29,6 +29,38 @@ n ()
             rm -f "$NNN_TMPFILE" > /dev/null
     fi
 }
+vv () {
+    arg="$1"
+    fname="vv"
+    filename="${arg}.conf"
+    custom_script="$HOME/.local/bin/helpers/vpnc-custom.sh"
+    conf_path="$HOME/.config/vpnconf/${filename}"
+    print_vv_usage() {
+        printf "$fname CONF: Start a VPNC connection.\n"
+        echo "Where:"
+        echo "  CONF is a valid vpnc configuration file, stored in"
+        echo "  ~/.config/vpnconf/*.conf"
+    }
+    if [ ! "$arg" ]; then
+        print_vv_usage
+        return
+    fi
+    # Argument provided. Go on...
+    if [ -f "${conf_path}" ] && [ -x "$custom_script" ]; then
+        trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
+        WAIT=5
+        while true; do
+            # TODO this needs Ctrl+c to finish. Alternatively use Ctrl+z
+            sudo vpnc --enable-1des "$conf_path" --script "$custom_script"
+            echo "Retrying in $WAIT seconds"
+            sleep $WAIT;
+        done;
+    else
+        echo "Error: Make sure the configuration file ${conf_path} exists and"
+        echo "  that the script $custom_script exists and"
+        echo "  it's executable."
+    fi
+}
 ve () {
     arg="$1"
     fname="ve"
