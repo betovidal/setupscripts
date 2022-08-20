@@ -69,7 +69,11 @@ list_servers() {
         echo " ->[ER] Directory $AVAILABLE_HTTP not found."
         return
     fi
-    for conf in ${AVAILABLE_HTTP}*; do
+    if [ -z "$(ls -A ${AVAILABLE_HTTP})" ]; then
+        echo " ->[WR] Directory $AVAILABLE_HTTP is empty."
+        return
+    fi
+    for conf in ${AVAILABLE_HTTP}/*; do
         contents=$(grep -m 3 'listen\|server_name\|root' "$conf")
         printf "%s\n%s\n\n" "$conf" "$contents"
     done
