@@ -17,6 +17,7 @@ if __name__ == "__main__":
 	conf_path = pathlib.Path(
 		pathlib.Path.home(),
 		".config",
+		"rr",
 		"remotes.json"
 	)
 	with open(conf_path) as f:

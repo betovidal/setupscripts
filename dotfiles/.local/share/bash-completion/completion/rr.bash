@@ -15,7 +15,7 @@ _remote_connections_completions() {
 		fi
 		# Depending on the type (previous word)
 		# Do not include hosts that cotains rdp/ssh in "ignore" array
-		words=$(jq -r --arg TYPE "$TYPE" '[.hosts[] | select(.ignore | index($TYPE) | not)] | map(.name) | join(" ")' "$HOME/.config/remotes.json")
+		words=$(jq -r --arg TYPE "$TYPE" '[.hosts[] | select(.ignore | index($TYPE) | not)] | map(.name) | join(" ")' "$HOME/.config/rr/remotes.json")
 	else
 		return
 	fi
