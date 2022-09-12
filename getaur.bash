@@ -9,14 +9,14 @@ AURREPOS=(
     "aur/flashplayer-standalone"
     "aur/google-earth-pro"
     "aur/lemonbar-git"
-    "aur/libxft-bgra"
+    # "aur/libxft-bgra" # Patches are available in upstream now.
     "aur/mcaselector"
     "aur/minecraft-launcher"
     "aur/nomachine"
     "aur/pcloud-drive"
     "aur/pod2man"
     "aur/spotify"
-    "aur/tuxguitar"
+    # "aur/tuxguitar" # Install on demand. It's slow to reinstall everytime.
     "aur/vscodium-bin"
     "aur/xtitle"
     "aur/xzoom"
