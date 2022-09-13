@@ -2,9 +2,8 @@
 
 CONFS="$HOME/.config/nginx"
 MNGINXCONF="$HOME/.config/nginx/nginx.conf"
-MPHPCONF="${CONFS}/php-fpm.conf"
 NGINX="/etc/nginx"
-PHPCONF="${NGINX}/php-fpm.conf"
+NGINXLOGS="/etc/nginx/logs"
 NGINXCONF="/etc/nginx/nginx.conf"
 NGINXBK="/etc/nginx/nginx.conf.bckp"
 AVAILABLE="${NGINX}/conf.d"
@@ -38,15 +37,8 @@ init() {
         echo "No directory $NGINX. Is nginx installed?"
         return
     fi
-    # Make php-fpm.conf configuration availble
-    if [ -f "${MPHPCONF}" ]; then
-        sudo ln -sf "${MPHPCONF}" "${PHPCONF}"
-        echo " ->[OK] Symlink of ${MPHPCONF} in ${PHPCONF} created."
-    else
-        echo " ->[ER] File ${MPHPCONF} does not exist. Skipping."
-        return
-    fi
-    # Finally, make a backup of the original file and replace with mine.
+    [ -d "$NGINXLOGS" ] || sudo mkdir -p "$NGINXLOGS"
+    # Make a backup of the original configuration file and replace with mine.
     if [ ! -f "$NGINXBK" ]; then
         sudo cp "$NGINXCONF" "$NGINXBK"
         echo " ->[OK] Backed up $NGINXCONF to $NGINXBK"
