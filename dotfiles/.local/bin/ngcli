@@ -6,10 +6,11 @@ NGINX="/etc/nginx"
 NGINXLOGS="/etc/nginx/logs"
 NGINXCONF="/etc/nginx/nginx.conf"
 NGINXBK="/etc/nginx/nginx.conf.bckp"
-AVAILABLE="${NGINX}/conf.d"
 AVAILABLE_HTTP="${NGINX}/conf.d/http"
 # ENABLED="${NGINX}/sites-enabled/"
 HTTPTEMPLATE="${CONFS}/templates/http.conf"
+
+trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
 
 print_help() {
     fname="ngcli"
@@ -89,10 +90,22 @@ create_server() {
         echo " ->[ER] Virtual server '$1' already exists."
         return
     fi
-    tmpfile=$(mktemp)
-    sed -e "s/{site_name}/$1/g" -e "s/{port_number}/$2/g" \
+    # Configuration file for virtual server
+    tmpfile="$(mktemp)"
+    site_path="/usr/share/nginx/$1/"
+    # root /usr/share/nginx/{site_name}/;
+    sed -e 's,{site_path},'"$site_path"',g' -e "s/{port_number}/$2/g" \
         "$HOME/.config/nginx/templates/http.conf" > "$tmpfile"
     sudo mv "$tmpfile" "${AVAILABLE_HTTP}/${1}.conf"
+    echo " ->[OK] Created configuration file ${AVAILABLE_HTTP}/${1}.conf."
+    # Folder creation for website files.
+    if [ ! -d  "$site_path" ]; then
+        sudo mkdir "$site_path"
+        sudo chown "$USER" "$site_path"
+        echo " ->[OK] Created $site_path and made user \"$USER\" its owner."
+    else
+        echo " ->[WN] Path $site_path exists. Make sure it has the correct permissions."
+    fi
 }
 
 arg="$1"
