@@ -53,6 +53,7 @@ xsetroot -cursor_name left_ptr
 #   (depending on the driver)
 xinput set-prop "PixArt Microsoft USB Optical Mouse" "libinput Accel Speed" -0.4
 xinput set-prop "ELAN0708:00 04F3:31BF Touchpad" "libinput Disable While Typing Enabled" 0
+xinput set-prop "ELAN0708:00 04F3:31BF Touchpad" "libinput Tapping Enabled" 1
 # Avoid Android Studio grey screen on startup
 export _JAVA_AWT_WM_NONREPARENTING=1
 # Kb layout
