@@ -113,7 +113,9 @@ denv () {
         fname="denv"
         printf "$fname: Simple services groups operations.\n"
         echo "Usage:"
-        echo "  $fname ACTION COLLECTION"
+        echo "  $fname help | h | la | lc | ACTION COLLECTION"
+        echo "la - List actions"
+        echo "lc - List collections"
         echo "ACTION is one of: ${actions[*]}"
         echo "COLLECTION is one of: ${collections[*]}"
     }
@@ -123,6 +125,14 @@ denv () {
     collections=(
         "web"
     )
+    # If list needed
+    if [ "$1" = "la" ]; then
+        echo "${actions[*]}"
+        return
+    elif [ "$1" = "lc" ]; then
+        echo "${collections[*]}"
+        return
+    fi
     # Action checks
     okaction=false
     for action in "${actions[@]}"; do
