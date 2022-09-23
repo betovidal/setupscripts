@@ -59,7 +59,9 @@ PACKAGES="\
 	gftp \
 	git \
 	grub \
+	guvcview \
 	gsimplecal \
+	htop \
 	i3lock \
 	inetutils \
 	inkscape \
@@ -73,6 +75,7 @@ PACKAGES="\
 	linux-firmware \
 	lm_sensors \
 	lua \
+	lxappearance-gtk3 \
 	maim \
 	make \
 	man \
