@@ -100,6 +100,7 @@ PACKAGES="\
 	pulseaudio-bluetooth \
 	pulsemixer \
 	python \
+	qbittorrent \
 	retext \
 	ripgrep \
 	rofi \
