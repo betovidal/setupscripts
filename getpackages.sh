@@ -27,6 +27,7 @@ PACKAGES="\
 	alsa-utils \
 	arandr \
 	archlinux-keyring \
+	baobab \
 	base \
 	base-devel \
 	bash-completion \
