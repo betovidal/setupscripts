@@ -105,6 +105,7 @@ PACKAGES="\
 	retext \
 	ripgrep \
 	rofi \
+	rofi-emoji \
 	screenfetch \
 	seahorse \
 	slop \

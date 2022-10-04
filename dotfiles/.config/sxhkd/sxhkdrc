@@ -137,7 +137,8 @@ super + {Left,Down,Up,Right}
 
 # Emojis
 super + minus
-	splatmoji -m type
+	rofi -monitor -1 -modi emoji -show emoji -disable-history -scroll-method 1
+	# splatmoji -m type
 
 # lock screen
 super + q
