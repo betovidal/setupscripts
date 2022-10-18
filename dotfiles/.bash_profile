@@ -9,6 +9,16 @@ case "$OSTYPE" in
     darwin*)
         SPECIFIC_PROF="$HOME/.config/darwin_profile"
         ;;
+    linux*)
+        JAVA_HOME=/usr/lib/jvm/default
+        # TODO: Move to specific script to configure this. Invoked by bspwm, not here.
+        # Panel related (bspwm)
+        PANEL_FIFO=/tmp/panel-fifo
+        PANEL_HEIGHT=24
+        PANEL_FONT="-*-terminus-*-*-*-*-24-*-*-*-*-*-*-*"
+        PANEL_WM_NAME=bspwm_panel
+        export PANEL_FIFO PANEL_HEIGHT PANEL_FONT PANEL_WM_NAME
+        ;;
 esac
 [ -f "$SPECIFIC_PROF" ] && . "$SPECIFIC_PROF"
 
@@ -22,10 +32,11 @@ if [ -d "$nx_path" ]; then
     PATH="$nx_path:$PATH"
 fi
 
-splat_path="$HOME/Repos/splatmoji"
-if [ -d  "$splat_path" ]; then
-    PATH="$splat_path:$PATH"
-fi
+# Unused in favor of rofi-emoji
+# splat_path="$HOME/Repos/splatmoji"
+# if [ -d  "$splat_path" ]; then
+#     PATH="$splat_path:$PATH"
+# fi
 
 android_path="$HOME/Android/Studio/bin"
 if [ -d "$android_path" ]; then
@@ -50,14 +61,5 @@ then
     PATH="$GEM_HOME/bin:$PATH"
 fi
 
-# TODO: Move to specific script to configure this. Invoked by bspwm, not here.
-# Panel related (bspwm)
-PANEL_FIFO=/tmp/panel-fifo
-PANEL_HEIGHT=24
-PANEL_FONT="-*-terminus-*-*-*-*-24-*-*-*-*-*-*-*"
-PANEL_WM_NAME=bspwm_panel
-export PANEL_FIFO PANEL_HEIGHT PANEL_FONT PANEL_WM_NAME
-
 EDITOR=vim
-JAVA_HOME=/usr/lib/jvm/default
 export TERM EDITOR JAVA_HOME PATH

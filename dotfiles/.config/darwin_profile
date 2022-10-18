@@ -8,3 +8,8 @@ if command -v brew &> /dev/null; then
         . "$COMPL_SCRIPT"
     fi
 fi
+
+ANDROID_HOME=/Users/$USER/Library/Android/sdk/
+
+export ANDROID_HOME
+
