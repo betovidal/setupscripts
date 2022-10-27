@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Install yay
-cd "$HOME/Repos/yay"
+pushd "$HOME/Repos/yay"
 makepkg -sirc --needed
-cd -
+popd
 
 # Install packages
 AURREPOS=(
