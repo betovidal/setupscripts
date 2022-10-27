@@ -1,15 +1,11 @@
 #!/usr/bin/env bash
 REPOS_FOLDER=$HOME/Repos/
 DEV_FOLDER=$HOME/Development/
-AUR_FOLDER=$HOME/AUR/
 if [ ! -d $REPOS_FOLDER ]; then
 	mkdir -p $REPOS_FOLDER
 fi
 if [ ! -d $DEV_FOLDER ]; then
 	mkdir -p $DEV_FOLDER
-fi
-if [ ! -d $AUR_FOLDER ]; then
-	mkdir -p $AUR_FOLDER
 fi
 # Suckless tools
 _SUCKLESSTOOLS="dmenu dwm farbfeld sent slock slstatus st"
@@ -22,7 +18,7 @@ done
 echo "= = = = = Additional Repositories = = = = ="
 git clone https://github.com/vim/vim.git "${REPOS_FOLDER}vim"
 git clone https://github.com/toadjaune/pulseaudio-config.git "${REPOS_FOLDER}pulseaudio-config"
-# git clone https://aur.archlinux.org/yay.git "${REPOS_FOLDER}yay"
+git clone https://aur.archlinux.org/yay.git "${REPOS_FOLDER}yay"
 # git clone https://github.com/cspeterson/splatmoji.git "${REPOS_FOLDER}splatmoji"
 
 # My repos
