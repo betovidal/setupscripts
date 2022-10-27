@@ -14,7 +14,7 @@ URL=$(echo $LATESTHREF | grep -o 'http.*bz2')
 if [ "$1" == "s" ]; then
 	echo $URL
 else
-	cd $TARGET
+	pushd $TARGET
 	curl -LO $URL
 	if [ "$1" == "f" ]; then
 		tar xjf firefox-*.tar.bz2
@@ -25,5 +25,5 @@ else
 	else
 		echo "Uncompress with \$tar xjf firefox-*.tar.bz2"
 	fi
-	cd -
+	popd
 fi

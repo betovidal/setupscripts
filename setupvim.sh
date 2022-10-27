@@ -9,7 +9,7 @@ if [ ! -d "$VIMREPO" ]; then
 fi
 
 echo "Configuring VIM..."
-cd "$VIMREPO"
+pushd "$VIMREPO"
 
 ./configure \
 --enable-gui=no \
@@ -30,4 +30,4 @@ for binary in $BINS; do
     sudo ln -sf "$VIMDEST/bin/$binary" "/usr/bin/$binary"
 done
 
-cd -
+popd

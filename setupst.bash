@@ -21,7 +21,7 @@ fi
 echo "Configuring st..."
 # I know there's the -C parameter in git, I just want to make sure before
 # cleaning and resetting everything. It'll also be less verbose.
-cd $STREPO
+pushd $STREPO
 
 git clean -df
 git reset --hard
@@ -45,4 +45,4 @@ fi
 
 sudo make clean install
 
-cd -
+popd
