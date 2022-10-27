@@ -24,10 +24,10 @@ pushd "$VIMREPO"
 sudo make clean install
 git clean -df
 
-BINS="vim vimdiff xxd"
+VIM_BINS="vim vimdiff xxd"
 
-for binary in $BINS; do
-    sudo ln -sf "$VIMDEST/bin/$binary" "/usr/bin/$binary"
+for vim_bin in $VIM_BINS; do
+    sudo ln -sf "$VIMDEST/bin/$vim_bin" "/usr/bin/$vim_bin"
 done
 
 popd
