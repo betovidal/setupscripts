@@ -19,6 +19,7 @@ echo "= = = = = Additional Repositories = = = = ="
 git clone https://github.com/vim/vim.git "${REPOS_FOLDER}vim"
 git clone https://github.com/toadjaune/pulseaudio-config.git "${REPOS_FOLDER}pulseaudio-config"
 git clone https://aur.archlinux.org/yay.git "${REPOS_FOLDER}yay"
+git clone https://github.com/muennich/sxiv.git "${REPOS_FOLDER}sxiv"
 # git clone https://github.com/cspeterson/splatmoji.git "${REPOS_FOLDER}splatmoji"
 
 # My repos
@@ -30,4 +31,7 @@ done
 
 # Setup vim-plug
 echo "= = = = = Setting up vim-plug = = = = ="
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+PLUGSCRIPT="$HOME/.vim/autoload/plug.vim"
+if [ ! -f "$PLUGSCRIPT" ]; then
+    curl -fLo "$PLUGSCRIPT" --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+fi
