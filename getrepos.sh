@@ -18,7 +18,6 @@ done
 echo "= = = = = Additional Repositories = = = = ="
 git clone https://github.com/vim/vim.git "${REPOS_FOLDER}vim"
 git clone https://github.com/toadjaune/pulseaudio-config.git "${REPOS_FOLDER}pulseaudio-config"
-git clone https://aur.archlinux.org/yay.git "${REPOS_FOLDER}yay"
 git clone https://github.com/muennich/sxiv.git "${REPOS_FOLDER}sxiv"
 # git clone https://github.com/cspeterson/splatmoji.git "${REPOS_FOLDER}splatmoji"
 

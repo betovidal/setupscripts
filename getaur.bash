@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
 # Install yay
-pushd "$HOME/Repos/yay"
-makepkg -sirc --needed
+YAYDIR="$HOME/.cache/yay/yay"
+if [ ! -d "$YAYDIR" ]; then
+    mkdir -p "$YAYDIR"
+    git clone https://aur.archlinux.org/yay.git "$YAYDIR"
+fi
+
+pushd "$YAYDIR"
+    makepkg -sirc --needed
 popd
 
 # Install packages
