@@ -49,11 +49,18 @@ xsetroot -cursor_name left_ptr
 # $xinput list
 # $xinput list-props <id|name>
 # $xinput set-prop <id|name> <propname> <value>
+
 # For mouse speed, try <libinput Accel Speed|Device Accel Constant Deceleration>
 #   (depending on the driver)
+# <Coordinate Transformation Matrix> will work too but it'll introduce
+#   unexpected behaviour on some SDL applications (e.g. Dota2)
 
-xinput set-prop "Logitech USB Optical Mouse" "libinput Accel Speed" -0.7
-xinput set-prop "PixArt Microsoft USB Optical Mouse" "libinput Accel Speed" -0.4
+logitech_m90_speed="1.9"
+logitech_m90_accel="-1"
+ms_basic_accel="-0.7"
+xinput set-prop "PixArt Microsoft USB Optical Mouse" "libinput Accel Speed" "$ms_basic_accel"
+xinput set-prop "Logitech USB Optical Mouse" "libinput Accel Speed" "$logitech_m90_accel"
+xinput set-prop "Logitech USB Optical Mouse" "Coordinate Transformation Matrix" "$logitech_m90_speed" 0 0 0 "$logitech_m90_speed" 0 0 0 1
 xinput set-prop "ELAN0708:00 04F3:31BF Touchpad" "libinput Disable While Typing Enabled" 0
 xinput set-prop "ELAN0708:00 04F3:31BF Touchpad" "libinput Tapping Enabled" 1
 # Avoid Android Studio grey screen on startup
