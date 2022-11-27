@@ -55,8 +55,13 @@ xsetroot -cursor_name left_ptr
 # <Coordinate Transformation Matrix> will work too but it'll introduce
 #   unexpected behaviour on some SDL applications (e.g. Dota2)
 
-logitech_m90_speed="1.9"
-logitech_m90_accel="-1"
+# Feels good but messes up a lot of games
+# logitech_m90_speed="1.9"
+# logitech_m90_accel="-1"
+# Minor accel
+logitech_m90_speed="1"
+logitech_m90_accel="-0.8"
+# Microsoft Mouse
 ms_basic_accel="-0.7"
 xinput set-prop "PixArt Microsoft USB Optical Mouse" "libinput Accel Speed" "$ms_basic_accel"
 xinput set-prop "Logitech USB Optical Mouse" "libinput Accel Speed" "$logitech_m90_accel"
