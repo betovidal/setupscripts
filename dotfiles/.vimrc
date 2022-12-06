@@ -264,8 +264,8 @@ endfunction
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 
 " ================= asyncomplete.svim =================
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 " Uncomment this block to trigger by pressing tab - - -
 " let g:asyncomplete_auto_popup = 0
@@ -279,7 +279,6 @@ inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 "   \ <SID>check_back_space() ? "\<TAB>" :
 "   \ asyncomplete#force_refresh()
 " Uncomment this block to trigger by pressing tab - - -
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 let g:asyncomplete_auto_completeopt = 0
 set completeopt=menuone,noinsert,noselect,preview
 
