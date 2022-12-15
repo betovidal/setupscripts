@@ -36,6 +36,9 @@ if __name__ == "__main__":
 		password = host_args.get("password", "")
 		if password:
 			args["/p"] = password
+		domain = host_args.get("domain", "")
+		if domain:
+			args["/d"] = domain
 		args_str = " ".join(["{}{}".format(x, ":{}".format(y) if y else "") for x, y in args.items()])
 	elif connection_type == "ssh":
 		args_str = "{}@{}".format(host_args["user"], host_args["host"])
