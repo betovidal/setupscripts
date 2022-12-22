@@ -94,8 +94,8 @@ Plug 'jeffkreeftmeijer/vim-dim', { 'name': 'dim' }
 call plug#end()
 
 " ================= Code formatting =====================
-autocmd FileType c,cpp,h,hpp,python,javascript,css,html,json,tcl setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
-autocmd FileType php,sh,python setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+autocmd FileType c,cpp,h,hpp,javascript,css,html,json,tcl setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
+autocmd FileType php,python,sh,sql setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 autocmd FileType markdown,dosini setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 
 " ================= VIM-LSP =============================
@@ -235,6 +235,10 @@ vnoremap <leader>t :Tab/
 nnoremap <leader>t :Tab/
 " Python JSON format module
 nnoremap <leader>j :%!python3 -m json.tool<CR>
+" Last Ex command
+nnoremap <leader>l :@:<CR>
+" Save and Make
+nnoremap <leader>m :w \| make<CR>
 " Move across splits
 nmap <silent> <up> :wincmd k<CR>
 nmap <silent> <down> :wincmd j<CR>
