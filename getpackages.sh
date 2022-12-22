@@ -166,6 +166,7 @@ MAC_CLI_PKGS="\
     git \
     node \
     python \
+    stow \
     tmux \
     vim \
 "
