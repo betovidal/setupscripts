@@ -164,6 +164,8 @@ MAC_UI_PKGS="\
     nomachine \
 "
 MAC_CLI_PKGS="\
+    bash-completion@2 \
+    ffmpeg \
     git \
     node \
     python \
