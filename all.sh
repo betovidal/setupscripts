@@ -30,7 +30,7 @@ printMsg "Creating folders"
 source createfolders.sh
 # Most important: gcc, git, curl...
 printMsg "Getting apt packages"
-source getpackages.sh
+source getpackages.bash
 # Get suckless tools repos and my own (instructions for vim)
 printMsg "Getting git repos"
 source getrepos.sh
