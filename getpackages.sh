@@ -21,7 +21,7 @@
 # 	"
 
 # ARCH
-PACKAGES="\
+ARCH_PKGS="\
 	acpilight \
 	alsa-card-profiles \
 	alsa-utils \
@@ -156,14 +156,29 @@ PACKAGES="\
 	dnsmasq \
 	iptables-nft \
 	edk2-ovmf \
-	\
-	"
+"
+MAC_UI_PKGS="\
+    firefox \
+    iterm2 \
+    nomachine \
+"
+MAC_CLI_PKGS="\
+    git \
+    node \
+    python \
+    vim \
+"
 # amdgpu packages as described here
 #   https://wiki.archlinux.org/title/AMDGPU#Installation
 # virt-manager packages described here
 #   https://wiki.archlinux.org/title/libvirt
 
-for package in $PACKAGES; do
-	echo $package
-done
-sudo pacman -Syu $PACKAGES --needed
+if [ "$1" == "mac" ]; then
+    brew install $MAC_CLI_PKGS
+    brew install --cask $MAC_UI_PKGS
+else
+    # for package in $ARCH_PACKAGES; do
+    #     echo $package
+    # done
+    sudo pacman -Syu $ARCH_PACKAGES --needed
+fi
