@@ -166,6 +166,7 @@ MAC_CLI_PKGS="\
     git \
     node \
     python \
+    tmux \
     vim \
 "
 # amdgpu packages as described here
