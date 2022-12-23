@@ -167,8 +167,11 @@ MAC_CLI_PKGS="\
     bash-completion@2 \
     ffmpeg \
     git \
+    jq \
     nnn \
     node \
+    openjdk \
+    plantuml \
     python \
     stow \
     tmux \
