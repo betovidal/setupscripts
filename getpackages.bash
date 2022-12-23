@@ -167,6 +167,7 @@ MAC_CLI_PKGS="\
     bash-completion@2 \
     ffmpeg \
     git \
+    nnn \
     node \
     python \
     stow \
