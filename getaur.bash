@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # Install yay
-YAYDIR="$HOME/.cache/yay/yay"
+YAYDIR="$HOME/.cache/yay/yay-bin"
 if [ ! -d "$YAYDIR" ]; then
     mkdir -p "$YAYDIR"
-    git clone https://aur.archlinux.org/yay.git "$YAYDIR"
+    git clone https://aur.archlinux.org/yay-bin.git "$YAYDIR"
 fi
 
 pushd "$YAYDIR"
@@ -20,6 +20,7 @@ AURREPOS=(
     "aur/minecraft-launcher"
     "aur/nomachine"
     "aur/pcloud-drive"
+    "aur/pcloudcc-git "
     "aur/pod2man"
     "aur/spotify"
     # "aur/tuxguitar" # Install on demand. It's slow to reinstall everytime.
