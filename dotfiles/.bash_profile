@@ -5,8 +5,11 @@
 
 # Platform specific configurations
 SPECIFIC_PROF=""
+RUBY_BIN="ruby"
 case "$OSTYPE" in
     darwin*)
+        # RUBY_BIN is overwriten here to use the one installed through brew
+        # instead of the one that ships with MacOS by default.
         SPECIFIC_PROF="$HOME/.config/darwin_profile"
         ;;
     linux*)
@@ -56,7 +59,7 @@ fi
 # Check if rubygems is installed and add to path
 if command -v gem &> /dev/null
 then
-    GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+    GEM_HOME="$($RUBY_BIN -e 'puts Gem.user_dir')"
     export GEM_HOME
     PATH="$GEM_HOME/bin:$PATH"
 fi

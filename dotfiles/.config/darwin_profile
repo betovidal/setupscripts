@@ -9,7 +9,10 @@ if command -v brew &> /dev/null; then
     fi
 fi
 
-ANDROID_HOME=/Users/$USER/Library/Android/sdk/
+RUBY_PATH="/usr/local/opt/ruby/bin"
+RUBY_BIN="$RUBY_PATH/ruby"
+export PATH="$RUBY_PATH:$PATH"
 
+ANDROID_HOME=/Users/$USER/Library/Android/sdk/
 export ANDROID_HOME
 
