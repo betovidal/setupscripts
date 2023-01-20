@@ -159,8 +159,11 @@ ARCH_PKGS="\
 	edk2-ovmf \
 "
 MAC_UI_PKGS="\
+    android-studio \
     firefox \
     iterm2 \
+    microsoft-remote-desktop \
+    microsoft-teams
     nomachine \
 "
 MAC_CLI_PKGS="\
@@ -172,7 +175,7 @@ MAC_CLI_PKGS="\
     node \
     openjdk \
     plantuml \
-    python \
+    python3 \
     stow \
     tmux \
     vim \
