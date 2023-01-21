@@ -77,10 +77,12 @@ dunst &
 # feh --bg-fill $HOME/Pictures/bg.png &
 # xwallpaper --center "$HOME/Pictures/bg.png"
 picom &
+# s is a script to launch st with custom colors. Located in ~/.local/bin/s.
 s -e launch_tmux.bash &
 
 # Different WMs/DEs if I want to try them
 
+# export XDG_SESSION_TYPE=x11; export GDK_BACKEND=x11; exec gnome-session
 # export DESKTOP_SESSION=plasma; exec startplasma-x11
 # slstatus & exec dwm
 # exec i3
