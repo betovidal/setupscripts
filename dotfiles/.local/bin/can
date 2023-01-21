@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+
+usr=$1
+perm=$2
+path=$3
+
+function usage() {
+    me=$(basename "$0")
+    echo "Usage: $me USERNAME PERMISSION PATH"
+    echo ""
+    echo "USERNAME   - Username only, not UID. 'i' is an alias to current user."
+    echo "PERMISSION - Either read/write/execute or their short variants r/w/x."
+    echo "PATH       - File or directory to check."
+    echo ""
+    echo "Example: can root read ~/.bash_profile"
+    echo "Example: can i write ~/.bashrc"
+    echo ""
+    echo "This commands outputs to stdout and returns a value:"
+    echo "  0 - The user has permissions over the file/directory."
+    echo "  1 - The user does not have permissions over the file/directory."
+}
+
+if [ -z "$usr" ] || [ -z "$perm" ] || [ -z "$path" ]; then
+    usage
+    exit 1
+fi
+
+# Handle alias for current user
+if [ $usr == "i" ] || [ $usr == "I" ]; then
+    usr=$USER
+fi
+
+# Alias for permission level.
+perm_arg="$perm"
+perm_verb=""
+case $perm in
+    "read")
+        perm_arg="r"
+        perm_verb="read"
+        ;;
+    "write")
+        perm_arg="w"
+        perm_verb="write"
+        ;;
+    "execute")
+        perm_arg="x"
+        perm_verb="execute"
+        ;;
+    "*")
+        usage
+        exit 1
+esac
+
+if $(sudo -u "$usr" test "-${perm_arg}" "$path"); then
+    echo "YES"
+    exit 0
+else
+    echo "NO"
+    exit 1
+fi
