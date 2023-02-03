@@ -5,6 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Colors definition
 NC="\001$(tput sgr0)\002"
 BLACK="\001$(tput setaf 0)\002"
 RED="\001$(tput setaf 1)\002"
@@ -29,8 +30,12 @@ FUNCTIONS_SCRIPT="$HOME/.local/bin/helpers/functions.bash"
 if [ -x "$FUNCTIONS_SCRIPT" ]; then
 	. "$FUNCTIONS_SCRIPT"
 fi
+
 # Include aliases.
 ALIASES="$HOME/.config/aliases.bash"
 if [ -x "$ALIASES" ]; then
 	. "$ALIASES"
 fi
+
+# Bash configurations
+HISTCONTROL=ignorespace
