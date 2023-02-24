@@ -12,7 +12,8 @@ set nocompatible            " Do not pretend to be vi, enable new features
 let mapleader=","           " To add more functionality, instead of \
 filetype plugin on          " Enable netwr
 set modeline                " Enable syntax hightlighting through modeline magic. See more with :help modeline
-set wildignore+=**/node_modules/**,**/__pycache__/** " Do not consider folders in :find
+" set wildignore+=**/node_modules/**,**/__pycache__/** " Do not consider folders in :find
+set wildignore+=**/__pycache__/** " Do not consider folders in :find
 set encoding=utf-8
 set wildmenu                " Display all matching files when we tab complete, complete ex commands
 set wildmode=longest:full   " Add comma separated option 'list' to see the whole list of options above.
@@ -94,9 +95,9 @@ Plug 'jeffkreeftmeijer/vim-dim', { 'name': 'dim' }
 call plug#end()
 
 " ================= Code formatting =====================
-autocmd FileType c,cpp,h,hpp,javascript,css,html,json,tcl setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
+autocmd FileType c,cpp,h,hpp,json,tcl setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
 autocmd FileType php,python,sh,sql setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
-autocmd FileType markdown,dosini setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+autocmd FileType css,html,javascript,dosini,markdown setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 
 " ================= VIM-LSP =============================
 
