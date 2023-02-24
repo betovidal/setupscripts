@@ -5,7 +5,7 @@ VIMDEST="/opt/vim"
 
 if [ ! -d "$VIMREPO" ]; then
     mkdir -p "$VIMREPO"
-    git clone "https://github.com/vim/vim" "$VIMREPO"
+    git clone  --depth 1 "https://github.com/vim/vim" "$VIMREPO"
 fi
 
 echo "Configuring VIM..."

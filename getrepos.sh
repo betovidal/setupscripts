@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 REPOS_FOLDER=$HOME/Repos/
 DEV_FOLDER=$HOME/Development/
+flags="--depth 1"
 if [ ! -d $REPOS_FOLDER ]; then
 	mkdir -p $REPOS_FOLDER
 fi
@@ -12,14 +13,15 @@ _SUCKLESSTOOLS="dmenu dwm farbfeld sent slock slstatus st"
 SUCKLESSTOOLS="st"
 echo "= = = = = Suckless Tools = = = = ="
 for tool in $SUCKLESSTOOLS; do
-	git clone https://git.suckless.org/$tool $REPOS_FOLDER$tool
+	git clone $flags https://git.suckless.org/$tool $REPOS_FOLDER$tool
 done
 # Other repos
 echo "= = = = = Additional Repositories = = = = ="
-git clone https://github.com/vim/vim.git "${REPOS_FOLDER}vim"
-git clone https://github.com/toadjaune/pulseaudio-config.git "${REPOS_FOLDER}pulseaudio-config"
-git clone https://github.com/muennich/sxiv.git "${REPOS_FOLDER}sxiv"
-# git clone https://github.com/cspeterson/splatmoji.git "${REPOS_FOLDER}splatmoji"
+# Managed in setupvim.bash script
+# git clone $flags https://github.com/vim/vim.git "${REPOS_FOLDER}vim"
+git clone $flags https://github.com/toadjaune/pulseaudio-config.git "${REPOS_FOLDER}pulseaudio-config"
+git clone $flags https://github.com/muennich/sxiv.git "${REPOS_FOLDER}sxiv"
+# git clone $flags https://github.com/cspeterson/splatmoji.git "${REPOS_FOLDER}splatmoji"
 
 # My repos
 echo "= = = = = My Own Repositories = = = = ="
