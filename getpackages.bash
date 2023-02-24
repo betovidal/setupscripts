@@ -189,8 +189,8 @@ if [ "$1" == "mac" ]; then
     brew install $MAC_CLI_PKGS
     brew install --cask $MAC_UI_PKGS
 else
-    # for package in $ARCH_PACKAGES; do
+    # for package in $ARCH_PKGS; do
     #     echo $package
     # done
-    sudo pacman -Syu $ARCH_PACKAGES --needed
+    sudo pacman -Syu $ARCH_PKGS --needed
 fi
