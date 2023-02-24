@@ -11,7 +11,7 @@ launch_polybar.bash
 # Set wallpaper
 BG="$HOME/Pictures/bg.png"
 if [ -f "$BG" ]; then
-    xwallpaper --center "$BG"
+    xwallpaper --maximize "$BG"
 fi
 
 # Use only connected and active (active is detected through the resolution)
