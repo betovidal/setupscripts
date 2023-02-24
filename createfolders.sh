@@ -17,4 +17,5 @@ mkdir -p $HOME/Shared/work
 
 mkdir -p $HOME/.npm-global
 
-sudo mkdir -p /opt/vim8
+# Do this inside the setupvim script
+# sudo mkdir -p /opt/vim
