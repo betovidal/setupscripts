@@ -12,6 +12,7 @@ popd
 
 # Install packages
 AURREPOS=(
+    "aur/code-marketplace", # Until I need vsc specific, stick to code-oss
     "aur/downgrade",
     "aur/flashplayer-standalone"
     "aur/google-earth-pro"
@@ -25,7 +26,7 @@ AURREPOS=(
     "aur/pod2man"
     "aur/spotify"
     # "aur/tuxguitar" # Install on demand. It's slow to reinstall everytime.
-    "aur/vscodium-bin-marketplace" # This installs vscodium-bin as a dependency
+    # "aur/vscodium-bin-marketplace" # This installs vscodium-bin as a dependency
     "aur/xtitle"
     "aur/xzoom"
 )
