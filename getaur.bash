@@ -12,6 +12,7 @@ popd
 
 # Install packages
 AURREPOS=(
+    "aur/downgrade",
     "aur/flashplayer-standalone"
     "aur/google-earth-pro"
     "aur/lemonbar-git"
@@ -24,7 +25,7 @@ AURREPOS=(
     "aur/pod2man"
     "aur/spotify"
     # "aur/tuxguitar" # Install on demand. It's slow to reinstall everytime.
-    "aur/vscodium-bin-marketplace" # This installs vscodium-bin too
+    "aur/vscodium-bin-marketplace" # This installs vscodium-bin as a dependency
     "aur/xtitle"
     "aur/xzoom"
 )
