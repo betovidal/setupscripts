@@ -24,7 +24,7 @@ AURREPOS=(
     "aur/pod2man"
     "aur/spotify"
     # "aur/tuxguitar" # Install on demand. It's slow to reinstall everytime.
-    "aur/vscodium-bin"
+    "aur/vscodium-bin-marketplace" # This installs vscodium-bin too
     "aur/xtitle"
     "aur/xzoom"
 )

@@ -57,6 +57,7 @@ Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
+Plug 'mattn/emmet-vim'
 " coc (vim-lsp alternative)
 " Plug 'neoclide/coc.nvim' " Not using as it has to be compiled
 " ale (vim-lsp alternative)
