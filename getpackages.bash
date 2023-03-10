@@ -33,7 +33,6 @@ ARCH_PKGS="\
 	base-devel \
 	bash-completion \
 	bc \
-	blender \
 	bluez \
 	bluez-utils \
 	bspwm \
@@ -119,6 +118,7 @@ ARCH_PKGS="\
 	terminus-font \
 	thunar \
 	thunar-archive-plugin \
+	tidy \
 	tigervnc \
 	tk \
 	tmux \
