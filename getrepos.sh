@@ -9,8 +9,8 @@ if [ ! -d $DEV_FOLDER ]; then
 	mkdir -p $DEV_FOLDER
 fi
 # Suckless tools
-_SUCKLESSTOOLS="dmenu dwm farbfeld sent slock slstatus st"
-SUCKLESSTOOLS="st"
+_SUCKLESSTOOLS="farbfeld sent slock"
+SUCKLESSTOOLS="dmenu dwm slstatus st"
 echo "= = = = = Suckless Tools = = = = ="
 for tool in $SUCKLESSTOOLS; do
 	git clone $flags https://git.suckless.org/$tool $REPOS_FOLDER$tool
