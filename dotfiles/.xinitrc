@@ -77,8 +77,8 @@ dunst &
 # feh --bg-fill $HOME/Pictures/bg.png &
 # xwallpaper --center "$HOME/Pictures/bg.png"
 picom &
-# s is a script to launch st with custom colors. Located in ~/.local/bin/s.
-s -e launch_tmux.bash &
+# sss is a script to launch st with custom colors. Located in ~/.local/bin/sss.
+sss -e launch_tmux.bash &
 
 # Different WMs/DEs if I want to try them
 

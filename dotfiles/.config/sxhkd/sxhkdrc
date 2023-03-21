@@ -3,7 +3,7 @@
 
 # terminal emulator
 super + Return
-	s
+	sss
 
 # program launcher
 super + @space
