@@ -1,42 +1,25 @@
 diff --git a/config.def.h b/config.def.h
-index 9a0a5e7..0fc1570 100644
+index d805331..0d63a68 100644
 --- a/config.def.h
 +++ b/config.def.h
-@@ -4,8 +4,7 @@
- const unsigned int interval = 1000;
- 
- /* text to show if no value can be retrieved */
--/* static const char unknown_str[] = "n/a"; */
--static const char unknown_str[] = "";
-+static const char unknown_str[] = "n/a";
- 
- /* maximum output string length */
- #define MAXLEN 2048
-@@ -70,22 +69,21 @@ static const char iname_wifi[] = "wlp2s0";
- static const char iname_eth[] = "enp1s0";
- static const char bname[] = "BAT0";
- /* PC */
--/* static const char iname_eth[] = "enp4s0"; */
--/* BOTH */
--static const char tun_vpnc[] = "tun0";
--static const char tun_mull[] = "wg-mullvad";
+@@ -63,7 +63,27 @@ static const char unknown_str[] = "n/a";
+  * wifi_essid          WiFi ESSID                      interface name (wlan0)
+  * wifi_perc           WiFi signal in percent          interface name (wlan0)
+  */
++
++/* TODO: Dynamically select the correct ifaces, depending on hostname. */
++/* TODO: Add a module to show VPN state. */
++/* LAPTOP */
++static const char bname[] = "BAT0";
++static const char iname_eth[] = "enp1s0";
++/* PC */
 +static const char iname_eth[] = "enp4s0";
 +
 +/* Date format https://cplusplus.com/reference/ctime/strftime/ */
- 
++
  static const struct arg args[] = {
  	/* function format          argument */
- 	/* LAPTOP */
--	{ battery_state,"%s", bname },
--	{ battery_perc, "b:%3s", bname },
--	{ run_command,  "|♫:%3s", "/bin/bash -c \"amixer get Master | awk '\\$0~/%/{print \\$5}' | tr -d '[]%'\""},
--	{ netspeed_tx,  "|▲%9s", iname_wifi},
--	{ netspeed_rx,  "|▼%9s", iname_wifi},
--	{ netspeed_tx,  "|▲%9s", iname_eth},
--	{ netspeed_rx,  "|▼%9s", iname_eth},
--	{ ram_perc,     "|r:%3s", NULL},
--	{ cpu_perc,     "|c:%3s", NULL},
--	{ datetime, "%s", "|%F|%a|%T" },
+-	{ datetime, "%s",           "%F %T" },
 +	{ battery_state,  "%s", bname },
 +	{ battery_perc,   "b:%3s", bname },
 +	{ run_command,    " | ♫:%3s", "/bin/bash -c \"amixer get Master | awk '\\$0~/%/{print \\$5}' | tr -d '[]%'\""},
@@ -44,8 +27,8 @@ index 9a0a5e7..0fc1570 100644
 +	{ netspeed_rx,    " ▼%9s", iname_wifi},
 +	{ netspeed_tx,    " | E: ▲%9s", iname_eth},
 +	{ netspeed_rx,    " ▼%9s", iname_eth},
-+	{ ram_perc,       " | r:%3s", NULL},
-+	{ cpu_perc,       " | c:%3s", NULL},
++	{ ram_perc,       " | R:%3s", NULL},
++	{ cpu_perc,       " | C:%3s", NULL},
 +	{ datetime, "%s", " | %a %d %b %T" },
  };
 diff --git a/slstatus.c b/slstatus.c
