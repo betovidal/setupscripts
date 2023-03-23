@@ -8,7 +8,9 @@ launch_polybar.bash
 # launch_panel.bash
 # polybar &
 
-# Set wallpaper
+# Set wallpaper. It seems redundant to have it here because I set the wallpaper
+# in .xinitrc script. However, this piece of code is called when I restart
+# bspwm too!
 BG="$HOME/Pictures/bg.png"
 if [ -f "$BG" ]; then
     xwallpaper --maximize "$BG"

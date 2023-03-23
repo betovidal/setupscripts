@@ -74,19 +74,24 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 setxkbmap latam
 # For allowing notifications
 dunst &
-# feh --bg-fill $HOME/Pictures/bg.png &
-# xwallpaper --center "$HOME/Pictures/bg.png"
 picom &
 # sss is a script to launch st with custom colors. Located in ~/.local/bin/sss.
 sss -e launch_tmux.bash &
+
+# Setup wallpaper
+# Alternative: feh --bg-fill $HOME/Pictures/bg.png &
+BG="$HOME/Pictures/bg.png"
+if [ -f "$BG" ]; then
+    xwallpaper --maximize "$BG"
+fi
 
 # Different WMs/DEs if I want to try them
 
 # export XDG_SESSION_TYPE=x11; export GDK_BACKEND=x11; exec gnome-session
 # export DESKTOP_SESSION=plasma; exec startplasma-x11
-# slstatus & exec dwm
+slstatus slstatus 2>/dev/null & exec dwm
 # exec i3
-sxhkd & exec bspwm
+# sxhkd & exec bspwm
 # exec awesome
 # exec qtile start
 # until wmii; do :; done
