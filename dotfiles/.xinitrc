@@ -89,7 +89,7 @@ fi
 
 # export XDG_SESSION_TYPE=x11; export GDK_BACKEND=x11; exec gnome-session
 # export DESKTOP_SESSION=plasma; exec startplasma-x11
-slstatus slstatus 2>/dev/null & exec dwm
+slstatus 2>/dev/null & exec dwm
 # exec i3
 # sxhkd & exec bspwm
 # exec awesome
