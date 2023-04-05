@@ -59,6 +59,7 @@ ARCH_PKGS="\
 	gcc \
 	gftp \
 	git \
+	gmtp \
 	grub \
 	guvcview \
 	gsimplecal \
