@@ -103,6 +103,7 @@ ARCH_PKGS="\
 	pulsemixer \
 	python \
 	qbittorrent \
+	qtqr \
 	retext \
 	ripgrep \
 	rofi \
@@ -144,6 +145,7 @@ ARCH_PKGS="\
 	xwallpaper \
 	zathura \
 	zathura-pdf-mupdf \
+	zbar \
 	\
 	mesa
 	mesa-vdpau \
