@@ -41,5 +41,13 @@ if __name__ == "__main__":
 			args["/d"] = domain
 		args_str = " ".join(["{}{}".format(x, ":{}".format(y) if y else "") for x, y in args.items()])
 	elif connection_type == "ssh":
-		args_str = "{}@{}".format(host_args["user"], host_args["host"])
+		port_args = ""
+		port = host_args.get("port", "")
+		if port:
+			port_args = "-p {}".format(port)
+		args_str = "{} {}@{}".format(
+			port_args,
+			host_args["user"],
+			host_args["host"]
+		)
 	print(args_str)
