@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 
-mpv --no-video --demuxer-max-bytes=1048576 "https://www.youtube.com/watch?v=jfKfPfyJRdk"
+# 5M buffer
+
+mpv --no-video --volume=100 --demuxer-max-bytes=5242880 "https://www.youtube.com/watch?v=jfKfPfyJRdk"
+
