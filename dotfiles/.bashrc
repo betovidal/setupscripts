@@ -17,7 +17,7 @@ CYAN="\001$(tput setaf 6)\002"
 WHITE="\001$(tput setaf 7)\002"
 ACCENT=$PURPLE
 # PS1='[\u@\h \W]\$ '
-PS1="$ACCENT[$WHITE\u$ACCENT@$WHITE\h \W$ACCENT]$WHITE\$ "
+PS1="$ACCENT[$WHITE\u$ACCENT@$WHITE\H \W$ACCENT]$WHITE\$ "
 # Replaced by my rr script and NetworkManager, respectively
 # source $HOME/.local/bin/complete-my-scripts.sh
 
