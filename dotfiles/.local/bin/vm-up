@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+echo "Starting libvirt daemon..."
+sudo systemctl start libvirtd
+echo "Starting default network..."
+sudo virsh net-start default
+echo "Launching virt-manager..."
+virt-manager &
+
+
