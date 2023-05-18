@@ -13,14 +13,29 @@ case "$OSTYPE" in
         SPECIFIC_PROF="$HOME/.config/darwin_profile"
         ;;
     linux*)
-        JAVA_HOME=/usr/lib/jvm/default
+        # TODO Move specific confs to separate files or merge darwin in here.
+        # https://unix.stackexchange.com/a/10282
+
+        # Arch specific.
+        if [ -f /etc/arch-release ]; then
+            JAVA_HOME=/usr/lib/jvm/default
+        fi
+
+        # Debian specific.
+        if [ -f /etc/debian_version ]; then
+            comp_conf="$HOME/.bash_completion"
+            if [ -f $comp_conf ]; then
+                . $comp_conf
+            fi
+        fi
+
         # TODO: Move to specific script to configure this. Invoked by bspwm, not here.
         # Panel related (bspwm)
-        PANEL_FIFO=/tmp/panel-fifo
-        PANEL_HEIGHT=24
-        PANEL_FONT="-*-terminus-*-*-*-*-24-*-*-*-*-*-*-*"
-        PANEL_WM_NAME=bspwm_panel
-        export PANEL_FIFO PANEL_HEIGHT PANEL_FONT PANEL_WM_NAME
+        # PANEL_FIFO=/tmp/panel-fifo
+        # PANEL_HEIGHT=24
+        # PANEL_FONT="-*-terminus-*-*-*-*-24-*-*-*-*-*-*-*"
+        # PANEL_WM_NAME=bspwm_panel
+        # export PANEL_FIFO PANEL_HEIGHT PANEL_FONT PANEL_WM_NAME
         ;;
 esac
 [ -f "$SPECIFIC_PROF" ] && . "$SPECIFIC_PROF"
