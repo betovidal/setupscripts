@@ -55,11 +55,31 @@ sss -e launch_tmux.bash &
 
 # Different WMs/DEs if I want to try them
 
+# GNOME
 # export XDG_SESSION_TYPE=x11; export GDK_BACKEND=x11; exec gnome-session
+
+# KDE PLASMA - Install plasma-meta or plasma. Alternatively install
+# plasma-desktop for a minimal plasma installation.
 # export DESKTOP_SESSION=plasma; exec startplasma-x11
+
+# DWM - Clone repo, compile and install manually before using.
 slstatus 2>/dev/null & exec dwm
+
+# MATE - install mate and mate-extra packages.
+# exec mate-session
+
+# i3
 # exec i3
+
+# BSPWM and SXHKD - Make sure to copy installed configurations to home folder
+# or use your own
 # sxhkd & exec bspwm
+
+# AWESOME - I won't really use it but it's nice to know.
 # exec awesome
+
+# QTILE - I won't really use it but it's nice to know.
 # exec qtile start
+
+# WMII - I won't really use it but it's nice to know.
 # until wmii; do :; done
