@@ -25,7 +25,8 @@ font pango:Terminus bold 12
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- kbinds.bash lock
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -33,22 +34,23 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id kbinds.bash vol up   && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id kbinds.bash vol down && $refresh_i3status
+bindsym XF86AudioMute        exec --no-startup-id kbinds.bash vol mute && $refresh_i3status
+# bindsym XF86AudioMicMute     exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+# start a program launcher
+bindsym $mod+d exec --no-startup-id kbinds.bash launcher
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -189,14 +191,23 @@ bar {
 # cmus
 # bindsym Control+$mod+z exec "cmus-remote -k -5"
 # bindsym Control+$mod+b exec "cmus-remote -k +5"
-bindsym Control+$mod+z exec "cmus-remote -r"
-bindsym Control+$mod+b exec "cmus-remote -n"
-bindsym Control+$mod+x exec "cmus-remote -p"
-bindsym Control+$mod+c exec "cmus-remote -u"
-bindsym Control+$mod+v exec "cmus-remote -s"
-bindsym Control+$mod+i exec "track-info.sh"
+# bindsym Control+$mod+z exec "cmus-remote -r"
+# bindsym Control+$mod+b exec "cmus-remote -n"
+# bindsym Control+$mod+x exec "cmus-remote -p"
+# bindsym Control+$mod+c exec "cmus-remote -u"
+# bindsym Control+$mod+v exec "cmus-remote -s"
+# bindsym Control+$mod+i exec "track-info.sh"
+bindsym Control+$mod+left  exec kbinds.bash music rewind
+bindsym Control+$mod+right exec kbinds.bash music forward
+bindsym XF86AudioPrev exec kbinds.bash music next
+bindsym XF86AudioNext exec kbinds.bash music prev
+bindsym XF86AudioPlay exec kbinds.bash music toggle
+bindsym XF86AudioStop exec kbinds.bash music stop
+bindsym Shift+$mod+question exec kbinds.bash music info
+bindsym $mod+apostrophe exec kbinds.bash music find
 
-bindsym --release Control+$mod+l exec "slock"
+# bindsym --release Control+$mod+l exec "slock"
+bindsym --release $mod+q exec kbinds.bash lock
 
 bindsym $mod+period exec "splatmoji type"
 

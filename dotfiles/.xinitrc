@@ -51,7 +51,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 dunst &
 picom &
 # sss is a script to launch st with custom colors. Located in ~/.local/bin/sss.
-sss -e launch_tmux.bash &
+alacritty &
 
 # Different WMs/DEs if I want to try them
 
