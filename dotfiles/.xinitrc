@@ -55,6 +55,10 @@ alacritty &
 
 # Different WMs/DEs if I want to try them
 
+# XFCE
+# exec startxfce4
+
+
 # GNOME
 # export XDG_SESSION_TYPE=x11; export GDK_BACKEND=x11; exec gnome-session
 
