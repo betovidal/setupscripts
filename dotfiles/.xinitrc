@@ -56,7 +56,7 @@ alacritty &
 # Different WMs/DEs if I want to try them
 
 # XFCE
-# exec startxfce4
+exec startxfce4
 
 
 # GNOME
@@ -67,7 +67,7 @@ alacritty &
 # export DESKTOP_SESSION=plasma; exec startplasma-x11
 
 # DWM - Clone repo, compile and install manually before using.
-slstatus 2>/dev/null & exec dwm
+# slstatus 2>/dev/null & exec dwm
 
 # MATE - install mate and mate-extra packages.
 # exec mate-session

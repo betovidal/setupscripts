@@ -146,6 +146,12 @@ ARCH_PKGS="\
 	zathura \
 	zathura-pdf-mupdf \
 	zbar \
+    \
+    blueman \
+    xfce4 \
+    xfce4-mpc-plugin \
+    xfce4-pulseaudio-plugin \
+    xfce4-taskmanager \
 	\
 	mesa
 	mesa-vdpau \
