@@ -10,6 +10,6 @@ Icon=teams
 # A comment which can/will be used as a tooltip
 Comment=Launch Chromium in app mode and go to Teams web app
 # This points to $HOME/.local/bin/teams.sh
-Exec=teams.sh
+Exec=teams
 # Describes the categories in which this entry should be shown
 Categories=Communication
