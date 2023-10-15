@@ -1,25 +1,74 @@
 #!/usr/bin/env bash
 
 # DEBIAN
-# PACKAGES="\
-# 	adduser sudo\
-# 	gcc make man stow\
-# 	bash-completion git\
-# 	alsa-utils pulseaudio pulseaudio-module-bluetooth\
-# 	fonts-noto-color-emoji fonts-symbola\
-# 	dbus-x11 dunst libnotify-bin ffmpegthumbnailer tumbler-plugins-extra\
-# 	geany thunar mednafen zathura xzoom gpick lingot\
-# 	bc cmus curl feh ffmpeg fim freerdp2-x11 maim nnn ntfs-3g\
-# 	p7zip-full python3 rofi screenfetch slop sxiv jq\
-# 	tigervnc-viewer tmux\
-# 	xclip xsel xdotool xinit xorg\
-# 	nethogs nload net-tools\
-# 	libncurses5-dev libx11-dev libxinerama-dev libxft-dev\
-# 	libjpeg-dev libxrandr-dev libxt-dev\
-# 	firmware-realtek\
-# 	firmware-amd-graphics firmware-linux-nonfree libgl1-mesa-dri\
-# 	libglx-mesa0 mesa-vulkan-drivers xserver-xorg-video-all\
-# 	"
+# DEBIAN_PACKAGES="\
+	adduser \
+	alsa-utils \
+	bash-completion \
+	bc \
+	curl \
+	dbus-x11 \
+	dunst \
+	evince \
+	ffmpeg \
+	ffmpegthumbnailer \
+	fim \
+	firmware-realtek \
+	firmware-amd-graphics \
+	firmware-linux-nonfree \
+	freerdp2-x11 \
+	fonts-noto-color-emoji \
+	fonts-symbola \
+	gcc \
+	git\
+	gpick \
+	jq \
+	libnotify-bin \
+	lingot \
+	maim \
+	make \
+	man \
+	nethogs \
+	net-tools \
+	nload \
+	nnn \
+	ntfs-3g \
+	openssh-client \
+	openssh-server \
+	p7zip-full \
+	pulseaudio \
+	pulseaudio-module-bluetooth \
+	python3 \
+	rofi \
+	screenfetch \
+	slop \
+	stow\
+	sudo \
+	sxiv \
+	tigervnc-viewer \
+	tmux \
+	tumbler-plugins-extra \
+	thunar \
+	xclip \
+	xdotool \
+	xinit \
+	xorg \
+	xsel \
+	xzoom \
+	zathura \
+\
+	libncurses5-dev \
+	libx11-dev \
+	libxinerama-dev \
+	libxft-dev \
+	libjpeg-dev \
+	libxrandr-dev \
+	libxt-dev \
+	libgl1-mesa-dri \
+	libglx-mesa0 \
+	mesa-vulkan-drivers \
+	xserver-xorg-video-all \
+	"
 
 # ARCH
 ARCH_PKGS="\
@@ -47,6 +96,7 @@ ARCH_PKGS="\
 	efibootmgr \
 	espeak-ng \
 	espeak-ng-espeak \
+	evince \
 	fbv \
 	file-roller \
 	firefox \
@@ -57,7 +107,6 @@ ARCH_PKGS="\
 	freerdp \
 	fzf \
 	gcc \
-	gftp \
 	git \
 	gmtp \
 	grub \
@@ -146,12 +195,12 @@ ARCH_PKGS="\
 	zathura \
 	zathura-pdf-mupdf \
 	zbar \
-    \
-    blueman \
-    xfce4 \
-    xfce4-mpc-plugin \
-    xfce4-pulseaudio-plugin \
-    xfce4-taskmanager \
+	\
+	blueman \
+	xfce4 \
+	xfce4-mpc-plugin \
+	xfce4-pulseaudio-plugin \
+	xfce4-taskmanager \
 	\
 	mesa
 	mesa-vdpau \
