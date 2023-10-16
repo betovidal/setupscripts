@@ -15,7 +15,7 @@ BLUE="\001$(tput setaf 4)\002"
 PURPLE="\001$(tput setaf 5)\002"
 CYAN="\001$(tput setaf 6)\002"
 WHITE="\001$(tput setaf 7)\002"
-ACCENT=$YELLOW
+ACCENT=$PURPLE
 # PS1='[\u@\h \W]\$ '
 PS1="$ACCENT[$WHITE\u$ACCENT@$WHITE\H \W$ACCENT]$WHITE\$ "
 # Replaced by my rr script and NetworkManager, respectively
