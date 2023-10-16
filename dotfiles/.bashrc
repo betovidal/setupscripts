@@ -15,7 +15,7 @@ BLUE="\001$(tput setaf 4)\002"
 PURPLE="\001$(tput setaf 5)\002"
 CYAN="\001$(tput setaf 6)\002"
 WHITE="\001$(tput setaf 7)\002"
-ACCENT=$PURPLE
+ACCENT=$YELLOW
 # PS1='[\u@\h \W]\$ '
 PS1="$ACCENT[$WHITE\u$ACCENT@$WHITE\H \W$ACCENT]$WHITE\$ "
 # Replaced by my rr script and NetworkManager, respectively
@@ -37,5 +37,17 @@ if [ -x "$ALIASES" ]; then
 	. "$ALIASES"
 fi
 
+# Needed in Debian
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
 # Bash configurations
-HISTCONTROL=ignorespace
+HISTCONTROL=ignoreboth
