@@ -23,6 +23,10 @@ DEBIAN_PACKAGES="\
 	firmware-realtek \
 	ffmpeg \
 	ffmpegthumbnailer \
+	fonts-baekmuk \
+	fonts-dejavu-extra \
+	fonts-hanazono \
+	fonts-liberation2 \
 	fonts-noto-color-emoji \
 	fonts-symbola \
 	fonts-terminus-otb \
@@ -57,7 +61,6 @@ DEBIAN_PACKAGES="\
 	network-manager \
 	nload \
 	nnn \
-	fonts-noto-color-emoji \
 	ntfs-3g \
 	openssh-client \
 	openssh-server \
