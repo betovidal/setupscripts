@@ -1,24 +1,33 @@
 #!/usr/bin/env bash
 
 # DEBIAN
-# DEBIAN_PACKAGES="\
+DEBIAN_PACKAGES="\
 	adduser \
 	alsa-utils \
+	arandr \
+	baobab \
 	bash-completion \
 	bc \
+	bluez \
+	bluez-tools \
+	bspwm \
+	calibre \
+	catfish \
+	chromium \
 	curl \
 	dbus-x11 \
+	dillo \
 	dunst \
 	evince \
-	ffmpeg \
-	ffmpegthumbnailer \
 	fim \
 	firmware-realtek \
 	firmware-amd-graphics \
 	firmware-linux-nonfree \
-	freerdp2-x11 \
+	ffmpeg \
+	ffmpegthumbnailer \
 	fonts-noto-color-emoji \
 	fonts-symbola \
+	freerdp2-x11 \
 	gcc \
 	git\
 	gpick \
@@ -51,14 +60,19 @@
 	thunar \
 	xclip \
 	xdotool \
+	\
 	xfce4 \
+	xfce4-mpc-plugin \
 	xfce4-power-manager \
+	xfce4-pulseaudio-plugin \
+	xfce4-taskmanager \
+	\
 	xinit \
 	xorg \
 	xsel \
 	xzoom \
 	zathura \
-\
+	\
 	libncurses5-dev \
 	libx11-dev \
 	libxinerama-dev \
