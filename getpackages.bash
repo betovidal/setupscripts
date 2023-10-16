@@ -2,7 +2,6 @@
 
 # DEBIAN
 DEBIAN_PACKAGES="\
-	adduser \
 	alsa-utils \
 	arandr \
 	baobab \
@@ -19,42 +18,77 @@ DEBIAN_PACKAGES="\
 	dillo \
 	dunst \
 	evince \
-	fim \
-	firmware-realtek \
-	firmware-amd-graphics \
+	firefox-esr \
 	firmware-linux-nonfree \
+	firmware-realtek \
 	ffmpeg \
 	ffmpegthumbnailer \
 	fonts-noto-color-emoji \
 	fonts-symbola \
+	fonts-terminus-otb \
 	freerdp2-x11 \
+	fzf \
 	gcc \
-	git\
+	ghostwriter \
+	git \
+	gmtp \
+	guvcview \
+	gsimplecal \
 	gpick \
+	htop \
+	i3 \
+	i3lock \
+	inkscape \
+	inotify-tools \
+	irssi \
 	jq \
+	l3afpad \
 	libnotify-bin \
 	lingot \
+	lm-sensors \
 	maim \
 	make \
 	man \
-	nethogs \
+	mpv \
+	mpc \
+	mpd \
 	net-tools \
+	nethogs \
+	network-manager \
 	nload \
 	nnn \
+	fonts-noto-color-emoji \
 	ntfs-3g \
 	openssh-client \
 	openssh-server \
 	p7zip-full \
+	pavucontrol \
+	picom \
+	plantuml \
+	polybar \
 	pulseaudio \
 	pulseaudio-module-bluetooth \
+	pulseaudio-utils \
+	pulsemixer \
 	python3 \
+	qbittorrent \
+	qtqr \
+	ripgrep \
 	rofi \
 	screenfetch \
+	seahorse \
 	slop \
+	sox \
 	stow\
 	sudo \
+	sxhkd \
 	sxiv \
+	taskwarrior \
+	thunar \
+	thunar-archive-plugin \
+	tidy \
 	tigervnc-viewer \
+	tk \
 	tmux \
 	tumbler-plugins-extra \
 	thunar \
@@ -80,6 +114,8 @@ DEBIAN_PACKAGES="\
 	libjpeg-dev \
 	libxrandr-dev \
 	libxt-dev \
+	\
+	firmware-amd-graphics \
 	libgl1-mesa-dri \
 	libglx-mesa0 \
 	mesa-vulkan-drivers \
@@ -105,27 +141,23 @@ ARCH_PKGS="\
 	catfish \
 	chromium \
 	coolreader \
+	curl \
 	dhcpcd \
 	dillo \
 	discord \
 	dunst \
 	efibootmgr \
-	espeak-ng \
-	espeak-ng-espeak \
 	evince \
-	fbv \
-	file-roller \
 	firefox \
 	firefox-developer-edition \
-	firejail \
 	ffmpeg \
 	ffmpegthumbnailer \
 	freerdp \
 	fzf \
 	gcc \
+	ghostwriter \
 	git \
 	gmtp \
-	grub \
 	guvcview \
 	gsimplecal \
 	htop \
@@ -135,7 +167,7 @@ ARCH_PKGS="\
 	inotify-tools \
 	irssi \
 	jq \
-	leafpad \
+	l3afpad \
 	libnotify \
 	libxml2 \
 	linux \
@@ -158,6 +190,7 @@ ARCH_PKGS="\
 	openssh \
 	os-prober \
 	p7zip \
+	pavucontrol \
 	picom \
 	pkgconf \
 	plantuml \
@@ -169,7 +202,6 @@ ARCH_PKGS="\
 	python \
 	qbittorrent \
 	qtqr \
-	retext \
 	ripgrep \
 	rofi \
 	rofi-emoji \
@@ -255,14 +287,23 @@ MAC_CLI_PKGS="\
     tmux \
     vim \
 "
+# ARCHLINUX
 # amdgpu packages as described here
 #   https://wiki.archlinux.org/title/AMDGPU#Installation
 # virt-manager packages described here
 #   https://wiki.archlinux.org/title/libvirt
 
+# DEBIAN
+# amdgpu packages as described here
+#   https://wiki.debian.org/AtiHowTo#Installation
+# virt-manager packages described here
+#   https://wiki.debian.org/KVM#Installation
+
 if [ "$1" == "mac" ]; then
     brew install $MAC_CLI_PKGS
     brew install --cask $MAC_UI_PKGS
+elif [ "$1" == "debian" ]; then
+    sudo apt install $DEBIAN_PACKAGES
 else
     # for package in $ARCH_PKGS; do
     #     echo $package
