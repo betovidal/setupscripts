@@ -51,6 +51,8 @@
 	thunar \
 	xclip \
 	xdotool \
+	xfce4 \
+	xfce4-power-manager \
 	xinit \
 	xorg \
 	xsel \
@@ -199,6 +201,7 @@ ARCH_PKGS="\
 	blueman \
 	xfce4 \
 	xfce4-mpc-plugin \
+	xfce4-power-manager \
 	xfce4-pulseaudio-plugin \
 	xfce4-taskmanager \
 	\
