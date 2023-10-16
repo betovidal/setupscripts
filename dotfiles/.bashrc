@@ -31,10 +31,9 @@ if [ -x "$FUNCTIONS_SCRIPT" ]; then
 	. "$FUNCTIONS_SCRIPT"
 fi
 
-# Include aliases.
-ALIASES="$HOME/.config/aliases.bash"
-if [ -x "$ALIASES" ]; then
-	. "$ALIASES"
+# Include aliases the Debian way.
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
 fi
 
 # Needed in Debian

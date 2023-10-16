@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 # git
 alias gall="git add -A"
 alias gclear="git clean -df; git reset --hard;"
