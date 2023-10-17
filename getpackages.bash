@@ -7,6 +7,7 @@ DEBIAN_PACKAGES="\
 	baobab \
 	bash-completion \
 	bc \
+	blueman \
 	bluez \
 	bluez-tools \
 	bspwm \
@@ -39,6 +40,7 @@ DEBIAN_PACKAGES="\
 	guvcview \
 	gsimplecal \
 	gpick \
+	gvim \
 	htop \
 	i3 \
 	i3lock \
@@ -95,8 +97,17 @@ DEBIAN_PACKAGES="\
 	tmux \
 	tumbler-plugins-extra \
 	thunar \
+	vpnc \
+	x11-utils \
+	xchm \
 	xclip \
+	xdo \
 	xdotool \
+	xsel \
+	xwallpaper \
+	xzoom \
+	zbar-tools \
+	zbarcam-gtk \
 	\
 	xfce4 \
 	xfce4-mpc-plugin \
@@ -104,26 +115,23 @@ DEBIAN_PACKAGES="\
 	xfce4-pulseaudio-plugin \
 	xfce4-taskmanager \
 	\
-	xinit \
-	xorg \
-	xsel \
-	xzoom \
-	zathura \
-	\
-	libncurses5-dev \
-	libx11-dev \
-	libxinerama-dev \
-	libxft-dev \
-	libjpeg-dev \
-	libxrandr-dev \
-	libxt-dev \
-	\
 	firmware-amd-graphics \
 	libgl1-mesa-dri \
 	libglx-mesa0 \
 	mesa-vulkan-drivers \
 	xserver-xorg-video-all \
 	"
+
+# I will be using gvim instead of compiling vim myself.
+# I'm using xfce instead of dwm.
+# These were the packages used to compile vim and some suckless tools.
+# libncurses5-dev \
+# libx11-dev \
+# libxinerama-dev \
+# libxft-dev \
+# libjpeg-dev \
+# libxrandr-dev \
+# libxt-dev \
 
 # ARCH
 ARCH_PKGS="\
@@ -137,6 +145,7 @@ ARCH_PKGS="\
 	base-devel \
 	bash-completion \
 	bc \
+	blueman \
 	bluez \
 	bluez-utils \
 	bspwm \
@@ -163,6 +172,7 @@ ARCH_PKGS="\
 	gmtp \
 	guvcview \
 	gsimplecal \
+	gvim \
 	htop \
 	i3lock \
 	inetutils \
@@ -241,13 +251,11 @@ ARCH_PKGS="\
 	xorg-xfontsel \
 	xorg-xinit \
 	xorg-xinput \
+	xort-xprop \
 	xsel \
 	xwallpaper \
-	zathura \
-	zathura-pdf-mupdf \
 	zbar \
 	\
-	blueman \
 	xfce4 \
 	xfce4-mpc-plugin \
 	xfce4-power-manager \
