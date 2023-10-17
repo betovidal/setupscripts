@@ -12,6 +12,7 @@ DEBIAN_PACKAGES="\
 	blueman \
 	bluez \
 	bluez-tools \
+	bsdgames \
 	bspwm \
 	calibre \
 	catfish \
@@ -88,8 +89,10 @@ DEBIAN_PACKAGES="\
 	rofi \
 	screenfetch \
 	seahorse \
+	simplescreenrecorder \
 	slop \
 	sox \
+	speedtest-cli \
 	stow\
 	sudo \
 	sxhkd \
@@ -114,6 +117,7 @@ DEBIAN_PACKAGES="\
 	xsel \
 	xwallpaper \
 	xzoom \
+	yt-dlp \
 	zbar-tools \
 	zbarcam-gtk \
 	\
@@ -129,6 +133,11 @@ DEBIAN_PACKAGES="\
 	libglx-mesa0 \
 	mesa-vulkan-drivers \
 	xserver-xorg-video-all \
+	\
+	qemu-system \
+	libvirt-daemon-system \
+	virt-manager \
+	\
 	"
 
 # I will be using gvim instead of compiling vim myself.
@@ -159,6 +168,7 @@ ARCH_PKGS="\
 	blueman \
 	bluez \
 	bluez-utils \
+	bsd-games \
 	bspwm \
 	calibre \
 	catfish \
@@ -234,8 +244,10 @@ ARCH_PKGS="\
 	rofi-emoji \
 	screenfetch \
 	seahorse \
+	simplescreenrecorder \
 	slop \
 	sox \
+	speedtest-cli \
 	stow \
 	sudo \
 	sxhkd \
@@ -270,6 +282,7 @@ ARCH_PKGS="\
 	xort-xprop \
 	xsel \
 	xwallpaper \
+	yt-dlp \
 	zbar \
 	\
 	xfce4 \
