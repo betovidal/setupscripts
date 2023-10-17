@@ -2,6 +2,8 @@
 
 # DEBIAN
 DEBIAN_PACKAGES="\
+	aisleriot \
+	alacritty \
 	alsa-utils \
 	arandr \
 	baobab \
@@ -37,6 +39,7 @@ DEBIAN_PACKAGES="\
 	ghostwriter \
 	git \
 	gmtp \
+	gnome-calculator \
 	guvcview \
 	gsimplecal \
 	gpick \
@@ -48,8 +51,10 @@ DEBIAN_PACKAGES="\
 	inotify-tools \
 	irssi \
 	jq \
+	kruler \
 	l3afpad \
 	libnotify-bin \
+	libxml2-utils \
 	lingot \
 	lm-sensors \
 	maim \
@@ -66,6 +71,7 @@ DEBIAN_PACKAGES="\
 	ntfs-3g \
 	openssh-client \
 	openssh-server \
+	otpclient \
 	p7zip-full \
 	pavucontrol \
 	picom \
@@ -92,11 +98,13 @@ DEBIAN_PACKAGES="\
 	thunar \
 	thunar-archive-plugin \
 	tidy \
+	tig \
 	tigervnc-viewer \
 	tk \
 	tmux \
 	tumbler-plugins-extra \
 	thunar \
+	thunderbird \
 	vpnc \
 	x11-utils \
 	xchm \
@@ -113,6 +121,7 @@ DEBIAN_PACKAGES="\
 	xfce4-mpc-plugin \
 	xfce4-power-manager \
 	xfce4-pulseaudio-plugin \
+	xfce4-screenshooter \
 	xfce4-taskmanager \
 	\
 	firmware-amd-graphics \
@@ -136,6 +145,8 @@ DEBIAN_PACKAGES="\
 # ARCH
 ARCH_PKGS="\
 	acpilight \
+	aisleriot \
+	alacritty \
 	alsa-card-profiles \
 	alsa-utils \
 	arandr \
@@ -170,6 +181,7 @@ ARCH_PKGS="\
 	ghostwriter \
 	git \
 	gmtp \
+	gnome-calculator \
 	guvcview \
 	gsimplecal \
 	gvim \
@@ -180,6 +192,7 @@ ARCH_PKGS="\
 	inotify-tools \
 	irssi \
 	jq \
+	kruler \
 	l3afpad \
 	libnotify \
 	libxml2 \
@@ -196,6 +209,7 @@ ARCH_PKGS="\
 	mpd \
 	net-tools \
 	nethogs \
+	networkmanager \
 	nload \
 	nnn \
 	noto-fonts-emoji \
@@ -230,7 +244,9 @@ ARCH_PKGS="\
 	terminus-font \
 	thunar \
 	thunar-archive-plugin \
+	thunderbird \
 	tidy \
+	tig \
 	tigervnc \
 	tk \
 	tmux \
@@ -260,6 +276,7 @@ ARCH_PKGS="\
 	xfce4-mpc-plugin \
 	xfce4-power-manager \
 	xfce4-pulseaudio-plugin \
+	xfce4-screenshooter \
 	xfce4-taskmanager \
 	\
 	mesa
