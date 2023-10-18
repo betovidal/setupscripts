@@ -45,7 +45,6 @@ DEBIAN_PACKAGES="\
 	guvcview \
 	gsimplecal \
 	gpick \
-	gvim \
 	htop \
 	i3 \
 	i3lock \
@@ -109,6 +108,7 @@ DEBIAN_PACKAGES="\
 	tumbler-plugins-extra \
 	thunar \
 	thunderbird \
+	vim-gtk3 \
 	vpnc \
 	x11-utils \
 	xchm \
@@ -347,6 +347,11 @@ if [ "$1" == "mac" ]; then
     brew install --cask $MAC_UI_PKGS
 elif [ "$1" == "debian" ]; then
     sudo apt install $DEBIAN_PACKAGES
+    echo "WARNING! Do not forget to uninstall xdg-desktop-portal as it makes"
+    echo "Firefox and other programs start very slowly."
+    echo "Run:"
+    echo "apt remove --purge xdg-desktop-portal"
+    echo "apt autoremove"
 else
     # for package in $ARCH_PKGS; do
     #     echo $package
