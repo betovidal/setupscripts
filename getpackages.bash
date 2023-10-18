@@ -9,6 +9,7 @@ DEBIAN_PACKAGES="\
 	baobab \
 	bash-completion \
 	bc \
+	binutils \
 	blueman \
 	bluez \
 	bluez-tools \
@@ -116,6 +117,7 @@ DEBIAN_PACKAGES="\
 	xdotool \
 	xsel \
 	xwallpaper \
+	xz-utils \
 	xzoom \
 	yt-dlp \
 	zbar-tools \
