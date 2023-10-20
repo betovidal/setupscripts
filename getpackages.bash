@@ -115,6 +115,7 @@ DEBIAN_PACKAGES="\
 	xclip \
 	xdo \
 	xdotool \
+	xinput \
 	xsel \
 	xwallpaper \
 	xz-utils \
