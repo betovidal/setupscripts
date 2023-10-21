@@ -130,6 +130,8 @@ DEBIAN_PACKAGES="\
 	xfce4-pulseaudio-plugin \
 	xfce4-screenshooter \
 	xfce4-taskmanager \
+	xfdesktop4 \
+	xfdesktop4-data \
 	\
 	firmware-amd-graphics \
 	libgl1-mesa-dri \
