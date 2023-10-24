@@ -12,7 +12,7 @@ function usage() {
     echo "PERMISSION - Either read/write/execute or their short variants r/w/x."
     echo "PATH       - File or directory to check."
     echo ""
-    echo "Example: can root read ~/.bash_profile"
+    echo "Example: can root read ~/.ssh/"
     echo "Example: can i write ~/.bashrc"
     echo ""
     echo "This commands outputs to stdout and returns a value:"

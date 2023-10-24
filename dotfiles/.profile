@@ -1,5 +1,5 @@
 #
-# ~/.bash_profile
+# ~/.profile
 #
 
 # https://unix.stackexchange.com/a/541352

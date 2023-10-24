@@ -48,7 +48,7 @@ source setupst.bash
 printMsg "Configuring mpd"
 source mpdconfig.sh
 # Backup and remove original bash profile and rc, will be linked by link.sh
-printMsg "Backing up bash_profile and bashrc, deleting originals"
+printMsg "Backing up profile and bashrc, deleting originals"
 source bashops.sh
 # ls with colors
 printMsg "Adding aliases"
