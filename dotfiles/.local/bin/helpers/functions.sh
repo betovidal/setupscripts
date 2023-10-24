@@ -119,23 +119,19 @@ denv () {
         echo "ACTION is one of: ${actions[*]}"
         echo "COLLECTION is one of: ${collections[*]}"
     }
-    actions=(
-        "start" "stop" "restart" "is-active" "is-enabled" "status"
-    )
-    collections=(
-        "web"
-    )
+    actions="start stop restart is-active is-enabled status"
+    collections="web"
     # If list needed
     if [ "$1" = "la" ]; then
-        echo "${actions[*]}"
+        echo "$actions"
         return
     elif [ "$1" = "lc" ]; then
-        echo "${collections[*]}"
+        echo "$collections"
         return
     fi
     # Action checks
     okaction=false
-    for action in "${actions[@]}"; do
+    for action in $actions; do
         if [ "$action" = "$1" ]; then
             okaction=true
         fi
@@ -146,7 +142,7 @@ denv () {
     fi
     # Collection checks
     okcollection=false
-    for collection in "${collections[@]}"; do
+    for collection in $collections; do
         if [ "$collection" = "$2" ]; then
             okcollection=true
         fi
@@ -157,7 +153,7 @@ denv () {
     fi
     case "$2" in
         "web")
-            services=("nginx" "mariadb" "php-fpm")
+            services="nginx mariadb php-fpm"
             ;;
         *)
             print_denv_help
@@ -165,7 +161,7 @@ denv () {
     esac
     action="$1"
     collection="$2"
-    for service in "${services[@]}"; do
+    for service in $services; do
         if [ "$action" = "status" ]; then
             sudo systemctl "status" "--no-pager" "$service"
         else
@@ -175,7 +171,7 @@ denv () {
     done
 }
 
-function flac-2-mp3 () {
+flac2mp3 () {
     for a in ./*.flac; do
       < /dev/null ffmpeg -i "$a" -qscale:a 0 "${a[@]/%flac/mp3}"
     done
