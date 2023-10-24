@@ -1,7 +1,17 @@
 #
 # ~/.bash_profile
 #
-[ -f "$HOME/.bashrc" ] && . "$HOME/.bashrc"
+
+# https://unix.stackexchange.com/a/541352
+# write content below into ~/.profile, or ~/.bash_profile
+
+# if running bash
+if [ -n "$BASH_VERSION" ]; then
+    # include .bashrc if it exists
+    if [ -f "$HOME/.bashrc" ]; then
+    . "$HOME/.bashrc"
+    fi
+fi
 
 # Platform specific configurations
 SPECIFIC_PROF=""
