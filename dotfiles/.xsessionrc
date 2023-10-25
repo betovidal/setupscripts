@@ -1,0 +1,10 @@
+# Debian specific file that runs when a GUI login starts. Needed by
+# lightdm. Read more about this requirement here
+#   https://github.com/canonical/lightdm/issues/96
+# Use of .xsessionrc file:
+#   https://unix.stackexchange.com/a/281923
+
+profile_file="$HOME/.profile"
+if [ -r "$profile_file" ]; then
+	. $profile_file
+fi
