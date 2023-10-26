@@ -55,6 +55,7 @@ DEBIAN_PACKAGES="\
 	kruler \
 	l3afpad \
 	libnotify-bin \
+	libreoffice \
 	libxml2-utils \
 	lingot \
 	lm-sensors \
