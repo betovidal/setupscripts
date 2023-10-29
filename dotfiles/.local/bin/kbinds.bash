@@ -73,10 +73,10 @@ function screen_cap_handler() {
 function vol_handler() {
     case $1 in
         up)
-            pactl set-sink-volume @DEFAULT_SINK@ +5%
+            pactl set-sink-volume @DEFAULT_SINK@ +2.5%
             ;;
         down)
-            pactl set-sink-volume @DEFAULT_SINK@ -5%
+            pactl set-sink-volume @DEFAULT_SINK@ -2.5%
             ;;
         mute)
             pactl set-sink-mute @DEFAULT_SINK@ toggle
