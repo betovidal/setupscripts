@@ -4,7 +4,7 @@
 # Must be launched with Bash
 
 OLDDPI=$(xrdb -query | awk '/Xft.dpi/ {print $2}')
-xrdb -merge <(echo "Xft.dpi: 100")
+xrdb -merge <(echo "Xft.dpi: 96")
 $* & disown
 sleep 3
 xrdb -merge <(echo "Xft.dpi: $OLDDPI")
