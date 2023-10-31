@@ -28,7 +28,6 @@ DEBIAN_PACKAGES="\
 	firmware-realtek \
 	ffmpeg \
 	ffmpegthumbnailer \
-	fonts-baekmuk \
 	fonts-dejavu-extra \
 	fonts-hanazono \
 	fonts-liberation2 \
@@ -146,6 +145,12 @@ DEBIAN_PACKAGES="\
 	\
 	"
 
+# I used fonts-baekmuk for rendering korean fonts... however this broke
+# the font rendering, specifically for Firefox. Any woff and other fonts were
+# rendered as if there was no antialiasing. Discovered by installing the package
+# fonts-manager and inspecting the existing fonts.
+# Twitter and Walmart websites were notable examples of very bad rendering.
+
 # I will be using gvim instead of compiling vim myself.
 # I'm using xfce instead of dwm.
 # These were the packages used to compile vim and some suckless tools.
@@ -189,6 +194,7 @@ ARCH_PKGS="\
 	evince \
 	firefox \
 	firefox-developer-edition \
+	fonts-manager \
 	ffmpeg \
 	ffmpegthumbnailer \
 	freerdp \
@@ -312,6 +318,9 @@ ARCH_PKGS="\
 	iptables-nft \
 	edk2-ovmf \
 "
+# Pending from Debian packages:
+# - fonts-manager
+
 MAC_UI_PKGS="\
     android-studio \
     firefox \
