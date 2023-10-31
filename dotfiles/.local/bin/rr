@@ -7,6 +7,13 @@
 TYPE=$1
 NAME=$2
 SCRIPT_FOLDER=$(dirname "$(readlink -f "$0")")
+PYTHON_BINS="python python3"
+
+for PYTHON_BIN in $PYTHON_BINS; do
+    if [ ! -z "$PYTHON_BIN" ]; then
+        break
+    fi
+done
 
 if [ -z "$NAME" ]; then
 	echo "ERROR: You must provide a named host, from $HOME/.config/rr/remotes.json"
@@ -14,7 +21,7 @@ if [ -z "$NAME" ]; then
 fi
 
 if [ "$TYPE" = "ssh" ] || [ "$TYPE" = "rdp" ]; then
-	args=$(python "$SCRIPT_FOLDER/helpers/_gen_compl_args.py" "$TYPE" "$NAME")
+	args=$($PYTHON_BIN "$SCRIPT_FOLDER/helpers/_gen_compl_args.py" "$TYPE" "$NAME")
 	if [ -z "$args" ]; then
 		echo "ERROR: Named host '$NAME' is not in file $HOME/.config/rr/remotes.json"
 		exit
