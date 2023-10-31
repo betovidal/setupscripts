@@ -10,7 +10,7 @@ SCRIPT_FOLDER=$(dirname "$(readlink -f "$0")")
 PYTHON_BINS="python python3"
 
 for PYTHON_BIN in $PYTHON_BINS; do
-    if [ ! -z "$PYTHON_BIN" ]; then
+    if [ ! -z "$(which PYTHON_BIN)" ]; then
         break
     fi
 done
