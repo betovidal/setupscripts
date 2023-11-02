@@ -62,7 +62,6 @@
       <property name="&lt;Primary&gt;&lt;Alt&gt;t" type="string" value="alacritty"/>
       <property name="AudioRaiseVolume" type="string" value="kbinds.bash vol up"/>
       <property name="AudioLowerVolume" type="string" value="kbinds.bash vol down"/>
-      <property name="&lt;Super&gt;q" type="string" value="kbinds.bash lock"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;space" type="string" value="kbinds.bash emoji"/>
       <property name="AudioPrev" type="string" value="kbinds.bash music prev"/>
       <property name="AudioNext" type="string" value="kbinds.bash music next"/>
@@ -71,6 +70,7 @@
       <property name="AudioMute" type="string" value="kbinds.bash vol mute"/>
       <property name="&lt;Super&gt;apostrophe" type="string" value="kbinds.bash music find"/>
       <property name="&lt;Shift&gt;&lt;Super&gt;question" type="string" value="kbinds.bash music info"/>
+      <property name="&lt;Super&gt;q" type="string" value="xflock4"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
