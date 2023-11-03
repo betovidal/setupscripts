@@ -1,40 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <actions>
 <action>
-	<icon>utilities-terminal</icon>
+	<icon>Alacritty</icon>
 	<name>Open Terminal Here</name>
+	<submenu></submenu>
 	<unique-id>1629840672641490-1</unique-id>
-	<command>st</command>
-	<description>Example for a custom action</description>
+	<command>alacritty</command>
+	<description>Open a terminal here</description>
+	<range></range>
 	<patterns>*</patterns>
 	<startup-notify/>
 	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
 </action>
 <action>
 	<icon>sxiv</icon>
 	<name>See images [N]</name>
+	<submenu></submenu>
 	<unique-id>1629948625747911-1</unique-id>
 	<command>sxiv -a -s f .</command>
 	<description>See images of this directory</description>
+	<range></range>
 	<patterns>*</patterns>
 	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
 </action>
 <action>
 	<icon>sxiv</icon>
 	<name>See images [R]</name>
+	<submenu></submenu>
 	<unique-id>1629948654564192-2</unique-id>
 	<command>sxiv -a -s f -r .</command>
 	<description>See images of this directory and its subdirectories</description>
+	<range></range>
 	<patterns>*</patterns>
 	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
 </action>
 <action>
-	<icon></icon>
+	<icon>org.xfce.catfish</icon>
 	<name>Search with catfish</name>
-	<unique-id>1637822812501311-1</unique-id>
-	<command>catfish %f</command>
-	<description></description>
+	<submenu></submenu>
+	<unique-id>1698996121955586-2</unique-id>
+	<command>catfish</command>
+	<description>Search with catfish</description>
+	<range>*</range>
 	<patterns>*</patterns>
 	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
 </action>
 </actions>
