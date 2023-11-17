@@ -2,21 +2,26 @@
 
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
-if command -v brew &> /dev/null; then
-    COMPL_SCRIPT="$(brew --prefix)/etc/profile.d/bash_completion.sh"
-    if [ -f "$COMPL_SCRIPT" ]; then
-        . "$COMPL_SCRIPT"
-    fi
-fi
-
-RUBY_PATH="/usr/local/opt/ruby/bin"
-RUBY_BIN="$RUBY_PATH/ruby"
-export PATH="$RUBY_PATH:$PATH"
-
-ANDROID_HOME=/Users/$USER/Library/Android/sdk/
-export ANDROID_HOME
-
+# brew path
 BREW_PATH="/opt/homebrew/bin/brew"
 if [ -x "$BREW_PATH" ]; then
     eval "$($BREW_PATH shellenv)"
 fi
+
+if command -v brew &> /dev/null; then
+    # bash-completion@2
+    COMPL_SCRIPT="$(brew --prefix)/etc/profile.d/bash_completion.sh"
+    if [ -f "$COMPL_SCRIPT" ]; then
+        . "$COMPL_SCRIPT"
+    fi
+
+    # ruby
+    RUBY_PATH="$(brew --prefix)/opt/ruby/bin"
+    RUBY_BIN="$RUBY_PATH/ruby"
+    export PATH="$RUBY_PATH:$PATH"
+
+fi
+
+ANDROID_HOME=/Users/$USER/Library/Android/sdk/
+export ANDROID_HOME
+
