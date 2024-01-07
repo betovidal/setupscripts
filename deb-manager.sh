@@ -4,6 +4,8 @@
 # - Aseprite https://www.humblebundle.com/ <-- need to login
 # - Spotify https://www.spotify.com/us/download/linux/ <-- add pgp
 # - NoMachine https://downloads.nomachine.com/linux/?id=1 <-- infinite redirects
+# - rpi-imager https://downloads.raspberrypi.org/imager/imager_latest_amd64.deb <-- I won't always need it
+# - Freetube https://github.com/FreeTubeApp/FreeTube/releases/download/v0.19.1-beta/freetube_0.19.1_amd64.deb <-- No way to get the latest build without known the version beforehand
 
 
 PKGS_CACHE="$HOME/.cache/deb-manager"
