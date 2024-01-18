@@ -5,7 +5,6 @@
 # can $action $type $args
 
 SCRIPT="do-backups"
-minecraft_saves="$HOME/.minecraft/saves/"
 _do_backups_completions() {
     unset COMPREPLY
     # Only complete the second argument
@@ -17,12 +16,18 @@ _do_backups_completions() {
         backup_types="minecraft wordpress bookstack"
         COMPREPLY=($(compgen -W "$backup_types" "${COMP_WORDS[-1]}"))
     elif [ "${#COMP_WORDS[@]}" = "4" ]; then
-        if [ "${COMP_WORDS[-2]}" == "minecraft" ]; then
-            minecraft_saves="hello there friend"
-            COMPREPLY=($(compgen -W "$minecraft_saves" "${COMP_WORDS[-1]}"))
-        fi
+        case "${COMP_WORDS[-2]}" in
+            minecraft)
+                minecraft_saves_path="$HOME/.minecraft/saves/"
+                minecraft_saves=$(ls "$minecraft_saves_path" | tr '\n' ' ')
+                COMPREPLY=($(compgen -W "$minecraft_saves" "${COMP_WORDS[-1]}"))
+                ;;
+            *)
+                words="hola amigo :)"
+                COMPREPLY=($(compgen -W "$words" "${COMP_WORDS[-1]}"))
+                ;;
+        esac
     fi
 }
-#        -o default after no more matches are present, use the default
-#        completion function.
-complete -o default -F _do_backups_completions "$SCRIPT"
+
+complete -F _do_backups_completions "$SCRIPT"
