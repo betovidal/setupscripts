@@ -1,14 +1,48 @@
 #!/usr/bin/env bash
 
 actions="backup restore"
-backup_types="minecraft wordpress bookstack"
+backup_types="minecraft"
+
+minecraft_saves_path="$HOME/.minecraft/saves"
+
+cache_path="~/.cache/mc-backups"
 
 function usage() {
     me=$(basename "$0")
     echo "Usage: $me ACTION TYPE"
     echo ""
-    echo "Place your configurations in $HOME/.config/do-backup.conf.bash"
     echo "ACTION - One of the following actions: $actions"
     echo "TYPE   - A type of action: $backup_types"
 }
 
+_compress() {
+    # e.g. 2024-01-18T01_12_44
+    now="$(date +%FT%H_%M_%S)"
+    # e.g. 
+    filename="${1}_${now}.tar.gz"
+    tar zvcf "${cache_path}/${filename}" -C "${minecraft_saves_path}/${1}"
+}
+
+
+_decompress() {
+    # $1 = source
+    # $2 = destin
+    tar xvf "$1" -C "$2"
+}
+
+_move_to_old() {
+    folder_name="$1"
+    old_folder_name="${1}_old"
+    if [ -d "${old_folder_name}" ]; then
+        echo "Deleting ${old_folder_name}"
+        rm -ri "${old_folder_name}"
+    fi
+    mv "$folder_name" "$old_folder_name"
+}
+
+_main() {
+    action="$1"
+    action_type="$2"
+}
+
+main "$@"
