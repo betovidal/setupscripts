@@ -54,7 +54,7 @@
 	<name>Search with catfish</name>
 	<submenu></submenu>
 	<unique-id>1698996121955586-2</unique-id>
-	<command>catfish</command>
+	<command>catfish %d</command>
 	<description>Search with catfish</description>
 	<range>*</range>
 	<patterns>*</patterns>
