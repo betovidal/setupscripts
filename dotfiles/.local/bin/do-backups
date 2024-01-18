@@ -7,6 +7,7 @@ function usage() {
     me=$(basename "$0")
     echo "Usage: $me ACTION TYPE"
     echo ""
+    echo "Place your configurations in $HOME/.config/do-backup.conf.bash"
     echo "ACTION - One of the following actions: $actions"
     echo "TYPE   - A type of action: $backup_types"
 }
