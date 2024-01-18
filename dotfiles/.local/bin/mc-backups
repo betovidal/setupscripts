@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 actions="backup restore"
-backup_types="minecraft"
 
 minecraft_saves_path="$HOME/.minecraft/saves"
 
@@ -9,10 +8,9 @@ cache_path="~/.cache/mc-backups"
 
 function usage() {
     me=$(basename "$0")
-    echo "Usage: $me ACTION TYPE"
+    echo "Usage: $me ACTION path"
     echo ""
     echo "ACTION - One of the following actions: $actions"
-    echo "TYPE   - A type of action: $backup_types"
 }
 
 _compress() {
@@ -42,7 +40,14 @@ _move_to_old() {
 
 _main() {
     action="$1"
-    action_type="$2"
+    folder_name="$2"
+    folder_path="${minecraft_saves_path}/${folder_name}"
+    backup_path="${minecraft_saves_path}/${folder_name}"
+    if [ "$action" = "backup" ]; then
+        _backup 
+    elif [ "$action" = "restore" ]; then
+        echo "restore :)"
+    fi
 }
 
-main "$@"
+_main "$@"
