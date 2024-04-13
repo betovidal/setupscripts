@@ -11,6 +11,8 @@ Icon=teams
 Comment=Launch Chromium in app mode and go to Teams web app
 # This points to $HOME/.local/bin/teams.sh
 # https://stackoverflow.com/a/8980518
-Exec=sh -c "\$HOME/.local/bin/teams"
+# Exec=sh -c "\$HOME/.local/bin/teams"
+Exec=chromium --app=https://teams.microsoft.com/
+
 # Describes the categories in which this entry should be shown
 Categories=Office
