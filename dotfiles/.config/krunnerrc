@@ -1,0 +1,9 @@
+[PlasmaRunnerManager]
+migrated=true
+
+[Plugins]
+appstreamEnabled=false
+baloosearchEnabled=false
+browsertabsEnabled=false
+recentdocumentsEnabled=false
+webshortcutsEnabled=false
