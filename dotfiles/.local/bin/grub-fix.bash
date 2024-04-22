@@ -7,3 +7,7 @@ else
     echo "Path $BOOT_PATH is not a mount point."
     echo "Make sure to mount the efi partition in /boot."
 fi
+
+# For debian, do:
+# #sudo grub-install
+# #sudo update-grub
