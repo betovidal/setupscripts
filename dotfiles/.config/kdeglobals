@@ -171,7 +171,7 @@ View Style=DetailTree
 
 [KScreen]
 ScaleFactor=1.25
-ScreenScaleFactors=DisplayPort-0=1.25;DisplayPort-1=1.25;DisplayPort-2=1.25;HDMI-A-0=1.25;
+ScreenScaleFactors=eDP=1;HDMI-A-0=1;
 
 [PreviewSettings]
 MaximumRemoteSize=0
