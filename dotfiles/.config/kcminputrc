@@ -10,6 +10,11 @@ RepeatRate=30
 PointerAcceleration=-0.200
 PointerAccelerationProfile=1
 
+[Libinput][1267][12735][ELAN0708:00 04F3:31BF Touchpad]
+PointerAccelerationProfile=2
+ScrollFactor=0.3
+TapToClick=true
+
 [Libinput][1539][510][SINO WEALTH Mechanical Keyboard]
 ScrollFactor=1
 
