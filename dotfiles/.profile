@@ -81,6 +81,11 @@ if [ -d "$npm_global_path" ]; then
     PATH="$npm_global_path:$PATH"
 fi
 
+fzf_git_path="$HOME/.fzf/bin"
+if [ -d "$fzf_git_path" ]; then
+    PATH="$fzf_git_path:$PATH"
+fi
+
 # Check if rubygems is installed and add to path
 if command -v gem &> /dev/null
 then
