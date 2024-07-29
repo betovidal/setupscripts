@@ -13,22 +13,22 @@ popd
 # Install packages
 AURREPOS=(
     "aur/code-marketplace", # Until I need vsc specific, stick to code-oss
-    "aur/downgrade",
-    "aur/flashplayer-standalone"
+    # "aur/downgrade",
+    # "aur/flashplayer-standalone"
     "aur/google-earth-pro"
-    "aur/lemonbar-git"
+    # "aur/lemonbar-git"
     # "aur/libxft-bgra" # Patches are available in upstream now.
-    "aur/mcaselector"
+    # "aur/mcaselector"
     "aur/minecraft-launcher"
-    "aur/nomachine"
-    "aur/pcloud-drive"
-    "aur/pcloudcc-git "
-    "aur/pod2man"
+    # "aur/nomachine"
+    # "aur/pcloud-drive"
+    # "aur/pcloudcc-git "
+    # "aur/pod2man"
     "aur/spotify"
     # "aur/tuxguitar" # Install on demand. It's slow to reinstall everytime.
     # "aur/vscodium-bin-marketplace" # This installs vscodium-bin as a dependency
-    "aur/xtitle"
-    "aur/xzoom"
+    # "aur/xtitle"
+    # "aur/xzoom"
 )
 # Update db so yay appears on the list too!
 yay -Y --gendb
