@@ -188,13 +188,12 @@ ARCH_PKGS="\
 	curl \
 	dhcpcd \
 	dillo \
-	discord \
 	dunst \
 	efibootmgr \
 	evince \
 	firefox \
 	firefox-developer-edition \
-	fonts-manager \
+	font-manager \
 	ffmpeg \
 	ffmpegthumbnailer \
 	freerdp \
@@ -256,7 +255,6 @@ ARCH_PKGS="\
 	rofi-emoji \
 	screenfetch \
 	seahorse \
-	simplescreenrecorder \
 	slop \
 	sox \
 	speedtest-cli \
@@ -291,18 +289,11 @@ ARCH_PKGS="\
 	xorg-xfontsel \
 	xorg-xinit \
 	xorg-xinput \
-	xort-xprop \
+	xorg-xprop \
 	xsel \
 	xwallpaper \
 	yt-dlp \
 	zbar \
-	\
-	xfce4 \
-	xfce4-mpc-plugin \
-	xfce4-power-manager \
-	xfce4-pulseaudio-plugin \
-	xfce4-screenshooter \
-	xfce4-taskmanager \
 	\
 	mesa
 	mesa-vdpau \
@@ -318,6 +309,19 @@ ARCH_PKGS="\
 	iptables-nft \
 	edk2-ovmf \
 "
+
+ARCH_UNUSED="\
+	\
+	discord \
+	\
+	xfce4 \
+	xfce4-mpc-plugin \
+	xfce4-power-manager \
+	xfce4-pulseaudio-plugin \
+	xfce4-screenshooter \
+	xfce4-taskmanager \
+	\
+	"
 # Pending from Debian packages:
 # - fonts-manager
 
