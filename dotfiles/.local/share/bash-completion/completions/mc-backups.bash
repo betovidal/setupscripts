@@ -6,7 +6,10 @@
 
 SCRIPT="mc-backups"
 minecraft_saves_path="$HOME/.minecraft/saves/"
-minecraft_saves=$(ls "$minecraft_saves_path" | tr '\n' ' ')
+minecraft_saves=""
+if [ -d "$minecraft_saves_path" ]; then
+    minecraft_saves=$(ls "$minecraft_saves_path" | tr '\n' ' ')
+fi
 actions="backup restore"
 
 _mc_backups_completions() {
