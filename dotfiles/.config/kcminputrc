@@ -19,7 +19,7 @@ TapToClick=true
 ScrollFactor=1
 
 [Mouse]
-X11LibInputXAccelProfileFlat=false
+X11LibInputXAccelProfileFlat=true
 XLbInptAccelProfileFlat=true
 XLbInptPointerAcceleration=-0.2
 cursorTheme=default

@@ -1031,6 +1031,10 @@ Key=Ctrl+Alt+T
 Type=SHORTCUT
 Uuid={a1bbdf79-a2cb-4dea-b530-145c0464ac3e}
 
+[DirSelect Dialog]
+DirSelectDialog Size[$d]
+History Items[$d]
+
 [General]
 BrowserApplication[$d]
 ColorScheme[$d]

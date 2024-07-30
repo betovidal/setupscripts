@@ -1,2 +1,7 @@
 [$Version]
 update_info=kwinrules.upd:replace-placement-string-to-enum,kwinrules.upd:use-virtual-desktop-ids
+
+[8098bcff-ca24-4f1a-98a1-eb75b4124b54]
+Description=Alacritty Transparency
+wmclass=alacritty
+wmclassmatch=1

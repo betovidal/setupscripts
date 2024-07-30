@@ -135,16 +135,20 @@ ForegroundNormal=252,252,252
 ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
+[DirSelect Dialog]
+DirSelectDialog Size=820,584
+History Items[$e]=file:$HOME/Development/im-here,file:$HOME/websites/wptest.local/public,file:$HOME/websites/themedev,file:$HOME/websites/wptest.local/public,file:$HOME/websites/wptest.local,file:$HOME/tmp,file:$HOME/websites/wptest.local,file:$HOME,file:$HOME/Torrents/P
+
 [General]
-ColorSchemeHash=01662607e36cd33eacc7d7d7189f69c26b9a2cc8
+ColorSchemeHash=4a48bd34ba53d580d8594cb0216221e77518509f
 TerminalApplication=alacritty
 TerminalService=Alacritty.desktop
-XftHintStyle=hintfull
-XftSubPixel=none
+XftHintStyle=hintslight
+XftSubPixel=rgb
 font=Noto Sans,10,-1,5,50,0,0,0,0,0
 
 [KDE]
-AnimationDurationFactor=0.7071067811865475
+AnimationDurationFactor=0.5
 LookAndFeelPackage=org.kde.breezedark.desktop
 ShowDeleteCommand=false
 SingleClick=false
@@ -162,7 +166,7 @@ Show Inline Previews=true
 Show Preview=false
 Show Speedbar=true
 Show hidden files=false
-Sort by=Name
+Sort by=Date
 Sort directories first=true
 Sort hidden files last=false
 Sort reversed=false
@@ -171,7 +175,7 @@ View Style=DetailTree
 
 [KScreen]
 ScaleFactor=1.25
-ScreenScaleFactors=eDP=1;HDMI-A-0=1;
+ScreenScaleFactors=DisplayPort-0=1.25;DisplayPort-1=1.25;DisplayPort-2=1.25;HDMI-A-0=1.25;
 
 [PreviewSettings]
 MaximumRemoteSize=0

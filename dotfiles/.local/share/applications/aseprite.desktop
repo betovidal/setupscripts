@@ -10,6 +10,6 @@ Icon=aseprite
 # A comment which can/will be used as a tooltip
 Comment=Pixel-art tool to create 2D animations, sprites and any kind of graphics for games.
 # Manually created symlink (inside /usr/bin/aseprite that points to $HOME/.steam/steam/steamapps/common/Aseprite/aseprite
-Exec=aseprite
+Exec=Aseprite.AppImage
 # Describes the categories in which this entry should be shown
 Categories=Communication

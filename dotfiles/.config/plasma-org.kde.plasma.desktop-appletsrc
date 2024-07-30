@@ -1,5 +1,4 @@
 [ActionPlugins][0]
-MiddleButton;NoModifier=org.kde.paste
 RightButton;NoModifier=org.kde.contextmenu
 wheel:Vertical;NoModifier=org.kde.switchdesktop
 
@@ -25,9 +24,12 @@ popupHeight=700
 popupWidth=616
 
 [Containments][2][Applets][19][Configuration][Appearance]
+autoFontAndSize=false
 dateFormat=isoDate
 fontFamily=Noto Sans
-showSeconds=true
+fontSize=72
+fontWeight=400
+showSeconds=2
 use24hFormat=2
 
 [Containments][2][Applets][19][Configuration][ConfigDialog]
@@ -64,37 +66,51 @@ global=Alt+F1
 [Containments][2][Applets][3][Shortcuts]
 global=Alt+F1
 
-[Containments][2][Applets][30]
+[Containments][2][Applets][33]
 immutability=1
 plugin=org.kde.plasma.systemmonitor.net
 
-[Containments][2][Applets][30][Configuration]
+[Containments][2][Applets][33][Configuration]
 CurrentPreset=org.kde.plasma.systemmonitor
-PreloadWeight=55
+PreloadWeight=100
+popupHeight=142
+popupWidth=156
 
-[Containments][2][Applets][30][Configuration][Appearance]
+[Containments][2][Applets][33][Configuration][Appearance]
 chartFace=org.kde.ksysguard.textonly
-showTitle=false
+showTitle=true
 title=Network speed
 
-[Containments][2][Applets][30][Configuration][ConfigDialog]
-DialogHeight=720
-DialogWidth=960
+[Containments][2][Applets][33][Configuration][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
 
-[Containments][2][Applets][30][Configuration][SensorColors]
+[Containments][2][Applets][33][Configuration][FaceGrid][Appearance]
+chartFace=org.kde.ksysguard.linechart
+showTitle=false
+
+[Containments][2][Applets][33][Configuration][FaceGrid][SensorColors]
 network/all/download=61,174,233
 network/all/upload=233,120,61
 
-[Containments][2][Applets][30][Configuration][SensorLabels]
-network/all/download=▼
-network/all/upload=▲
+[Containments][2][Applets][33][Configuration][FaceGrid][SensorLabels]
+network/all/download=▿
+network/all/upload=▵
 
-[Containments][2][Applets][30][Configuration][Sensors]
+[Containments][2][Applets][33][Configuration][FaceGrid][Sensors]
+highPrioritySensorIds=["network/all/download"]
+
+[Containments][2][Applets][33][Configuration][SensorColors]
+network/all/download=61,174,233
+network/all/upload=233,120,61
+
+[Containments][2][Applets][33][Configuration][SensorLabels]
+network/all/download=▿
+network/all/upload=▵
+
+[Containments][2][Applets][33][Configuration][Sensors]
 highPrioritySensorIds=["network/all/upload","network/all/download"]
 lowPrioritySensorIds=[]
-
-[Containments][2][Applets][30][Configuration][org.kde.ksysguard.textonly][General]
-groupByTotal=true
 
 [Containments][2][Applets][4]
 immutability=1
@@ -109,7 +125,7 @@ DialogHeight=720
 DialogWidth=960
 
 [Containments][2][Applets][5][Configuration][General]
-launchers=applications:systemsettings.desktop,applications:org.kde.discover.desktop,preferred://filemanager,preferred://browser,applications:freetube.desktop,applications:thunderbird.desktop,file:///home/red/.local/share/applications/teams.desktop,applications:Alacritty.desktop
+launchers=applications:systemsettings.desktop,applications:firefox.desktop,file:///home/red/.local/share/applications/teams.desktop,applications:Alacritty.desktop,applications:org.mozilla.Thunderbird.desktop,applications:freetube.desktop
 
 [Containments][2][Applets][6]
 immutability=1
@@ -124,16 +140,17 @@ PreloadWeight=100
 SystrayContainmentId=8
 
 [Containments][2][ConfigDialog]
-DialogHeight=84
-DialogWidth=1366
+DialogHeight=100
+DialogWidth=1920
 
 [Containments][2][General]
-AppletOrder=3;4;5;6;30;7;19;20
+AppletOrder=3;4;5;6;33;7;19;20
 
-[Containments][31]
-ItemGeometries-1366x768=
+[Containments][35]
+ItemGeometries-1536x864=
+ItemGeometries-1920x1080=
 ItemGeometriesHorizontal=
-activityId=edb15f1a-61ed-4bb1-aa35-d6f14bfbeb09
+activityId=2a7ca123-3831-480a-b13b-64cc823d291c
 formfactor=0
 immutability=1
 lastScreen=0
@@ -141,9 +158,9 @@ location=0
 plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
 
-[Containments][31][General]
-ToolBoxButtonState=topcenter
-ToolBoxButtonX=290
+[Containments][35][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
 
 [Containments][8]
 activityId=
@@ -188,7 +205,7 @@ immutability=1
 plugin=org.kde.plasma.clipboard
 
 [Containments][8][Applets][16][Configuration]
-PreloadWeight=85
+PreloadWeight=100
 
 [Containments][8][Applets][17]
 immutability=1
@@ -199,7 +216,7 @@ immutability=1
 plugin=org.kde.plasma.notifications
 
 [Containments][8][Applets][18][Configuration]
-PreloadWeight=90
+PreloadWeight=100
 
 [Containments][8][Applets][21]
 immutability=1
@@ -210,11 +227,14 @@ immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][8][Applets][22][Configuration]
-PreloadWeight=60
+PreloadWeight=85
 
 [Containments][8][Applets][23]
 immutability=1
 plugin=org.kde.plasma.bluetooth
+
+[Containments][8][Applets][23][Configuration]
+PreloadWeight=57
 
 [Containments][8][Applets][24]
 immutability=1
@@ -233,12 +253,30 @@ plugin=org.kde.plasma.mediacontroller
 [Containments][8][Applets][29][Configuration]
 PreloadWeight=0
 
+[Containments][8][Applets][34]
+immutability=1
+plugin=org.kde.plasma.cameraindicator
+
+[Containments][8][Applets][36]
+immutability=1
+plugin=org.kde.plasma.printmanager
+
+[Containments][8][Applets][36][Configuration]
+PreloadWeight=55
+
+[Containments][8][Applets][37]
+immutability=1
+plugin=org.kde.plasma.brightness
+
+[Containments][8][Applets][37][Configuration]
+PreloadWeight=55
+
 [Containments][8][Applets][9]
 immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][8][Applets][9][Configuration]
-PreloadWeight=60
+PreloadWeight=100
 
 [Containments][8][Applets][9][Configuration][General]
 migrated=true
@@ -248,9 +286,10 @@ DialogHeight=693
 DialogWidth=960
 
 [Containments][8][General]
-extraItems=org.kde.plasma.networkmanagement,org.kde.plasma.volume,org.kde.kdeconnect,org.kde.kupapplet,org.kde.plasma.devicenotifier,org.kde.plasma.mediacontroller,org.kde.plasma.vault,org.kde.kscreen,org.kde.plasma.manage-inputmethod,org.kde.plasma.bluetooth,org.kde.plasma.clipboard,org.kde.plasma.keyboardlayout,org.kde.plasma.notifications,org.kde.plasma.battery
+extraItems=org.kde.plasma.devicenotifier,org.kde.plasma.mediacontroller,org.kde.plasma.manage-inputmethod,org.kde.plasma.clipboard,org.kde.plasma.keyboardlayout,org.kde.plasma.notifications,org.kde.plasma.battery,org.kde.plasma.cameraindicator,org.kde.plasma.brightness,org.kde.plasma.networkmanagement,org.kde.plasma.volume,org.kde.plasma.printmanager,org.kde.plasma.vault,org.kde.kscreen,org.kde.plasma.keyboardindicator,org.kde.plasma.bluetooth
 iconSpacing=1
-knownItems=org.kde.plasma.networkmanagement,org.kde.plasma.volume,org.kde.kdeconnect,org.kde.kupapplet,org.kde.plasma.devicenotifier,org.kde.plasma.mediacontroller,org.kde.plasma.vault,org.kde.kscreen,org.kde.plasma.manage-inputmethod,org.kde.plasma.bluetooth,org.kde.plasma.clipboard,org.kde.plasma.keyboardlayout,org.kde.plasma.notifications,org.kde.plasma.battery
+knownItems=org.kde.plasma.devicenotifier,org.kde.plasma.mediacontroller,org.kde.plasma.manage-inputmethod,org.kde.plasma.clipboard,org.kde.plasma.keyboardlayout,org.kde.plasma.notifications,org.kde.plasma.battery,org.kde.plasma.cameraindicator,org.kde.plasma.brightness,org.kde.plasma.networkmanagement,org.kde.plasma.volume,org.kde.plasma.printmanager,org.kde.plasma.vault,org.kde.kscreen,org.kde.plasma.keyboardindicator,org.kde.plasma.bluetooth
 
 [ScreenMapping]
 itemsOnDisabledScreens=
+screenMapping=

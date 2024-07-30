@@ -19,6 +19,8 @@ Places Icons Static Size=22
 [KPropertiesDialog]
 1536x864 screen: Height=616
 1536x864 screen: Width=456
+1920x1080 screen: Height=668
+1920x1080 screen: Width=547
 
 [MainWindow]
 MenuBar=Disabled
@@ -26,6 +28,3 @@ ToolBarsMovable=Disabled
 
 [PreviewSettings]
 Plugins=appimagethumbnail,audiothumbnail,blenderthumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,mobithumbnail,opendocumentthumbnail,gsthumbnail,rawthumbnail,svgthumbnail,ffmpegthumbs,webarchivethumbnail
-
-[Search]
-Location=Everywhere
