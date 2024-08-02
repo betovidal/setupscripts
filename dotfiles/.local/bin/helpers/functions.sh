@@ -153,7 +153,10 @@ denv () {
     fi
     case "$2" in
         "web")
-            services="nginx mariadb php8.2-fpm"
+            # Debian
+            # services="nginx mariadb php8.2-fpm"
+            # Arch
+            services="nginx mariadb php-fpm"
             ;;
         *)
             print_denv_help
