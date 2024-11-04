@@ -28,3 +28,7 @@ size = 12
 [font.normal]
 family = "Terminus"
 style = "bold"
+
+[window]
+opacity = 0.8
+
