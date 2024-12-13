@@ -94,5 +94,10 @@ then
     PATH="$GEM_HOME/bin:$PATH"
 fi
 
+php_storm_path="/opt/php-storm/bin"
+if [ -d "$php_storm_path" ]; then
+    PATH="$php_storm_path:$PATH"
+fi
+
 EDITOR=vim
 export TERM EDITOR JAVA_HOME PATH
