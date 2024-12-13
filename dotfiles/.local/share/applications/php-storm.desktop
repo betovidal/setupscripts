@@ -10,6 +10,6 @@ Icon=/opt/php-storm/bin/phpstorm.png
 # A comment which can/will be used as a tooltip
 Comment=Php IDE by Jetbrains
 # Manually created symlink (inside /usr/bin/aseprite that points to $HOME/.steam/steam/steamapps/common/Aseprite/aseprite
-Exec=/opt/php-storm/bin/phpstorm.sh
+Exec=/opt/php-storm/bin/phpstorm
 # Describes the categories in which this entry should be shown
 Categories=Development
