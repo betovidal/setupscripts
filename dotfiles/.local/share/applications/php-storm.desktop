@@ -1,0 +1,15 @@
+[Desktop Entry]
+# The type as listed above
+Type=Application
+# The version of the desktop entry specification to which this file complies
+Version=1.0
+# The name of the application
+Name=PhpStorm
+# Located in $HOME/.icons/hicolor/48x48/teams.{png,ico}
+Icon=/opt/php-storm/bin/phpstorm.png
+# A comment which can/will be used as a tooltip
+Comment=Php IDE by Jetbrains
+# Manually created symlink (inside /usr/bin/aseprite that points to $HOME/.steam/steam/steamapps/common/Aseprite/aseprite
+Exec=/opt/php-storm/bin/phpstorm.sh
+# Describes the categories in which this entry should be shown
+Categories=Development
