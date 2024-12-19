@@ -124,7 +124,7 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][2][Applets][5][Configuration][General]
-launchers=applications:Alacritty.desktop,applications:systemsettings.desktop,file:///home/red/.local/share/applications/teams.desktop,applications:firefox.desktop,applications:ario.desktop,applications:org.mozilla.Thunderbird.desktop,applications:freetube.desktop,applications:php-storm.desktop
+launchers=applications:Alacritty.desktop,applications:systemsettings.desktop,file:///home/red/.local/share/applications/teams.desktop,applications:firefox.desktop,applications:ario.desktop,applications:org.mozilla.Thunderbird.desktop,applications:freetube.desktop,applications:idea-iu.desktop
 
 [Containments][2][Applets][6]
 immutability=1
