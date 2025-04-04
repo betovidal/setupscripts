@@ -9,6 +9,6 @@ Name=sxiv
 # A comment which can/will be used as a tooltip
 Comment=Open images and animate them if possible
 # The executable of the application, possibly with arguments.
-Exec=sxiv -a %f
+Exec=sxiv -s f -a %f
 # Describes the categories in which this entry should be shown
-Categories=Images
+Categories=Graphics

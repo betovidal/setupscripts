@@ -20,8 +20,8 @@ plugin=org.kde.plasma.digitalclock
 
 [Containments][2][Applets][19][Configuration]
 PreloadWeight=100
-popupHeight=450
-popupWidth=396
+popupHeight=537
+popupWidth=484
 
 [Containments][2][Applets][19][Configuration][Appearance]
 dateFormat=isoDate
@@ -49,8 +49,8 @@ plugin=org.kde.plasma.kickoff
 
 [Containments][2][Applets][3][Configuration]
 PreloadWeight=100
-popupHeight=614
-popupWidth=785
+popupHeight=568
+popupWidth=707
 
 [Containments][2][Applets][3][Configuration][ConfigDialog]
 DialogHeight=720
@@ -72,8 +72,8 @@ plugin=org.kde.plasma.systemmonitor.net
 [Containments][2][Applets][33][Configuration]
 CurrentPreset=org.kde.plasma.systemmonitor
 PreloadWeight=100
-popupHeight=142
-popupWidth=156
+popupHeight=150
+popupWidth=164
 
 [Containments][2][Applets][33][Configuration][Appearance]
 chartFace=org.kde.ksysguard.textonly
@@ -124,7 +124,7 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][2][Applets][5][Configuration][General]
-launchers=applications:Alacritty.desktop,applications:systemsettings.desktop,file:///home/red/.local/share/applications/teams.desktop,applications:firefox.desktop,applications:ario.desktop,applications:org.mozilla.Thunderbird.desktop,applications:freetube.desktop,applications:idea-iu.desktop
+launchers=applications:Alacritty.desktop,applications:firefox.desktop,applications:ario.desktop,file:///home/red/.local/share/applications/teams.desktop,applications:org.mozilla.Thunderbird.desktop,applications:freetube.desktop,applications:idea-iu.desktop
 
 [Containments][2][Applets][6]
 immutability=1
@@ -161,6 +161,9 @@ wallpaperplugin=org.kde.image
 DialogHeight=540
 DialogWidth=720
 
+[Containments][35][General]
+positions={"1536x864":[]}
+
 [Containments][35][Wallpaper][org.kde.image][General]
 Image=/usr/share/wallpapers/MilkyWay/
 PreviewImage=/usr/share/wallpapers/MilkyWay/
@@ -173,13 +176,16 @@ immutability=1
 lastScreen=0
 location=4
 plugin=org.kde.plasma.private.systemtray
-popupHeight=570
-popupWidth=568
+popupHeight=476
+popupWidth=476
 wallpaperplugin=org.kde.image
 
 [Containments][8][Applets][10]
 immutability=1
 plugin=org.kde.kdeconnect
+
+[Containments][8][Applets][10][Configuration]
+PreloadWeight=90
 
 [Containments][8][Applets][11]
 immutability=1
@@ -247,7 +253,7 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][8][Applets][24][Configuration]
-PreloadWeight=25
+PreloadWeight=35
 
 [Containments][8][Applets][24][Configuration][General]
 showPercentage=true
@@ -275,7 +281,11 @@ immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][8][Applets][37][Configuration]
-PreloadWeight=65
+PreloadWeight=100
+
+[Containments][8][Applets][37][Configuration][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
 
 [Containments][8][Applets][9]
 immutability=1
@@ -292,9 +302,9 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][8][General]
-extraItems=org.kde.plasma.devicenotifier,org.kde.plasma.mediacontroller,org.kde.plasma.manage-inputmethod,org.kde.plasma.clipboard,org.kde.plasma.keyboardlayout,org.kde.plasma.notifications,org.kde.plasma.battery,org.kde.plasma.cameraindicator,org.kde.plasma.brightness,org.kde.plasma.networkmanagement,org.kde.plasma.volume,org.kde.plasma.printmanager,org.kde.plasma.vault,org.kde.kscreen,org.kde.plasma.keyboardindicator
+extraItems=org.kde.plasma.devicenotifier,org.kde.plasma.mediacontroller,org.kde.plasma.manage-inputmethod,org.kde.plasma.clipboard,org.kde.plasma.keyboardlayout,org.kde.plasma.notifications,org.kde.plasma.battery,org.kde.plasma.cameraindicator,org.kde.plasma.brightness,org.kde.plasma.networkmanagement,org.kde.plasma.volume,org.kde.plasma.printmanager,org.kde.plasma.vault,org.kde.kscreen,org.kde.plasma.keyboardindicator,org.kde.kdeconnect
 iconSpacing=1
-knownItems=org.kde.plasma.devicenotifier,org.kde.plasma.mediacontroller,org.kde.plasma.manage-inputmethod,org.kde.plasma.clipboard,org.kde.plasma.keyboardlayout,org.kde.plasma.notifications,org.kde.plasma.battery,org.kde.plasma.cameraindicator,org.kde.plasma.brightness,org.kde.plasma.networkmanagement,org.kde.plasma.volume,org.kde.plasma.printmanager,org.kde.plasma.vault,org.kde.kscreen,org.kde.plasma.keyboardindicator,org.kde.plasma.bluetooth
+knownItems=org.kde.plasma.devicenotifier,org.kde.plasma.mediacontroller,org.kde.plasma.manage-inputmethod,org.kde.plasma.clipboard,org.kde.plasma.keyboardlayout,org.kde.plasma.notifications,org.kde.plasma.battery,org.kde.plasma.cameraindicator,org.kde.plasma.brightness,org.kde.plasma.networkmanagement,org.kde.plasma.volume,org.kde.plasma.printmanager,org.kde.plasma.vault,org.kde.kscreen,org.kde.plasma.keyboardindicator,org.kde.plasma.bluetooth,org.kde.kdeconnect
 
 [ScreenMapping]
 itemsOnDisabledScreens=
