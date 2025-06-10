@@ -20,8 +20,8 @@ plugin=org.kde.plasma.digitalclock
 
 [Containments][2][Applets][19][Configuration]
 PreloadWeight=100
-popupHeight=537
-popupWidth=484
+popupHeight=450
+popupWidth=396
 
 [Containments][2][Applets][19][Configuration][Appearance]
 dateFormat=isoDate
@@ -49,15 +49,17 @@ plugin=org.kde.plasma.kickoff
 
 [Containments][2][Applets][3][Configuration]
 PreloadWeight=100
-popupHeight=568
-popupWidth=707
+popupHeight=512
+popupWidth=651
 
 [Containments][2][Applets][3][Configuration][ConfigDialog]
-DialogHeight=720
-DialogWidth=960
+DialogHeight=540
+DialogWidth=720
 
 [Containments][2][Applets][3][Configuration][General]
+compactMode=true
 favoritesPortedToKAstats=true
+systemFavorites=suspend\\,hibernate\\,reboot\\,shutdown
 
 [Containments][2][Applets][3][Configuration][Shortcuts]
 global=Alt+F1
@@ -72,8 +74,8 @@ plugin=org.kde.plasma.systemmonitor.net
 [Containments][2][Applets][33][Configuration]
 CurrentPreset=org.kde.plasma.systemmonitor
 PreloadWeight=100
-popupHeight=150
-popupWidth=164
+popupHeight=90
+popupWidth=168
 
 [Containments][2][Applets][33][Configuration][Appearance]
 chartFace=org.kde.ksysguard.textonly
@@ -124,7 +126,7 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][2][Applets][5][Configuration][General]
-launchers=applications:Alacritty.desktop,applications:firefox.desktop,applications:ario.desktop,file:///home/red/.local/share/applications/teams.desktop,applications:org.mozilla.Thunderbird.desktop,applications:freetube.desktop,applications:idea-iu.desktop
+launchers=applications:Alacritty.desktop,applications:firefox.desktop,applications:ario.desktop,file:///home/red/.local/share/applications/teams.desktop,applications:org.mozilla.Thunderbird.desktop,applications:freetube.desktop,applications:idea-iu.desktop,applications:org.kde.ghostwriter.desktop
 
 [Containments][2][Applets][6]
 immutability=1
@@ -176,8 +178,8 @@ immutability=1
 lastScreen=0
 location=4
 plugin=org.kde.plasma.private.systemtray
-popupHeight=476
-popupWidth=476
+popupHeight=813
+popupWidth=828
 wallpaperplugin=org.kde.image
 
 [Containments][8][Applets][10]
@@ -185,7 +187,7 @@ immutability=1
 plugin=org.kde.kdeconnect
 
 [Containments][8][Applets][10][Configuration]
-PreloadWeight=90
+PreloadWeight=100
 
 [Containments][8][Applets][11]
 immutability=1
@@ -201,6 +203,9 @@ plugin=org.kde.plasma.vault
 [Containments][8][Applets][13]
 immutability=1
 plugin=org.kde.kscreen
+
+[Containments][8][Applets][13][Configuration]
+PreloadWeight=55
 
 [Containments][8][Applets][14]
 immutability=1
@@ -240,7 +245,7 @@ immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][8][Applets][22][Configuration]
-PreloadWeight=100
+PreloadWeight=92
 
 [Containments][8][Applets][22][Configuration][General]
 currentDetailsTab=details
