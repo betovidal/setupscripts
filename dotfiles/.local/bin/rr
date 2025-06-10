@@ -10,7 +10,7 @@ SCRIPT_FOLDER=$(dirname "$(readlink -f "$0")")
 PYTHON_BINS="python python3"
 
 for PYTHON_BIN in $PYTHON_BINS; do
-    if [ ! -z "$(which PYTHON_BIN)" ]; then
+    if [ ! -z "$(which PYTHON_BIN) > /dev/null 2>&1" ]; then
         break
     fi
 done
@@ -31,7 +31,7 @@ if [ "$TYPE" = "ssh" ] || [ "$TYPE" = "rdp" ]; then
 			ssh $args
 			;;
 		"rdp")
-			xfreerdp $args
+			xfreerdp3 $args
 			;;
 	esac
 else
