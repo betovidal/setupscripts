@@ -20,8 +20,8 @@ plugin=org.kde.plasma.digitalclock
 
 [Containments][2][Applets][19][Configuration]
 PreloadWeight=100
-popupHeight=450
-popupWidth=396
+popupHeight=454
+popupWidth=400
 
 [Containments][2][Applets][19][Configuration][Appearance]
 dateFormat=isoDate
@@ -49,8 +49,8 @@ plugin=org.kde.plasma.kickoff
 
 [Containments][2][Applets][3][Configuration]
 PreloadWeight=100
-popupHeight=512
-popupWidth=651
+popupHeight=508
+popupWidth=647
 
 [Containments][2][Applets][3][Configuration][ConfigDialog]
 DialogHeight=540
@@ -74,8 +74,8 @@ plugin=org.kde.plasma.systemmonitor.net
 [Containments][2][Applets][33][Configuration]
 CurrentPreset=org.kde.plasma.systemmonitor
 PreloadWeight=100
-popupHeight=90
-popupWidth=168
+popupHeight=94
+popupWidth=172
 
 [Containments][2][Applets][33][Configuration][Appearance]
 chartFace=org.kde.ksysguard.textonly
@@ -178,8 +178,8 @@ immutability=1
 lastScreen=0
 location=4
 plugin=org.kde.plasma.private.systemtray
-popupHeight=813
-popupWidth=828
+popupHeight=432
+popupWidth=432
 wallpaperplugin=org.kde.image
 
 [Containments][8][Applets][10]
@@ -245,7 +245,7 @@ immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][8][Applets][22][Configuration]
-PreloadWeight=92
+PreloadWeight=97
 
 [Containments][8][Applets][22][Configuration][General]
 currentDetailsTab=details

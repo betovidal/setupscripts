@@ -3,9 +3,6 @@ MenuBar=Disabled
 [$Version]
 update_info=dolphin_detailsmodesettings.upd:rename-leading-padding
 
-[DetailsMode]
-PreviewSize=32
-
 [ExtractDialog]
 1536x864 screen: Height=540
 1536x864 screen: Width=1024
