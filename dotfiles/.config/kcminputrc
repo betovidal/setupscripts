@@ -7,8 +7,8 @@ RepeatDelay=150
 RepeatRate=30
 
 [Libinput][1133][49271][Logitech USB Optical Mouse]
-PointerAcceleration=-0.200
-PointerAccelerationProfile=1
+PointerAcceleration=-0.900
+PointerAccelerationProfile=2
 
 [Libinput][1267][12735][ELAN0708:00 04F3:31BF Touchpad]
 PointerAccelerationProfile=2
