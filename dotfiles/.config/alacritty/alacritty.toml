@@ -1,44 +1,71 @@
-[colors.bright]
-black = "0x666666"
-blue = "0xaaccbb"
-cyan = "0x42717b"
-green = "0xbde077"
-magenta = "0xe16a98"
-red = "0xd23d3d"
-white = "0xcccccc"
-yellow = "0xffe863"
+# Monokai
+[colors.primary]
+background="0x272822"
+foreground="0xf1ebeb"
 
 [colors.normal]
-black = "0x222222"
-blue = "0x66aabb"
-cyan = "0x6d878d"
-green = "0xb7ce42"
-magenta = "0xb7416e"
-red = "0xe84f4f"
-white = "0xdddddd"
-yellow = "0xfea63c"
+black='0x48483e'
+red='0xdc2566'
+green='0x8fc029'
+yellow='0xd4c96e'
+blue='0x55bcce'
+magenta='0x9358fe'
+cyan='0x56b7a5'
+white='0xacada1'
 
-[colors.primary]
-background = "0x161616"
-foreground = "0xffffff"
+[colors.bright]
+black='0x76715e'
+red='0xfa2772'
+green='0xa7e22e'
+yellow='0xe7db75'
+blue='0x66d9ee'
+magenta='0xae82ff'
+cyan='0x66efd5'
+white='0xcfd0c2'
+
+# [colors.bright]
+# black = "0x666666"
+# blue = "0xaaccbb"
+# cyan = "0x42717b"
+# green = "0xbde077"
+# magenta = "0xe16a98"
+# red = "0xd23d3d"
+# white = "0xcccccc"
+# yellow = "0xffe863"
+# 
+# [colors.normal]
+# black = "0x222222"
+# blue = "0x66aabb"
+# cyan = "0x6d878d"
+# green = "0xb7ce42"
+# magenta = "0xb7416e"
+# red = "0xe84f4f"
+# white = "0xdddddd"
+# yellow = "0xfea63c"
+# 
+# [colors.primary]
+# background = "0x161616"
+# foreground = "0xffffff"
 
 [font]
 size = 11
 
+# Terminess Nerd Font Mono
+# JetBrainsMono Nerd Font Mono
 [font.normal]
-family = "JetBrains Mono"
+family = "JetBrainsMono Nerd Font Mono"
 style = "Regular"
 
 [font.bold]
-family = "JetBrains Mono"
+family = "JetBrainsMono Nerd Font Mono"
 style = "Bold"
 
 [font.italic]
-family = "JetBrains Mono"
+family = "JetBrainsMono Nerd Font Mono"
 style = "Italic"
 
 [font.bold_italic]
-family = "JetBrains Mono"
+family = "JetBrainsMono Nerd Font Mono"
 style = "Bold Italic"
 [window]
 opacity = 0.8
