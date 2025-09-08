@@ -9,6 +9,7 @@ PreviewSize=16
 [ExtractDialog]
 1536x864 screen: Height=540
 1536x864 screen: Width=1024
+DirHistory[$e]=$HOME/Downloads/Paper/GraphIsMe/
 
 [General]
 EditableUrl=true
@@ -28,6 +29,9 @@ Places Icons Static Size=22
 
 [MainWindow]
 MenuBar=Disabled
+
+[Notification Messages]
+warnAboutRisksBeforeActingAsAdmin=false
 
 [PreviewSettings]
 Plugins=appimagethumbnail,audiothumbnail,blenderthumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,mobithumbnail,opendocumentthumbnail,gsthumbnail,rawthumbnail,svgthumbnail,ffmpegthumbs,webarchivethumbnail

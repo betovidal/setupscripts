@@ -206,7 +206,7 @@ immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][2][Applets][7][Applets][22][Configuration]
-PreloadWeight=97
+PreloadWeight=100
 
 [Containments][2][Applets][7][Applets][22][Configuration][General]
 currentDetailsTab=details
@@ -258,7 +258,7 @@ immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][2][Applets][7][Applets][38][Configuration]
-PreloadWeight=5
+PreloadWeight=0
 
 [Containments][2][Applets][7][Applets][9]
 immutability=1
@@ -290,6 +290,7 @@ DialogWidth=1920
 AppletOrder=3;4;5;6;33;7;19;20
 
 [Containments][35]
+ItemGeometries-1280x720=
 ItemGeometries-1536x864=
 ItemGeometries-1920x1080=
 ItemGeometriesHorizontal=
@@ -306,7 +307,7 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][35][General]
-positions={"1536x864":[],"1920x1080":[]}
+positions={"1280x720":[],"1536x864":[],"1920x1080":[]}
 
 [Containments][35][Wallpaper][org.kde.image][General]
 Image=/usr/share/wallpapers/MilkyWay/
